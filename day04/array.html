@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //一段连续的有序的数据集合  变量的大盒子
+        //可以通过下标/索引来访问元素
+        // let arr = [2, 33, 3, 334, 443, 553, 443, 559]
+        //数组长度-1就是最后一个元素的下标
+        // console.log(arr[arr.length - 1]); //获取最后一个元素
+        // //遍历
+        // for (let i = 0; i < arr.length; i++) {
+        //     if (arr[i] % 3 === 0)
+        //         console.log(arr[i]);
+        // }
+
+        // let str =''
+        // let str1 = new String()
+
+        // let arr = new Array() //构造函数方式创建数组对象
+        let arr1 = [5] //字面量方式创建数组对象
+
+        arr1.push(10) //在数组末尾添加元素
+        arr1.push(20)
+        arr1.push(20, 1222, 333, 445, 333, 66)
+
+        let z = arr1.pop() //删除并返回末尾元素
+        console.log(z); //20
+
+        arr1.unshift(80) //在数组开头添加元素
+        arr1.shift(80)//删除并返回第一个元素
+
+        //在指定位置删除并返回一段元素(index,length)  从下标index开始删除length个
+        arr1.splice(2, 2)
+
+        //返回一段元素,[start,end)  0,3  返回 0,1,2三个下标对应的元素
+        console.log(arr1.slice(0, 3));
+
+        //返回指定元素在数组中第一次出现的下标
+        console.log(arr1.indexOf(333));
+        //返回指定元素在数组中最后一次出现的下标
+        console.log(arr1.lastIndexOf(333));
+
+        //判断数组是否包含一个元素
+        console.log(arr1.includes(444));
+
+        //翻转数组，直接改变数组结构
+        arr1.reverse()
+
+        //数组排序  默认是按首字符排序   [3, 2, 1, 6, 4]
+        arr1.sort()
+
+        //将数组通过某字符串拼接，默认是逗号
+        console.log(arr1.join('|'));
+        
+        //返回与另一个数组合并之后的新数组，不会改变原数组
+        let arr2 = [111, 222]
+        console.log(arr1.concat(arr2));
+
+        console.log(arr1);
+
+        // a() //  函数/方法 
+
+
+        //预习  String  Date
+
+    </script>
+</body>
+
+</html>

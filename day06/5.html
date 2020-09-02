@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [11, 22, 33, 44, 55]
+        // console.log(arr.join('---'));
+
+        function join(code = ',') {
+            let res = ''
+            for (let i = 0; i < arr.length; i++) {
+                res += arr[i] + code
+                //如果不是最后一个元素，则拼接code
+                if (i < arr.length - 1) res += code
+            }
+            // console.log(res);
+            return res
+        }
+
+        let str = join('----')
+        console.log(str); //11-22-33-44-55
+
+        function slice(strat, end) {
+            let res = []
+            for (let i = 0; i < array.length; i++) {
+                res.push(arr[i]);
+
+            }
+        }
+        console.log((slice(2, 4)));
+
+
+        function push() {}
+
+        function pop() {}
+
+        function unshift() {}
+
+        function reverse() {}
+
+        function splice() {}
+    </script>
+</body>
+
+</html>

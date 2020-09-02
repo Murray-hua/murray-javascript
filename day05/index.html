@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let str = "World Hello World"
+
+
+
+        //转大写
+        console.log(str.toUpperCase());
+        //转小写
+        console.log(str.toLowerCase());
+        //字符串长度
+        console.log(str.length);
+        //通过索引访问
+        console.log(str[0]);
+        //遍历字符串的每一个字符
+        for (let i = 0; i < str.length; i++) {
+            console.log(str[i]);
+        }
+        console.log('-'.repeat(30));
+        let str1 = '11,22,33,44'
+        //将字符串按指定字符分割成数组
+        console.log(str1.split(','));
+        //利用数组来翻转字符串
+        console.log(str.split('').reverse().join(''));
+        //生成重复的字符串
+        console.log('-'.repeat(30));
+        //将一个字符串中的部分内容替换成新的内容，默认替换第一个
+        console.log(str.replace('World', 'China'))
+        //利用正则表达式进行全部替换
+        console.log(str.replace(/World/g, 'China'))
+        console.log('-'.repeat(30));
+
+        let template = '尊敬的{tel}用户，恭喜您获得本公司最高{money}万的贷款额度，请尽快登录XXXX领取'
+        let telList = ['18899990000', '18899910000', '18899390000', '14799990000', '15899990000']
+        for (let i = 0; i < telList.length; i++) {
+            let msg = template.replace('{tel}', telList[i])
+            msg = msg.replace('{money}', Math.round(Math.random() * 90) + 10)
+            console.log(msg);
+        }
+
+        console.log('-'.repeat(30));
+
+
+        let arr = ['张三', '张伟', '李四', '王五']
+        // let keywords = prompt('请输入查询条件')
+        // for (let i = 0; i < arr.length; i++) {
+        //     //判断a字符串中是否包含b字符串
+        //     if (arr[i].includes(keywords))
+        //         console.log(arr[i]);
+        // }
+        console.log('-'.repeat(30));
+
+        let str3 = '11324243284324242342342341119899990000'
+        console.log(str3.startsWith('198')); //是否以某字符串开头
+        console.log(str3.endsWith('88')); //是否以某字符串结尾
+        console.log(str3.includes('198'));//包含某字符串
+        console.log('-'.repeat(30));
+
+        console.log(str3.substring(0, 8) + '...');//截取前8位，拼接省略号
+        console.log(str3.substr(4, 5)); //start,length    开始下标，长度
+        console.log(str3.substring(4, 5));// [start,end)  开始下标，结束下标
+        console.log(str3.substring(4));// 截取到最后
+
+        console.log('-'.repeat(30));
+
+        console.log(str3.indexOf('8'));//第一次出现8的位置
+        console.log(str3.lastIndexOf('8'));//最后一次出现8的位置
+        console.log(str3.indexOf('z'));//第一次出现z的位置，如果不存在z，则返回-1
+        console.log(str3.substring(str3.indexOf('8'))) //从8的下标位置，截取到最后
+        console.log(str3.substring(0, str3.indexOf('8') + 1)) //从头开始截取到8的下标位置
+        console.log(str3.concat('zzzzzzzzzzzzzzzzz'));
+
+        console.log('-'.repeat(30));
+
+
+        // let path = `https://search.jd.com/Search?keyword=%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91%20%E5%A4%96%E6%98%9F%E4%BA%BA&enc=utf-8&suggest=4.his.0.0&wq=&pvid=e1b9756363ea4d30a3b15805a1927a5e`
+
+        // let params = path.split('?')[1].split('&')
+
+        // let key = 'keyword'
+
+        // for (let i = 0; i < params.length; i++) {
+        //     let kv = params[i].split('=')
+        //     if (kv[0] === key)
+        //         console.log(decodeURI(kv[1]));
+        // }
+
+        console.log(encodeURI("张三"));//将中文转码
+        console.log(decodeURI("%E5%BC%A0%E4%B8%89"));//将中文解码
+
+
+        console.log('-'.repeat(30));
+
+        console.log(str);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // while(循环条件){  循环操作 }
+
+        var i = 1
+        var total = 0
+        var count = 0
+
+        //循环条件为true则执行循环，否则退出循环
+        while (i <= 20) {
+            if (i % 2 === 0)
+                total += i
+            else
+                count++
+
+            i++
+        }
+
+        console.log('偶数和为' + total);
+        console.log('奇数个数为' + count);
+
+
+    </script>
+</body>
+
+</html>

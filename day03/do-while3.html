@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //取款操作
+        // 不停取款，直到输入退出两个字为止，每次打印出余额
+        var balance = 1000
+        var money = 0
+        do {
+            money = prompt('请输入取款金额：')
+            if (money === '退出') {
+                break
+            }
+            if (isNaN(money)) {
+                console.log('请输入数字');
+            } else {
+                money = parseInt(money)
+
+                if (money <= 0 || money > balance) {
+                    console.log('金额有误，请重新输入！');
+                } else {
+                    balance -= money
+                    console.log(`取款成功，当前余额  ${balance} 元`);
+                }
+
+            }
+        } while (true);
+
+        console.log('谢谢使用');
+
+
+    </script>
+</body>
+
+</html>
