@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let a = function(){
+
+        // }
+        // let a = () => {
+        //     return 1
+        // }
+
+        // let b = a()
+        // console.log(b);
+
+
+        // console.log('-'.repeat(30));
+
+        // function a() {
+        //     return 1
+        // }
+        // let a = function () {
+        //     return 1
+        // }
+
+        // let a = (aa, bb) => {
+        //     return aa + bb
+        // }
+        // let a = (aa, bb) => aa + bb
+        // // let b = (aa) => aa * 20
+        // let b = aa => aa * 20
+
+        // console.log(a(10, 20));
+
+
+
+        // 详细版
+        // function a()
+
+        // let b =()=>{
+        //     return num
+        // }
+        // let b =(num,zz)=>{
+        //     return num
+        // }
+        // let b = num =>{
+        //     return num * 20
+        // }
+        // let b = num => num * 20
+        // console.log(b(20));
+
+
+        let a = function (num) {
+            console.log(num);
+        }
+
+        // let b = a
+        // let c = b
+        // c(30)
+
+        // let a = 10
+        // callback 回调函数/高阶函数  将一个函数作为函数传入另一个函数中执行
+        //高阶函数： 参数为函数或者返回值为函数的函数成为高阶函数
+        function test(b) {
+            // console.log(b);
+            b(30);
+        }
+        test(a)
+        
+
+        function zz() {
+            let bb = function(){
+            }
+            return bb
+        }
+
+        //自执行函数
+        (function () {
+            console.log(1111111);
+        })()
+
+    </script>
+</body>
+
+</html>

@@ -9,36 +9,11 @@
 
 <body>
     <script>
-
         var month = prompt('请输入月份')
         if (isNaN(month)) {
             alert("请输入数字！")
         } else {
             month = parseInt(month)
-
-            // if-else 通常用于范围判断  if(a>2 && a<10)
-            // 一般if-else用于等值判断时，如果超过两个，就应该考虑用switch
-            /*
-            if(a===2){
-                
-            }else if(a===3){    
-
-            }else{
-
-            }
-            */
-            //switch通常用于等值判断，结构
-            /*
-            switch (key) {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                default:
-                    break; //最后一个break可以省略
-            }
-            
-            */
             switch (month) {
                 case 1:
                 case 3:
@@ -64,6 +39,29 @@
             }
         }
 
+        // if-else 通常用于范围判断  if(a>2 && a<10)
+        // 一般if-else用于等值判断时，如果超过两个，就应该考虑用switch
+        /*
+        if(a===2){
+            
+        }else if(a===3){    
+
+        }else{
+
+        }
+        */
+        //switch通常用于等值判断，结构
+        /*
+        switch (key) {
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                break; //最后一个break可以省略
+        }
+        
+        */
     </script>
 </body>
 
