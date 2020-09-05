@@ -127,13 +127,121 @@
         console.log(arr);
         console.log(arr.length);
 
+
+
+
+
+
         //在指定位置插入元素
         // insertAt(1, 'aa')
-        //concat
-        //indexof
-        //includes
-        //sort
+        let arr1 = [111, 22, 33]
 
+        function insertAt(index, val) {
+            // 备份length,防止数组扩容造成死循环
+            let len = arr1.length
+            //从后往前循环，index后面的每个元素往后挪一个位置
+            for (let i = arr1.length - 1; i >= index; i--) {
+
+                arr1[i + 1] = arr1[i]
+            }
+            // 将index位置的元素替换掉
+            arr1[index] = val
+        }
+        insertAt(0, 20)
+
+        // function l(str) {
+        //     console.log(str);
+        // }
+        function unshift(val) {
+            insertAt(0, val)
+        }
+        unshift(30)
+        console.log(arr1);
+
+
+        // function unshift(val) {
+        //     //因为数组长度会扩容，所以先记录长度
+        //     // 备份length,防止数组扩容造成死循环
+        //     let len = arr.length
+        //     //从后往前循环，每个元素往后挪一个位置
+        //     for (let i = len - 1; i >= 0; i--) {
+        //         arr[i + 1] = arr[i]
+        //     }
+        //     //将第一个元素改成参数值
+        //     //覆盖第一个元素
+        //     arr[0] = val
+        // }
+        // unshift(111)
+        // unshift(233333)
+
+        // function concat(newarr) {
+        //     let res = []
+        //     for (let i = 0; i < arr1.length; i++) {
+        //         res.push(arr1[i])
+        //     }
+        //     for (let i = 0; i < newarr.length; i++) {
+        //         res.push(newarr[i])  
+        //     }            
+        //     return res
+        // }
+        // console.log(concat([20,30,40,50]));
+
+
+
+
+
+        // arr1.forEach(function (item) {
+        //         res.push(item)
+
+        //     })
+        //     newarr.forEach(function (item) {
+
+        //     })
+
+
+
+        //concat
+
+        //indexof
+        // function indexof(val) {
+        //     let res = -1
+        //     for (let i = 0; i < arr1.length; i++) {
+        //         //挨个比对，如果找到，则将当前下标赋值给res
+        //         if (arr1[i] === val) {
+        //             res = i
+        //             break
+        //         }
+        //     }
+        //     return res
+        // }
+        // console.log(indexof(30));
+
+        // //includes
+        // function includes(val) {
+        //     return indexof(val) > -1
+        // }
+        // console.log(includes(22));
+        // console.log(includes(22222));
+
+
+        //sort
+        let arr2 = [1, 33, 2, 55, 32, 2]
+
+        function sort() {
+            for (let i = 0; i < arr2.length - 1; i++) {
+                console.log(`-`.repeat(30));
+                for (let j = 0; j < arr2.length - i - 1; j++) {
+                    console.log(`第${i + 1}轮-第${j + 1}次`);
+                    if (arr2[j] > arr2[j + 1]) {
+                        let temp = arr2[j]
+                        arr2[j] = arr2[j + 1]
+                        arr2[j + 1] = temp
+                    }
+                }
+            }
+        }
+        sort()
+        console.log(arr2);
     </script>
 </body>
 
