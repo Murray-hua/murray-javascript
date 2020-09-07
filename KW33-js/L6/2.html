@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="./js/simba.js"></script>
+    <script>
+        // function chu(a, b) {
+        //     //手动报错,抛出异常
+        //     if (!b) throw '除数不能为空'
+        //     return a / b
+        // }
+        // console.log(chu(10));
+
+        //如果time传参了，则取time对应的时间，如果没有传，则取当前时间
+
+        function getDateText(time, type) {
+            let now = new Date() //默认为当前时间
+            if (time) now = new Date(time)//如果传参了，则创建对应对象
+            //年月日
+            let yy = repairZero(now.getFullYear())
+            let mm = repairZero(now.getMonth() + 1)
+            let dd = repairZero(now.getDate())
+            let hh = repairZero(now.getHours())
+            let mi = repairZero(now.getMinutes())
+            let ss = repairZero(now.getSeconds())
+            let ymd = [yy, mm, dd].join('-')
+            //时分秒
+            let hms = [hh, mi, ss].join(':')
+            //年月日时分秒
+            let all = [ymd, hms].join(' ')
+
+            if (type === 0) return ymd
+            else if (type === 1) return hms
+            else return all
+        }
+
+        console.log(getDateText());
+        console.log(getDateText(undefined, 0));
+        console.log(getDateText(undefined, 1));
+
+        function getFriendlyTime(time) {
+            let d3 = new Date()
+            let d4 = new Date(time)
+            //两个时间相减，得到毫秒数，除以1000换算成秒
+            let sec = (d3 - d4) / 1000
+            //根据秒数来显示文本
+            if (sec < 60) {
+                console.log('刚刚');
+            } else if (sec < 60 * 60) {
+                console.log(Math.floor(sec / 60) + "分钟前");
+            } else if (sec < 60 * 60 * 24) {
+                console.log(Math.floor(sec / 60 / 60) + "小时前");
+            } else {
+                console.log(getDateText(time));
+            }
+        }
+
+        getFriendlyTime(1598006192403)
+        getFriendlyTime('2020-09-01 08:00:22')
+        getFriendlyTime('Wed, 01 Sep 2020 00:21:12 GMT')
+        getFriendlyTime('2020-09-02 09:55:22')
+
+        // getDateText('2020-11-22 02:02:22')
+    </script>
+</body>
+
+</html>

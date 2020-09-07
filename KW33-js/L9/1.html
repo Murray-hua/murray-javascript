@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // let obj = {
+        //     name: "Simba",
+        //     0: 'Ace',
+        //     a: 20
+        // }
+
+        // //如果对象中包含此属性，则赋值，如果不包含此属性，则新增属性
+        // obj.zzz = 30
+        // obj.xxx = 30
+        // obj.name = 'roger'
+
+        // console.log(obj);
+
+
+        //hello world . i like javascript.   得到每个字符出现的次数，及出现最多的字符
+        // let count = { age: 10 }
+        // let key = 'name'
+        // if (count[key] === undefined) {
+        //     console.log('没有包含');
+        // }
+
+
+
+        let str = 'hello world . i like javascript.'
+
+        //用于统计次数的对象
+        let obj = {}
+        // obj.a = 100
+        // obj['a'] = 100
+        // obj.a = 200
+        // obj.a = obj.a + 1
+
+        let maxCode = {
+            name: "",
+            count: 0
+        }
+        //每个字符出现的次数，以及出现次数最多的那个字符
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] != ' ') {
+                let key = str[i]
+                if (obj[key] === undefined) {
+                    // console.log(key + '不存在');
+                    obj[key] = 1
+                } else {
+                    // console.log(key + '存在了,目前的值是' + obj[key]);
+                    obj[key]++
+                }
+                // console.log(obj);
+                //跟擂台上的比较一下大小
+                if (obj[key] > maxCode.count) {
+                    maxCode.name = key
+                    maxCode.count = obj[key]
+                }
+            }
+        }
+
+        console.log(obj);
+        console.log(`出现次数最多的字符是${maxCode.name}，出现了${maxCode.count}次`);
+
+
+
+
+    </script>
+</body>
+
+</html>

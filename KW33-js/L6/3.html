@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./js/simba.js"></script>
+    <script>
+        setInterval(function () {
+            let now = new Date()
+            let six = new Date('2020-09-02 15:00:00')
+
+            let sec = (six - now) / 1000
+
+            let h = repairZero(Math.floor(sec / 3600))
+            let m = repairZero(Math.floor(sec % 3600 / 60))
+            let s = repairZero(Math.floor(sec % 3600 % 60))
+
+            console.log([h, m, s].join(':'));
+        }, 1000)
+
+
+
+    </script>
+</body>
+
+</html>

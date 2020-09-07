@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //字面量方式定义对象，只适用于用一次或者临时表示简单事物
+        // let ma1 = {
+        //     name: "马",
+        //     color: "红",
+        //     position: {
+        //         x: 1,
+        //         y: 0
+        //     },
+        //     move(x, y) {
+        //         this.position.x = x
+        //         this.position.y = y
+        //     }
+        // }
+
+        // let obj = new Object()
+        // obj.age = 10
+        // console.log(obj);
+
+        //构造函数   本质是函数，概念称为类
+        function Chess(name, color, x, y) {
+            //this在构造函数中指向创建出的对象/实例
+            this.name = name
+            this.color = color
+            this.position = {}
+            this.position.x = x
+            this.position.y = y
+            this.move = function (x, y) {
+                //this在普通的函数中指向函数的调用者
+                console.log(this.color + this.name + "移动到了" + x + '-' + y);
+                this.position.x = x
+                this.position.y = y
+            }
+        }
+
+        //new Date()  new Array() 
+        let a = new Chess('马', '红', 10, 10)
+        let b = new Chess('车', '黑', 4, 5)
+        let c = new Chess('相', '黑', 5, 6)
+
+        a.move(10,13)
+        b.move(5,3)
+        a.move(14,13)
+        c.move(6,8)
+
+    </script>
+</body>
+
+</html>

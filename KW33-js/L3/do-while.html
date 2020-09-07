@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var i = 0
+        // //先执行，再判断，至少执行一次
+        // do {
+        //     console.log(i);
+        //     i++
+        // } while (i < 10)
+
+        var age = 15
+
+        while (age < 18) {
+            console.log('年龄不够，再过' + (18 - age) + '年再来吧！');
+            age++
+        }
+        console.log('欢迎报名，交钱吧！');
+
+        var result = ''
+        var i = 1
+        do {
+            console.log('学习完毕，第' + i + '次准备考试');
+            console.log('科一科二科三科四。。。');
+            i++
+            result = prompt('考试通过了吗？')
+        } while (result !== '是');
+
+        console.log('恭喜，去等待拿证吧');
+
+        // var res = ''
+        // do {
+        //     res = prompt('are you ok?')
+        // } while (res !== 'ok');
+
+
+    </script>
+</body>
+
+</html>

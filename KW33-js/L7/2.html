@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // function a() {
+        //     return 1
+        // }
+
+        // let b = function (num) {
+        //     return num
+        // }
+
+        // let b = () => {
+        //     return num
+        // }
+
+        // let b = (num, zz) => {
+        //     return num
+        // }
+
+        // let b = num => {
+        //     return num * 20
+        // }
+
+        // let b = num => num * 20
+
+        // console.log(b(20));
+
+        let a = function (num) {
+            console.log(num);
+        }
+        // let b = a
+        // b(30)
+
+        // let a = [111, 22, 334]
+        // let a = 10
+
+        //callback  回调函数   将一个函数作为参数传入到另一个函数中执行
+        //高阶函数 ： 参数为函数或者返回值为函数的函数成为高阶函数
+        function test(b) {
+            b(30);
+        }
+
+        test(a)
+
+
+        function zz() {
+            let bb = function () { }
+            return bb
+        }
+
+
+        //自执行函数
+        (function () {
+            console.log(11111111111111);
+        })()
+
+
+
+
+    </script>
+</body>
+
+</html>

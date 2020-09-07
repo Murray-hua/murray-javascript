@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 请输入一个月份，再输入一个日期  
+        // 得到是今年的第几天
+        // 如 2月5日是第36天
+        // 如 12月25日是第359天
+
+        var month = prompt('月')
+        if (isNaN(month)) {
+            console.log('please input a number');
+        } else {
+            month = parseInt(month)
+            if (month < 1 || month > 12) {
+                console.log('月份不正确');
+            } else {
+                var date = prompt('日')
+                if (isNaN(date)) {
+                    console.log('Please input a number');
+                } else {
+                    date = parseInt(date)
+                    if (date < 1 || date > 31) {
+                        console.log('日期不正确');
+                    } else {
+                        var total = 0//总天数
+                        total += date  //先加上零头
+                        var i = 1
+                        //加上之前的整月的总天数,如7月，就是前6个整月
+                        while (i <= month - 1) {
+                            switch (i) {
+                                case 1:
+                                case 3:
+                                case 5:
+                                case 7:
+                                case 8:
+                                case 10:
+                                case 12:
+                                    total += 31
+                                    break
+                                case 2:
+                                    total += 29
+                                    break
+                                case 4:
+                                case 6:
+                                case 9:
+                                case 11:
+                                    total += 30
+                                    break
+                            }
+                            i++
+                        }
+
+                        console.log(total);
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

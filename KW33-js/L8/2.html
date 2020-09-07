@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr2 = [121, 23, 1212, 2223, 44]
+
+        function forEach(callback) {
+            for (let i = 0; i < arr2.length; i++) {
+                callback(arr2[i])
+            }
+        }
+
+        // forEach(function (item) {
+        //     console.log(item);
+        // })
+
+
+        function filter(callback) {
+            let res = []
+            for (let i = 0; i < arr2.length; i++) {
+                //满足条件则加入结果集
+                let isok = callback(arr2[i])
+                if (isok) res.push(arr2[i])
+            }
+            return res
+        }
+        console.log(filter(function (item) {
+            return item > 300
+        }));
+
+        function find(callback) {
+            for (let i = 0; i < arr2.length; i++) {
+                //如果满足条件，则直接返回当前元素
+                let isok = callback(arr2[i])
+                if (isok) return arr2[i]
+            }
+        }
+        console.log(find(function (item) {
+            return item > 300
+        }));
+
+        function some(callback) {
+            for (let i = 0; i < arr2.length; i++) {
+                //如果满足条件，则直接返回true
+                let isok = callback(arr2[i])
+                if (isok) return true
+            }
+            return false
+        }
+
+        console.log(some(function (item) {
+            return item > 300
+        }));
+
+        function every(callback) {
+            for (let i = 0; i < arr2.length; i++) {
+                //如果有一个不满足条件，则直接返回false
+                let isok = callback(arr2[i])
+                if (!isok) return false
+            }
+            return true
+        }
+
+        console.log(every(function (item) {
+            return item > 3
+        }));
+
+    </script>
+</body>
+
+</html>

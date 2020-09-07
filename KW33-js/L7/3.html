@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let arr = [11, 22, 33, 44]
+
+        //遍历每一个元素
+        arr.forEach(function (item) {
+            console.log(item);
+        })
+
+        // let res = []
+        // for (let i = 0; i < arr.length; i++) {
+        //     if (arr[i] % 2 === 0) {
+        //         res.push(arr[i])
+        //     }
+        // }
+        // console.log(res);
+
+        //筛选/过滤元素，返回数组中满足条件的元素列表
+        console.log(arr.filter(function (item) {
+            return item > 30
+        }));
+
+        // console.log(arr.filter(item => item % 2 === 0));
+
+        let arr1 = ['张三丰', '张无忌', '李思思']
+        console.log(arr1.filter(function (item) {
+            return item.startsWith('张')
+        }));
+
+        //返回数组中第一个满足条件的元素
+        console.log(arr1.find(function (item) {
+            return item.startsWith('张')
+        }));
+
+        // console.log(arr1.includes('王'));
+
+        //判断是否存在符合条件的元素
+        console.log(arr1.some(function (item) {
+            return item.startsWith('李')
+        }));
+
+        //判断数组都是符合条件的元素
+        console.log(arr1.every(function (item) {
+            return item.length >= 2
+        }));
+
+        // console.log(arr1.filter(function (item) {
+        //     return item.length === 3
+        // }));
+
+       
+
+        // setInterval(function () {
+        //     console.log(11);
+        //     console.log(22);
+        // }, 1000);
+
+
+        // function forEach(callback) {
+        //     for (let i = 0; i < arr.length; i++) {
+        //         callback(arr[i], i);
+        //     }
+        // }
+
+        // forEach(function (item, i) {
+        //     console.log(item);
+        // })
+
+    </script>
+</body>
+
+</html>

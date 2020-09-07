@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let i = 4
+        // while (i >= 0) {
+        //     console.log(i);
+        //     i--
+        // }
+
+        let arr = [11, 22, 33, 44, 55, 66]
+
+        function push(val) {
+            //下一个元素的下标是数组的自身长度
+            arr[arr.length] = val
+        }
+        // push(10)
+        // push(20)
+
+        function pop() {
+            //先将最后一个元素获取到并备份
+            let res = arr[arr.length - 1]
+            //数组长度-1，会自动删除最后一个元素
+            arr.length--
+            //返回备份
+            return res
+        }
+
+        // let last = pop()
+        // console.log(last);
+
+        // var a = 10
+        // var b = a
+        // a = 30
+        // console.log(b);
+
+
+
+        function shift() {
+            //备份第一个
+            let res = arr[0]
+            //后面的往前挪
+            for (let i = 0; i < arr.length; i++) {
+                arr[i] = arr[i + 1]
+            }
+            //长度减一，删除最后一个元素
+            arr.length--
+            return res
+        }
+
+        // let first = shift()
+        // console.log(first);
+
+        function reverse() {
+            let len = arr.length
+            //循环数组到一半，将前面每一个元素跟后面相对应的元素比较，如果值不相等则互换位置
+            for (let i = 0; i < len / 2; i++) {
+                //如果值相等则不必替换，节约内存开销
+                if (arr[i] !== arr[len - 1 - i]) {
+                    //定义第三个变量来完成变量值互换
+                    let temp = arr[i]
+                    arr[i] = arr[len - 1 - i]
+                    arr[len - 1 - i] = temp
+                }
+            }
+        }
+
+        // reverse()
+
+        function splice1(index, len) {
+            //从参数传进来的下标开始删除
+            for (let i = index; i < arr.length; i++) {
+                //用后面对应的元素替换旧元素
+                arr[i] = arr[i + len]
+            }
+            //删除对应长度，完成删除
+            arr.length -= len
+        }
+
+        function splice(index, len) {
+            if (len < 0) throw '请输入合法参数'
+            //算出Len最大值，防止溢出
+            let maxLen = arr.length - index
+            //如果Len没传或者超过最大值，则限制为最大值
+            if (!len || len > maxLen) len = maxLen
+
+            let res = []
+            //从参数传进来的下标开始删除
+            for (let i = index; i < arr.length; i++) {
+                //在删除的范围内的元素，返回出去
+                if (i < index + len) {
+                    res.push(arr[i])
+                }
+                //用后面对应的元素替换旧元素
+                arr[i] = arr[i + len]
+            }
+            //删除对应长度，完成删除
+            arr.length -= len
+
+            return res
+        }
+
+        splice1(1, 2)
+
+        // console.log(splice(2, 2));
+
+        console.log('-'.repeat(30));
+        console.log(arr);
+        console.log(arr.length);
+
+       
+    </script>
+</body>
+
+</html>

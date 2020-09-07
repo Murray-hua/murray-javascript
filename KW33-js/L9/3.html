@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let obj = {
+            age: 10,
+            name: "Simba",
+            gender: "男"
+        }
+
+        // for (let key in obj) {
+        //     console.log(key, obj[key]);
+        // }
+
+        //返回此对象的key数组
+        console.log(Object.keys(obj));
+        //返回此对象的值数组
+        console.log(Object.values(obj));
+
+
+        let arr = [11, 22, 33]
+
+        // let res = arr.map(function (item) {
+        //     return item * 2
+        // })
+
+        // console.log(res);
+
+        //利用已有数组，创建一个新的数组
+        let res = arr.map(function (item) {
+            return item * 10
+        })
+
+        console.log(res);
+
+        // [22,44,66]
+        // let newarr = []
+        // arr.forEach(function (item) {
+        //     newarr.push(item * 2);
+        // })
+
+        // console.log(newarr);
+
+        // let newarr = []
+        // arr.forEach(function (item) {
+        //     newarr.push({
+        //         age: item * 2
+        //     });
+        // })
+        // console.log(newarr);
+
+        // function map(callback) {
+        //     let res1 = []
+        //     for (let i = 0; i < arr.length; i++) {
+        //         let data = callback(arr[i])
+        //         res1.push(data);
+        //     }
+        //     return res1
+        // }
+
+
+        // let newarr = map(function (item) {
+        //     return { name: "Simba", age: item }
+        // })
+
+        // console.log(newarr);
+
+
+        let arr1 = [
+            { name: "ace", age: 20 },
+            { name: "roger", age: 30 },
+            { name: "robin", age: 40 },
+        ]
+
+        // let newarr = []
+        // arr1.forEach(function (item) {
+        //     newarr.push(item.name);
+        // })
+        // console.log(newarr);
+
+        console.log(arr1.map(function (item) {
+            return item.name
+        }));
+
+        console.log(arr1.map(function (item) {
+            return item.age
+        }));
+
+
+
+        let arr2 = [11, 22, 33, 44]
+        //total代表上一次的计算结果，item代表每一项
+        let sum = arr2.reduce(function (total, item) {
+            return total + item
+        }, 0)
+        console.log(sum);
+
+        let goods = [
+            { name: "薯片", price: 5, count: 2 },
+            { name: "可乐", price: 3, count: 1 },
+            { name: "雪碧", price: 4, count: 3 }
+        ]
+        // let sum1 = 0
+        // goods.forEach(function(item){
+        //     sum1 += item.price * item.count
+        // })
+        // console.log(sum1);
+        console.log(goods.reduce(function (total, item) {
+            return total + item.price * item.count
+        }, 0));
+
+
+
+    </script>
+</body>
+
+</html>

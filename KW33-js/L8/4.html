@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let arr = []
+
+        for (let i = 0; i < 30; i++) {
+            arr.push(i + 1)
+        }
+
+
+
+        function getPageList(pageIndex, pageSize) {
+            let start = (pageIndex - 1) * pageSize
+            let end = pageIndex * pageSize
+
+            return {
+                data: arr.slice(start, end),
+                pageCount: Math.ceil(arr.length / pageSize)
+            }
+        }
+
+        let res = getPageList(1, 5)
+        console.log(res.data);
+        console.log(res.pageCount);
+
+
+
+        //写一个函数，参数为n,返回1+2+3+...+n的和,n=20
+        // function calc(n) {
+        //     let res = 0
+        //     for (let i = 1; i <= n; i++) {
+        //         res += i
+        //     }
+        //     return res
+        // }
+
+        function calc(n) {
+            // debugger
+            if (n === 1) return 1
+            //解耦   解除函数名的依赖
+            let res = n + arguments.callee(n - 1)
+            return res
+        }
+
+        // console.log(calc(20));
+
+        function zz() {
+
+            // console.log(arguments.callee); //代表本函数
+
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+
+        }
+
+        // zz(11, 22, 33)
+
+
+    </script>
+</body>
+
+</html>

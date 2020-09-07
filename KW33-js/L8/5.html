@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let i = 0
+        //对象  Object
+        //类  Class
+        //类是对象的抽象，对象是类的实例化
+
+        //字面量方式定义对象，格式为 let obj = { key: value , key1:value1}
+        let zhangsan = {
+            name: '张三',
+            age: 20,
+            gender: "男",
+            hobbies: ['篮球', '唱跳'],
+            eat: function () {
+                console.log('吃饭');
+            },
+            sleep: function () {
+                console.log('睡觉');
+            }
+        }
+
+        //凡是a.b  a就是对象
+        //可以通过两种方式访问属性/方法
+        console.log(zhangsan.name);
+        console.log(zhangsan['name']);
+
+        zhangsan.sleep()
+
+        // function zz(){
+        //     console.log(this);
+        // }
+
+        // zz()
+
+        let ma = {
+            name: "马",
+            color: "红",
+            position: {
+                x: 1,
+                y: 0
+            },
+            // move: function (x, y) {
+            move(x, y) {
+                //指向方法的调用者，如 a.move  this=>a   如果没有人调用，this=>window
+                console.log(`${this.color + this.name}从${this.position.x}-${this.position.y}移动到了${x}-${y}`);
+                //更新位置
+                this.position.x = x
+                this.position.y = y
+                console.log('播放动画和音效..');
+            }
+        }
+
+        ma.move(10, 20)
+        ma.move(10, 10)
+
+        console.log(ma);
+
+
+
+    </script>
+</body>
+
+</html>
