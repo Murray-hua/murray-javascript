@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let car = {
+            id: 1,
+            brand: "BMW",
+            color: " ",
+            pic: "",
+            price: "",
+            createtime: "",
+            move() {}
+        }
+        // console.log(obj);
+
+        //字面量方式定义对象，只适用于用一次或者临时表示简单事物
+        let chess = {
+            name: "horse",
+            color: "red",
+            position: {
+                x: 1,
+                y: 0
+            },
+            move(x, y) {
+                this.position.x = x
+                this.position.y = y
+            }
+        }
+
+
+        let obj = new Object()
+        obj.age = 10
+        console.log(obj);
+
+        //构造函数 本质是函数，概念称为类
+        function Chess(name, color, x,y) {
+            //构造函数的this指向创建出的对象/实例
+            this.name = name
+            this.color = color
+            this.position = {}
+            this.position.x = x
+            this.position.y = y
+            this.move = function(x,y){
+                //this 在普通的函数中指向函数的调用者
+                console.log(tihs.color + this.name + "移动到了" + x + '-' + y);
+                this.position.x = x
+                this.position.y = y
+            }
+        }
+
+        //new Date() new Array()
+        let ma = new Chess('horse', 'red' , 10, 10)
+        let ma = new Chess('car', 'black' , 5, 4)
+        let ma = new Chess('xiang', 'black' , 15, 30)
+
+
+        a.move(10.13)
+        a.move(13.3)
+        a.move(4.5)
+        a.move(4.53)
+        a.move(40.33)
+
+
+
+
+
+
+
+
+
+
+
+
+        // //棋子的数组
+        // let chessList = []
+        // console.log(chess);
+        // console.log(chessList);
+
+
+        // //构造函数 类 this指向创建出来的对象/实例
+
+        // function Chess() {
+        //     this.name = 'horse'
+        //     this.color = 'red'
+        //     this.position = {
+        //         x: 1,
+        //         y: 0
+        //     }
+        //     this.move = function (x, y) {
+        //         this.position.x = x
+        //         this.position.y = y
+        //     }
+        // }
+
+        // let ma1 = new Chess()
+        // console.log(ma.name);
+        // //棋子的数组
+        // let chessList = []
+        // chessList.push(ma1);
+        // console.log(chessList);
+    </script>
+</body>
+
+</html>

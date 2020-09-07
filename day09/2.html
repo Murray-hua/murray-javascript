@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //将 xxx.html?a=18b=2&c=3  变成{a:1，b:2, c:3}的对象
+
+
+        // 将'a=1&b=2&c=3'  变成{a:1,b:2,c:3}
+
+        let str = 'a=1&b=2&c=3'
+
+        function parse(str) {
+            let obj = {}
+            let args = str.split('&')
+            args.forEach(function (item) {
+                let kv = item.split('=')
+                let key = kv[0]
+                let val = kv[1]
+                obj[key] = val
+            })
+            return obj
+        }
+        // console.log(parse('a=1&b=2&c=3'));
+        // console.log(parse('a=21&b=23'));
+        // console.log(parse('age=21&name=Sima'));
+
+
+
+
+        //将{a:1,b:2,c:3}  变成‘a=1&b=2&c=3'
+        let zz = {
+            a: 1,
+            b: 2,
+            c: 3
+        }
+
+        //for-in获取对象的所有属性
+        function stringify(obj) {
+            let arr = []
+            for (let key in obj) {
+                let val = obj[key]//对象[属性]=>属性值
+                let str = key + '=' + val //a = 1
+                arr.push(str);
+            }
+            return arr.join('&')
+
+        }
+        console.log(stringify(zz));
+        console.log(stringify({ aa:1, age:2}));
+        console.log(stringify({ name: 'ace', age:20 }));
+    
+    
+    
+    
+        //for-in获取对象的所有属性
+        // function stringify(obj) {
+
+        //     let arr = Object.keys(obj).map(function(key)) {
+        //         let val = obj[key]//对象[属性]=>属性值
+        //         let str = key + '=' + val //a = 1
+        //         return str
+        //     }
+        //     return arr.join('&')
+
+        // }
+        console.log(stringify(zz));
+        console.log(stringify({ aa:1, age:2}));
+        console.log(stringify({ name: 'ace', age:20 }));
+    </script>
+</body>
+
+</html>

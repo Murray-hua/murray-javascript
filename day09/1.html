@@ -9,17 +9,41 @@
 
 <body>
     <script>
+        // let obj = {
+        //     name: "Simba",
+        //     0: 'Ace',
+        //     a: 20
+        // }
+        // //如果对象中包含此属性，则赋值，
+        // obj.zzz = 30
+        // obj.xxx = 30
+        // obj.name = 'roger'
+
+        // console.log(obj);
+
+
+        // let count = {age:10}
+        // let key= 'name'
+        // if(cont[key] === undefined){
+        //     console.log('没有包含');
+        // }
+
+
+
+
+
+
         let maxCode = {
-            name: "",
+            name: " ",
             count: 0
         }
 
+        let str = 'hello world . i like javascript.'
         //用于统计次数的对象
-        // let obj = {}
+        let obj = {}
         //每个字符出现的次数，以及出现次数最多的那个字符
 
-        let str = 'hello world . i like javascript.'
-        let obj = {}
+
         for (let i = 0; i < str.length; i++) {
             if (str[i] != ' ') {
                 let key = str[i] // 使用每个字符作为对象的key
@@ -41,6 +65,7 @@
                 }
             }
         }
+
         console.log(obj);
         console.log(`出现次数最多的字符是${maxCode.name},出现了${maxCode.count}次`);
     </script>
