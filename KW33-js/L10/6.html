@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta nickname="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // console.log(a)
+        // var a = 12
+        // function fn() {
+        //     console.log(a)
+        //     var a = 13
+        // }
+        // fn()
+        // console.log(a)
+
+
+        // console.log(a)
+        // var a = 12
+        // function fn() {
+        //     console.log(a)
+        //     a = 13
+        // }
+        // fn()
+        // console.log(a)
+
+        // console.log(a)
+        // let a = 12
+        // function fn() {
+        //     console.log(a)
+        //     let a = 13 //形成一个暂时性死区   本作用域不会访问外面的a
+        // }
+        // fn()
+        // console.log(a)
+
+
+        // console.log(a)
+        // a = 12
+        // function fn() {
+        //     console.log(a)
+        //     let a = 13
+        // }
+        // fn()
+        // console.log(a)
+
+
+        // var foo = 1
+
+        // function bar() {
+        //     if (!foo) {
+        //         var foo = 10
+        //     }
+        //     console.log(foo)
+        // }
+
+        // bar()
+
+        // var foo = 1
+        // function bar() {
+        //     if (!foo) {
+        //         foo = 10
+        //     }
+        //     console.log(foo)
+        // }
+
+        // bar()
+
+
+
+        // var n = 0
+        // function a() {
+        //     var n = 10
+        //     function b() {
+        //         n++
+        //         console.log(n)
+        //     }
+        //     b()
+        //     return b
+        // }
+
+        // var c = a()//11
+        // c()//12
+        // console.log(n)//0
+
+
+        // var a = 10
+        // var b = 11
+        // var c = 12
+
+        // function test(a) {
+        //     a = 1
+        //     var b = 2
+        //     c = 3
+        // }
+        // test(100)
+
+        // console.log(a)
+        // console.log(b)
+        // console.log(c)
+
+        // var a
+        // if (!('a' in window)) {
+        //     a = 10
+        // }
+        // console.log(a)
+
+
+        // var a = 9
+        // function fn() {
+        //     a = 0 //1
+        //     return function (b) {
+        //         return b + a++
+        //     }
+        // }
+
+        // var f = fn()
+        // console.log(f(5))//5
+        // console.log(fn()(5))//5
+        // console.log(f(5))//6
+        // console.log(a)//2
+
+
+        // var a = [1, 2, 3, 4]
+
+        // function fn(b) {
+        //     b[0] = 0
+        //     b = [0]
+        //     b[0] = 100
+
+        //     return b //[100]
+        // }
+        // var res = fn(a)
+        // console.log(a)//[0,2,3,4]
+        // console.log(res)//[100]
+
+
+        // function fn(i) {
+        //     return function (n) {
+        //         console.log(n + (i++))
+        //     }
+        // }
+        // var f = fn(10)
+        // f(20)//30
+        // fn(20)(40)
+        // fn(30)(50)
+        // f(30)//41
+
+
+        // var fullName = 'language'
+        // var obj = {
+        //     fullName: 'javascript',
+        //     prop: {
+        //         getFullName: function () {
+        //             return this.fullName
+        //         }
+        //     }
+        // }
+        // console.log(obj.prop.getFullName())
+        // var test = obj.prop.getFullName
+        // console.log(test())
+
+        var name = 'window'
+        var Tom = {
+            name: "tom",
+            show: function () {
+                console.log(this.name)
+            },
+            wait: function () {
+                var fun = this.show
+                fun()
+            }
+        }
+        Tom.wait()
+
+       
+    </script>
+</body>
+
+</html>

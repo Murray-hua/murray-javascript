@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta nickname="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // let a = 10 //字符串  数字  赋值相当于是克隆、复制了新的一份
+
+        // let b = a
+
+        // a = 30
+
+        // console.log(a);
+
+        // let a = [11, 22]
+
+        // let b = a
+
+        // b.push(40)
+
+        // console.log(a);
+
+
+        // let a = { age: 30 }
+
+        // let b = a
+
+        // b.age = 50
+
+        // console.log(a);
+
+        // let a = { age: 30 }
+
+        // let b = a
+
+        // b = { age: 50 }
+
+        // console.log(a);
+
+
+        let a = [10]
+
+        function zz(b) {
+            b.push(40)
+            b = [30]
+            b.push(400)
+        }
+
+        zz(a)
+
+        console.log(a);
+
+    </script>
+</body>
+
+</html>

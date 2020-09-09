@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let age = 10
+
+        //解构  ES6语法
+        let obj = {
+            age: 20,
+            name: "Ace",
+            gender: "男"
+        }
+
+        // let age1 = obj.age
+        // let name = obj.name
+        // let gender = obj.gender
+
+        //解构 别名   定义变量age1，值是obj中age的值
+        let { age: age1, name, gender } = obj //定义变量age和name,从obj中找到各自同名属性的值
+
+        console.log(age1, name, gender);
+
+        let arr = [111, 222, 33, 444]
+
+        // let a = arr[0]
+        // let b = arr[1]
+        //按顺序解构数组
+        let [a] = arr
+        console.log(a);
+
+        // let [, b, c] = arr
+        let [, b, c,] = arr
+        console.log(b, c);
+
+        let userName = 'Ace'
+        let password = '123456'
+        let type = '管理员'
+
+        // let user = {
+        //     userName: userName,
+        //     password: password,
+        //     type: type,
+        // }
+        let user = {
+            userName, //如果属性只写了属性名，则默认是找同名变量的值
+            password,
+            type,
+        }
+
+        console.log(user);
+
+    </script>
+</body>
+
+</html>

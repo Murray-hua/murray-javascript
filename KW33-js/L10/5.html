@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta nickname="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = 10//65
+        var obj = { num: 20 }//30
+
+        obj.fn = (function (num) {
+            this.num = num * 3
+            num++  //23
+            return function (n) {
+                this.num += n
+                num++
+                console.log(num)
+            }
+        })(obj.num)
+
+        var fn = obj.fn
+        fn(5)//22
+        obj.fn(10)//23
+        console.log(num, obj.num)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta nickname="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var a = 30
+        //作用域  变量所依赖生存的环境
+        function zz() {
+            //先从本作用域中查找，找不到则去上级作用域,，找到则停止
+            console.log(a);
+        }
+
+        function aaaaa() {
+            var a = 30
+            //先从本作用域中查找，找不到则去上级作用域,，找到则停止
+        }
+
+        zz()
+
+
+
+        let nickname = 'Ace'
+
+        let obj = {
+            nickname: "Simba",
+            introduceSelf() {
+                console.log(nickname);
+                console.log(`你好，我叫${this.nickname}`);
+            }
+        }
+
+        obj.introduceSelf()
+
+
+
+    </script>
+</body>
+
+</html>
