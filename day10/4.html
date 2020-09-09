@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let  a = 10
+
+        // //作用域  变量所依赖生存的环境
+        // function zz() {
+        //     var a = 20
+        //     //先从本作用域中查找，找不到则去上级作用域，找到则停止
+        // }
+        // zz()
+
+        // console.log(a);
+
+
+        //基本面试
+
+        // let nickname = 'Ace'
+        // let obj = {
+        //     nickname: "Simba",
+        //     introduceSelf() {
+        //         let nickname = 'Roger'
+        //         console.log(`你好，我叫${this.nickname}`);
+        //         return function (nickname) {
+        //             console.log(nickname);
+        //             console.log(`早上好，我叫${this.nickname}`);
+        //         }
+        //     }
+        // }
+        // let res = obj.introduceSelf()
+        // res()
+
+        // obj.introduceSelf()()
+
+
+        // (function () {
+        //     console.log(11111);
+        // })()
+
+
+        // function z() {
+        //     let zzz = 20
+        //     return zzz
+        // }
+
+        // console.log(z());
+        // console.log(z());
+
+
+
+        // //闭包函数   两个函数嵌套，内部函数引用了外部的变量，则内部函数成为外部的闭包函数
+        //羁绊
+        // function a() {
+        //     let i = 0
+
+        //     function b() {
+        //         i++
+        //         return i 
+        //     }
+        //     return b
+        // }
+        // let b = a()
+        // console.log(b());
+        // console.log(b());
+        // console.log(b());
+        // console.log(b());
+
+        // 写一个小的应用，实现对数字num的加减
+
+        let calc = function () {
+            let num = 0 //一直没有释放掉
+            return {
+                jia: function () {
+                    num++
+                },
+                jian: function () {
+                    num--
+                },
+                get: function () {
+                    return num
+                }
+            }
+        }
+
+        let c = calc()
+        c.jia()
+        c.jia()
+        c.jia()
+        c.jia()
+        c.jia()
+        c.jia()
+        c.jia()
+        c.jia()
+        console.log(c.get());
+        c.jian()
+        c.jian()
+        c.jian()
+        console.log(c.get());
+
+
+        // let num = 0 
+        // function jia() {
+        //     num++
+        // }
+        // function jian() {
+        //     num--
+        // }
+
+        // function get() {
+        //     return num
+        // }
+
+        // jia()
+        // jia()
+        // num = 1000
+        // jia()
+
+        // console.log(get());
+
+
+        // jian()
+        // console.log(get());
+    </script>
+</body>
+
+</html>

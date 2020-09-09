@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let obj = {
+        //     name: "ACE",
+        //     sayHi: function () {
+        //         console.log('hi');
+        //     }
+        // }
+
+
+        //普通方法this指向方法调用者，如a.b() 则b中的this指向a
+        let obj = {
+            nickname: "ACE",
+            sayHi() {
+                console.log(this);
+                console.log(this.nickname + 'hi');
+            }
+        }
+
+
+        let zz = {
+            nickname: "Roger"
+        }
+
+        zz.sayHi = obj.sayHi
+        let xx = zz.sayHi
+
+        obj.sayHi()
+        zz.sayHi()
+
+        xx()//如果没有显示调用，则相当于window调用
+
+        // zz.sayHi()
+
+
+
+        // let obj2 = {
+        //     nickname: "ACE",
+        //     sayHi: () => {
+        //         console.log(this);
+        //         //箭头函数中没有自己的this和arguments
+        //         console.log('hi');
+        //     }
+        // }
+
+        // obj.sayHi()
+        // obj2.sayHi()
+
+
+        function test() {
+            console.log(111111);
+        }
+        let zzz = test
+        let z1z = zzz
+        z1z()
+
+
+
+
+    </script>
+</body>
+
+</html>
