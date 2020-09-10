@@ -9,40 +9,45 @@
 
 <body>
     <script>
-        let maxCode = {
-            name: "",
-            count: 0
+        // var a
+        // console.log(a)
+        // a = 12
+
+        // function fn() {
+        //     console.log(a)
+        //     var a = 13
+        // }
+        // fn()
+        // console.log(a)
+
+        // console.log(a)
+        // var a = 12
+
+        // function fn() {
+        //     // console.log(a)
+        //     a = 13
+        // }
+        // fn()
+        // console.log(a)
+
+
+        // console.log(a)
+        // var a = 12
+
+        // function fn() {
+        //     console.log(a)
+        //     a = 13
+        // }
+        // fn()
+        // console.log(a)
+
+        num1 = 10
+        function fun(){
+            var num1 = 10;
         }
-
-        //用于统计次数的对象
-        // let obj = {}
-        //每个字符出现的次数，以及出现次数最多的那个字符
-
-        let str = 'hello world . i like javascript.'
-        let obj = {}
-        for (let i = 0; i < str.length; i++) {
-            if (str[i] != ' ') {
-                let key = str[i] // 使用每个字符作为对象的key
-                //排除空格
-                //如果undefined代表此字符不存在，初始化为1次
-                if (obj[key] === undefined) {
-                    obj[key] = 1
-                } else {
-                    // console.log(key + '存在了，目前的值是' + obj[key]);
-                    //如果存在，则数量++
-                    obj[key]++
-                }
-
-                // console.log(obj);
-                //跟擂台上的比较一下大小
-                if (obj[key] > maxCode.count) {
-                    maxCode.name = key
-                    maxCode.count = obj[key]
-                }
-            }
-        }
-        console.log(obj);
-        console.log(`出现次数最多的字符是${maxCode.name},出现了${maxCode.count}次`);
+        fun()
+        console.log(num1);
+        
     </script>
 </body>
 
