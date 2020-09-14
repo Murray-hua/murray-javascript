@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       
+
+
+        let obj = {
+            age: 20,
+            showAge(name, a) {
+                console.log(name + ',' + a + ',' + this.age);
+            }
+        }
+
+        let zzz = {
+            age: 30
+        }
+
+
+        obj.showAge('ace', 50)
+
+        let showAge = obj.showAge
+        showAge.call(zzz, 'ace', 10)//让此函数内部的this的指向call的第一个参数
+        showAge.apply(zzz, ['ace', 10])
+        let s = showAge.bind(zzz)//bind 并不会立即调用，而是返回一个修改过this的新函数
+        s('ace', 10)
+
+        let vv = {
+            age: 40
+        }
+        showAge.call(vv, 'roger', 20)  //call可以有很多个参数
+        showAge.apply(vv, ['roger', 20]) //apply只有两个参数，第一个是this所指向的对象，第二个是参数数组
+        let s1 = showAge.bind(vv)//bind可以有很多个参数， 并不会立即调用，而是返回一个修改过this的新函数
+        s1('roger', 10)
+
+
+        var age = 60
+
+        function test() {
+            console.log(this.age);
+        }
+
+        test()
+        test.call(obj)//手动指定this指向obj
+        test.apply(zzz)
+        test.bind(vv)()
+
+    </script>
+</body>
+
+</html>

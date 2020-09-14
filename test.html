@@ -9,45 +9,37 @@
 
 <body>
     <script>
-        // var a
-        // console.log(a)
-        // a = 12
-
-        // function fn() {
-        //     console.log(a)
-        //     var a = 13
+        //trim去掉字符串的头尾空格，不会改变原始字符串。
+        // function myTrim(str) {
+        //     // 如果是null或undefined 直接返回空字符串
+        //     if (!str) {
+        //         return ''
+        //     } else {
+        //         return str.trim()
+        //     }
         // }
-        // fn()
-        // console.log(a)
 
-        // console.log(a)
-        // var a = 12
+        function showWelComPage() {
+            let type = prompt('欢迎来到宠物世界，请选择操作：1.登录 2.注册 3.退出')
+            switch (type) {
+                case '1':
+                    console.log('登录');
+                    break;
+                case '2':
+                    console.log('注册');
+                    break;
+                case '3':
+                    console.log('退出成功，欢迎再来');
+                    break;
 
-        // function fn() {
-        //     // console.log(a)
-        //     a = 13
-        // }
-        // fn()
-        // console.log(a)
+                default:
+                    console.log('输入有误，请重新操作');
+                    arguments.callee()
+                    break;
+            }
 
-
-        // console.log(a)
-        // var a = 12
-
-        // function fn() {
-        //     console.log(a)
-        //     a = 13
-        // }
-        // fn()
-        // console.log(a)
-
-        num1 = 10
-        function fun(){
-            var num1 = 10;
         }
-        fun()
-        console.log(num1);
-        
+        showWelComePage()
     </script>
 </body>
 

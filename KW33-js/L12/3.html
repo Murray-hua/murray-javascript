@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(this);
+        let zz = {
+            sayHi() {
+                console.log(this);
+            },
+            sayHello: function () {
+                console.log(this);
+            },
+            say: () => {
+                //箭头函数内的this和箭头函数外的function的this是同一个
+                console.log(this);
+            }
+        }
+
+        zz.sayHi()
+        zz.sayHello()
+        zz.say()
+
+
+        // let obj = {
+        //     age: 20,
+        //     sayHi() {
+        //         console.log(this);
+        //         let that = this //定义普通变量来中转
+        //         return function () {
+        //             console.log(that.age);
+        //         }
+        //     }
+        // }
+
+        // obj.sayHi()()
+
+
+        let obj = {
+            age: 20,
+            sayHi() {
+                console.log(this);
+                return () => {
+                    //箭头函数本身没有this和arguments
+                    //如果在箭头函数中访问this，则代表访问此函数外层的function中的this
+                    console.log(this.age);
+                }
+            }
+        }
+
+        obj.sayHi()()
+
+
+
+    </script>
+</body>
+
+</html>
