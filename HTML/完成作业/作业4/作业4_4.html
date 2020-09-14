@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td{
+            
+            border: 1px solid black;
+
+            border-collapse: collapse;
+        }
+        td{
+            width: 100px;
+            height: 100px;
+        }
+        .box1{
+            background-color: darkgoldenrod;
+        }
+        .box2{
+            background-color: red;
+        }
+        .box3{
+            background-color: green;
+
+        }
+        .box4{
+            background-color: cadetblue;
+        }
+        .box5{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td class="box1" rowspan="2"></td>
+            <td></td>
+            <td class="box2" colspan="2"></td>
+        </tr>
+        <tr>
+            <td class="box3" rowspan="2"></td>
+            <td class="box4" rowspan="2"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="box5" colspan="3"></td>
+        </tr>
+    </table>    
+
+
+
+</body>
+</html>

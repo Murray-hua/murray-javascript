@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+
+            /* 超出部分隐藏 */
+            overflow: hidden;
+            /* 省略号的写法  （重点）*/
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            /* 文字换行 */
+            /* word-wrap: break-word; */
+        }
+        .two{
+            width: 200px;
+            height: 200px;
+            border: 1px solid blue;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .three{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+
+            /* 默认给盒子加上滚动条 */
+            overflow: scroll;
+
+        }
+        .four{
+            width: 200px;
+            height: 200px;
+            border: red;
+            /* 根据需要情况来调加滚动条 */
+            overflow: auto;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        끝까지 성공할수있어요. 화이딩. 내일 날씨 가 좋아요.
+
+    </div>
+    <div class="two">
+        kw33！！！今天学浮动，也太简单了吧。!!!才这几个解决塌陷的方法
+        就不能多来几个吗，真希望老师默写这个
+    </div>
+    <div class="three">
+        kw33！！！今天学浮动，也太简单了吧。!!!才这几个解决塌陷的方法
+        就不能多来几个吗，真希望老师默写这个
+
+
+        kw33！！！今天学浮动，也太简单了吧。!!!才这几个解决塌陷的方法
+        就不能多来几个吗，真希望老师默写这个 kw33！！！今天学浮动，也太简单了吧。!!!才这几个解决塌陷的方法
+        就不能多来几个吗，真希望老师默写这个
+    </div>
+    <div class="four">
+        kw33！！！今天学浮动，也太简单了吧。!!!才这几个解决塌陷的方法
+        就不能多来几个吗，真希望老师默写这个
+
+
+        kw33！！！今天学浮动，也太简单了吧。!!!才这几个解决塌陷的方法
+        就不能多来几个吗，真希望老师默写这个 kw33！！！今天学浮动，也太简单了吧。!!!才这几个解决塌陷的方法
+        就不能多来几个吗，真希望老师默写这个
+    </div>
+
+</body>
+</html>

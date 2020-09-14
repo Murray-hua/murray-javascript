@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fa{
+            margin: 50px auto;
+            width: 50px;
+            height: 50px;
+            border:1px solid rebeccapurple;
+            position: relative;
+            overflow: hidden;
+        }
+        .fa div{
+            width: 50px;
+            height: 50px;
+            border:1px solid red;
+            box-sizing: border-box;
+            position: absolute;
+
+        }
+        .box1{
+            left: -50px;
+            background-color: goldenrod;
+            transition: left .5s;
+        }
+        .box2{
+            background-color: pink;
+            left: 0;
+            top: 0;
+            transition: left .5s;
+
+        }
+        .fa:hover .box1{
+            left: 0;
+        }
+        .fa:hover .box2{
+            left: 50px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <div class="fa">
+        <div class="box1">小米1</div>
+        <div class="box2">logo2</div>
+
+
+    </div>
+</body>
+</html>

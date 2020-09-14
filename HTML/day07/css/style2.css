@@ -1,0 +1,115 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+}
+body {
+    padding-top: 30px;
+    line-height: 1.62;
+    font: 12px Helvetica, Arial, sans-serif
+}
+.head_container {
+
+    background-color: white;
+}
+.head_main {
+    width: 1080px;
+    height: 34px;
+    /* border: 1px solid blue; */
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+.head_logo {
+    width: 160px;
+    height: 34px;
+    background-image: url("../images/logo_db.png");
+    background-repeat: no-repeat;
+    float: left;
+    margin-right: 20px
+}
+.head_nav {
+    width: 515px;
+    height: 22px;
+    /* border: 1px solid green; */
+    float: right;
+    margin-top: calc((34px - 20px) /2);
+
+}
+.head_input {
+    width: 272px;
+    height: 32px;
+    border: 1px solid #c3c3c3;
+    float: left;
+    padding-left: 5px;
+}
+.head_input input {
+    border: none;
+    outline: none;
+    width: 240px;
+    height: 32px;
+    /* border: 1px solid red; */
+    float: left;
+
+}
+.head_input span {
+    width: 30px;
+    height: 30px;
+    float: right;
+    /* border: 1px solid red; */
+    background-image: url("../images/bn_srh_1.png");
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+
+}
+.head_nav ul li {
+    width: 40px;
+    height: 20px;
+    background-image: url("../images/anony_nav_logo.png");
+    float: left;
+    margin-left: 14px;
+
+}
+
+
+/* main主体 */
+.main_container {
+    height: 304px;
+    border: 1px solid green;
+    background-image: url("../images/main.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: calc(50% - 305px) top;
+}
+
+.wrapper{
+    width: 950px;
+    height: 304px;
+    border: 1px solid red;
+    margin: 0 auto;
+    
+    
+}
+.login{
+    width: 300px;
+    height: 300px;
+    border: 1px solid skyblue;
+    float: right;
+}
+
+.app{
+    width: 150.03px;
+    height: 120px;
+    border: 1px solid purple;
+    float: right;
+    margin-top: calc((304px - 120px) /2);
+    margin-right: 20px;
+}
+
+.app-title {
+    width: 150.03px;
+    height: 24px;
+    border: 1px solid blue;
+    float: left;
+}
+

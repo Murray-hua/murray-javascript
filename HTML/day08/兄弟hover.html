@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+
+
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /* display: inline-block;  */ 
+            display: none;  
+            /* 隐藏盒子 脱离文档流 */
+            /* 改变盒子的透明度，还在文档流中 */
+            /* opacity: 0; */
+
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            display: none;
+        }
+
+        .box1:hover+.box2{
+            /* 只能对紧挨着的后面的兄弟元素设置hover */
+            display: block;
+        }
+
+        .box1:hover~.box3{
+            /* 对后面的兄弟元素设置hover */
+            display: block;
+        }
+     
+    </style>
+
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

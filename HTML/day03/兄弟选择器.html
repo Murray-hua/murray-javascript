@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .p2{
+            color: red;
+        } */
+        /* 需求，选择p2 后面的p标签 */
+        /* 选择紧挨着后面的兄弟元素 语法：前一个元素+后一个元素{} 就能选出后面选择器 */
+        /* .p2+p{
+            color: sandybrown;
+        } */
+
+        /* 需求2， 选择p2 后面的所有p标签 */
+
+        .p2~p{
+            color: sandybrown;
+        }
+
+    </style>
+
+</head>
+<body>   
+    <div>
+        <p>我是p1</p>
+        <p class="p2">我是p2</p>
+        <!-- 如果后面没有紧挨着的对应标签，就不会有任何样式 -->
+        <h1>flfas</h1>
+        <p>我是p3</p>
+        <p>我是p4</p>
+        <p>我是p5</p>
+        
+
+
+    </div>
+</body>
+</html>

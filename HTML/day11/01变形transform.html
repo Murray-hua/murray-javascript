@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border-color: skyblue red coral khaki;
+            transform: scale(2);
+            /* 变形放大效果 */
+            
+        }
+        /* div:hover{ */
+            /* transform: rotate(30deg); */
+            /* 变形 旋转的效果，给一个正值表示顺时针旋转
+            负值标志逆时针旋转
+            */
+
+            /* transform: scale(-.5); */
+            /* 变形缩小的效果，如果给一个负数就会基于原点 整个互换，然后缩放 */
+        
+            /* transform: skew(30deg,15deg);
+            transform: skewY(30deg);
+            transform: skewX(); */
+            /* 变形的扭曲效果 */
+
+            /* transform: translate(100px,100px); */
+            /* 第一个值是x轴的平移距离,第二个值是y轴的平移距离*/
+
+            /* transform: translateX(50px); */
+            /* 单独设置x轴的效果 */
+
+            /* transform:translate(0px 0px) */
+            /* transform:translate(50% 50%) */
+        /* } */
+
+      
+      /* 默写 */
+        .fa{
+            padding-top: calc((345px -120px) /2 );
+            padding-top: calc((300px -100px) /2 );
+            box-sizing: border-box;
+
+              /* 盒子水平垂直居中 */
+              position: relative;
+        }
+        
+        .son{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        /* 盒子水平垂直居中第二种方法 */
+        .fa{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+          
+
+        .son:hover{
+            transform: rotate(30deg);
+            transform: scale(2);
+        }
+    </style>
+</head>
+<body>
+    <!-- 变形 scale() 放大缩小 -->
+
+    <div>
+
+
+    </div>
+    <div class="fa" style="width: 300px; height: 345px; border: 1px solid red ;">
+        <div class="son" style="width: 100px; height:120px; border: 1px solid red;"></div>
+
+    </div>
+
+
+
+</body>
+</html>

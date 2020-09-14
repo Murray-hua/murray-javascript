@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../通用样式.css">
+    <style>
+        .right{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            position: relative;
+        }
+        li.left::before{
+            content: "";
+            display: block;
+            width: 1px;
+            height: 80%;
+            background-color: black;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        li.right::after{
+            content: "";
+            display: block;
+            width: 1px;
+            height: 80%;
+            background-color: black;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <ul class="flex">
+            <li class="right"></li>
+            <li class="right"></li>
+            <li class="right"></li>
+            <li class="right"></li>
+            <li class="right"></li>
+        </ul>
+    </div>
+    
+</body>
+</html>

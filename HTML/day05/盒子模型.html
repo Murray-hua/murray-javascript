@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            /* 长宽一致的情况下，设置盒子的border-radius 为长款的一半，就可以设置 盒子为圆 */
+            border-radius: 100px;
+
+
+            /* 同时设置四个边的值为10px 的宽度 */
+            /* border-width: 10px;
+            border-top-width: 20px;
+            border-right-width: 40px;
+            border-bottom-width: 50px;
+            border-left-width: 20px; */
+
+            /* 简写设置四个值是按照， 上右下左 分别设置 */
+            border-width: 20px 40px 50px 20px;
+
+            /* 简写设置三个值是按照， 上 左右 下 分别设置 */
+            border-width: 20px 40px 50px;
+
+            /* 简写设置两个值是按照， 上下 左右  分别设置 */
+            border-width: 20px 50px;
+
+
+
+
+
+
+
+
+
+            /* 如果不设置颜色，默认是黑色 */
+            /* border-color: tomato; */
+
+            /* 可以单独设置每一条边得颜色 */
+            border-top-color: red;
+            border-right-color: yellow;
+            border-bottom-color: cadetblue;
+            border-left-color: green;
+
+
+            /* border-style: solid; */
+            /* dotted 点状线 */
+            border-top-style: dotted;
+            /* dashed 虚线 */
+            border-right-style: dashed;
+            /* double 双线 */
+            border-bottom-style: double;
+            /* 常用值 solid 实线 */
+            border-left-style: solid;
+            /* 还有其他一些值，效果越炫酷，兼容性越差，不推荐使用太炫酷的属性值 */
+            /* border-style: dotted dashed double solid; */
+
+            border-width: 5px;
+            border-color: red;
+            border-style: solid;
+
+            /* 同时设置四个边的颜色 样式和宽度 常用 */
+            border: 5px red solid;
+
+            /* ******************************************************************* */
+            border-color: red;
+            border-style: solid;
+            border-left-width: 5px;
+            border-top-width: 5px;
+            border-top-width: 5px;
+            border-bottom-width: 5px;
+
+
+            border: 5px solid red;
+            border-right: none;
+            /* 注意书写顺序 */
+
+
+        }
+
+        .box2 {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            /* border-radius: 50px; */
+            /* border-top-left-radius: 100px;
+            border-top-right-radius: 100px; */
+
+            /* 同时设置四个值 分别是 左上 右上 右下 左下 */
+            /* border-radius: 100px 100px 0px 0px; */
+            border-radius: 0px 0px 100px 100px;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /* 设置其中一个值为 宽高的值，就可以实现扇形 */
+            border-radius: 200px 0px 0px 0px;
+
+
+        }
+
+        .box4 {
+            width: 0px;
+            height: 0px;
+            border: 40px red solid;
+            border-color: red transparent transparent transparent;
+            /* transparent 透明色 */
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 盒子模型的组成 边框 内容 内边距 外边距 -->
+
+    <!-- 边框  得组成 
+        边框得宽度 border-width
+        边框得颜色 border-color
+        边框得样式  border-style
+    
+    -->
+
+    <div class="box">
+
+    </div>
+    <div class="box2">
+
+    </div>
+    <div class="box3">
+
+    </div>
+
+    <!-- 如何实现border 画三角形 -->
+
+    <div class="box4">
+
+
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+            /* 去掉textarea 文本得可以改变大小的功能 */
+            resize: none;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- GET是显示地址 POST不显示地址 -->
+    <form action="./test.html" method="GET" name="myForm">
+        <!-- 登录名<input type="text" name="username"><br>
+        密码<input type="password" name="userpwd"><br>
+        <input type="submit"> -->
+
+        <!-- 默认选择得选项 selected value 是每一个选项得值 -->
+        <select name="firstsel" id="first-sel" size="1">
+            <option value="pingguo">苹果</option>
+            <option value="lizi" selected>栗子</option>
+            <option value="banana">香蕉</option>
+        </select>
+        <input type="submit">
+
+        <!-- <input type="radio" checked>男 -->
+
+        <!-- cols 和 rows 是以 字符为单位 -->
+        <input type="text" placeholder="请输入用户名">
+        <textarea name="myText" id="my-text" cols="10" rows="20">
+            
+
+        </textarea>
+
+    </form>
+
+
+</body>
+</html>

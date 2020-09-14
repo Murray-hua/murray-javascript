@@ -1,0 +1,6 @@
+div{
+    width: 800px;
+    color: red;
+    border-color: red;
+    box-sizing: border-box;
+}

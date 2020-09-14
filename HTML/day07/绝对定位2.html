@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .fa{
+            width: 200px;
+            border: 3px solid red;
+            height: 300px;
+            /* 只能给固定高度解决塌陷 */
+
+        }
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            position: absolute;
+            /* 因为脱离文档流，无法继承父元素百分之百宽度 */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="fa">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div> 
+    </div>
+
+
+
+</body>
+
+</html>

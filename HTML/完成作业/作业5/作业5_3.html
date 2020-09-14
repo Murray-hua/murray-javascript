@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .head {
+            height: 30px;
+            background-color: #f1f1f1;
+        }
+
+        ul li{
+            display: inline-block;
+            line-height: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        ul li:not(:last-of-type):after{
+            content: "|";
+            padding: 0 5px;
+            color: #ccc;
+        }
+
+        ul{
+            padding-left: 70px;
+           
+        }
+        a{
+            color: crimson;
+        }
+        #icon{
+            background-image: url(./image/tel.png);
+            background-repeat: no-repeat;
+            /* vertical-align: middle; */
+            padding-left: 15px;
+            background-position: 0px 5px;
+            cursor: pointer;
+        }
+        #icon:hover{
+            background-image: url(./image/tel.png);
+            background-repeat: no-repeat;
+            /* vertical-align: middle; */
+            padding-left: 15px;
+            background-position: 0px -20px;
+            cursor: pointer;
+           
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="head">
+        <ul>
+            <li>您好，请登录</li>
+            <li><a href="#">免费注册</a></li>
+            <li>我的订单</li>
+            <li>我的京东</li>
+            <li>京东会员</li>
+            <li>企业采购</li>
+            <li id="icon"> &nbsp;手机京东</li>
+            <li>关注京东</li>
+            <li>客户服务</li>
+            <li>客户服务</li>
+        </ul>
+
+
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .outer>p{ */
+            /* 子代选择器  父元素>子元素 */
+            /* color: green; */
+        /* } */
+
+        .outer p{
+            /* 后代选择器 祖先元素 后代元素{} */
+            color: red;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="outer">
+        <h1>这是h1标签</h1>
+        <p>我是一个段落</p>
+        <p>我是一个段落</p>
+        <p>我是一个段落</p>
+
+        <div>
+            <p>我是一个段落</p>
+        </div>
+    </div>
+
+
+</body>
+</html>

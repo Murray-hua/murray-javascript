@@ -1,0 +1,280 @@
+header{
+    height: 140px;
+    
+}
+.header-wrap{
+    height: 40px;
+    background-color: #333;
+    color: #b0b0b0;
+}
+.header-nav{
+    width: 1226px;
+    height: 100%;
+}
+.header-nav ul{
+    width: 600px;
+    height: 100%;
+}
+.header-nav ul li:not(:first-of-type)::before{
+    content: "|";
+    color: #b0b0b0;
+    padding: 0 12px;
+}
+.header-nav-right{
+    width: 160px;
+    height: 100%;
+}
+.header-nav-right ul{
+    width: 80px;
+}
+.site-header-container{
+    width: 1226px;
+    height: 100px;
+}
+.header-logo{
+    width: 55px;
+    height: 55px;
+    margin-top: calc((100px - 55px)/2);
+    background-image: url('../images/xiaomi_logo.png');
+}
+.nav-cate{
+    width: 172px;
+    height: 100%;
+}
+.logo-nav{
+    width: 850px;
+    height: 100%;
+}
+.logo-nav ul{
+    width: 600px;
+    height: 100%;
+}
+
+.search{
+    width: 296px;
+    height: 50px;
+    border: 1px solid #b0b0b0;
+    
+}
+
+.logo-nav ul li{
+    font-size: 16px;
+    color: #333;
+    font-weight: 300;
+}
+
+.search input{
+    width: 240px;
+    height: 45px;
+    border: none;
+    outline: none;
+}
+.src-logo{
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #333;
+    border-left: 1px solid #b0b0b0;
+    
+}
+
+.search .icon-go{
+    font-size: 45px;
+}
+
+
+
+
+
+section{
+    width: 1226px;
+    height: 460px;
+    background-image: url('../images/T1vWdTBKDv1RXrhCrK.jpg');
+    
+}
+
+aside{
+    width: 234px;
+    height: 420px;
+    padding: 20px 0;
+    background-color: #424242;
+}
+aside ul li{
+    width: 234px;
+    height: 42px;
+    padding-left: 30px;
+    line-height: 42px;
+    position: relative;
+}
+aside ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+aside ul li .icon-jiantou{
+    position: absolute;
+    font-size: 14px;
+    right: 50px;
+
+}
+
+/* --------------------- */
+
+.home-sub{
+    width: 1226px;
+    height: 170px;
+    margin-top: 14px;
+    margin-bottom: 22px;
+}
+
+.home-sub .span1{
+    width: 234px;
+    height: 170px;
+    background: #5f5750;
+}
+
+.home-sub ul .span1-sub{
+    width: 72px;
+    height: 73px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #7b7672;
+}
+
+.home-sub ul .span1-sub p{
+    padding-top: 18px;
+}
+.home-sub ul .span1-sub:nth-of-type(1){
+    border-top: none;
+    border-left: none;
+}
+.home-sub ul .span1-sub:nth-of-type(2){
+    border-top: none;
+}
+.home-sub ul .span1-sub:nth-of-type(3){
+    border-top: none;
+    border-right: none;
+}
+.home-sub ul .span1-sub:nth-of-type(4){
+    border-bottom: none;
+    border-left: none;
+}
+.home-sub ul .span1-sub:nth-of-type(5){
+    border-bottom: none;
+}
+.home-sub ul .span1-sub:nth-of-type(6){
+    border-bottom: none;
+    border-right: none;
+}
+
+.home-sub .span2{
+    width: 978px;
+    height: 170px;
+    margin-left: 14px;
+}
+.span2-list{
+    width: 316px;
+    height: 170px;
+}
+
+.brick-list{
+    width: 1226px;
+    height: 400px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.box-hd{
+    height: 58px;
+    width: 100%;
+}
+.brick-list .box-hd .title{
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    color: #333;
+}
+.brick-list .box-right{
+    width: 70px;
+    height: 25px;
+}
+.box-right .icon-jiantou-copy{
+    margin: 3px 9px;
+    color: #b0b0b0;
+}
+.box-right .icon-jiantou{
+    margin: 3px 9px;
+    color: #b0b0b0;
+}
+
+.brick-list .row{
+    height: 340px;
+    width: 100%;
+}
+
+.row li{
+    width: 234px;
+    height: 300px;
+    padding: 20px 0;
+    background-color: #fafafa;
+    border-top: 2px solid orange;
+}
+.row li a:hover{
+    text-decoration: none;
+    
+}
+
+.thumb{
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 18px;
+}
+.row .title{
+    margin: 0 10px 2px;
+    text-align: center;
+    font-weight: 400;
+    color: #333;
+}
+.row p{
+    margin: 0 10px 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+.box-list{
+    width: 100%;
+    height: 686px;
+}
+.box-list-wrap{
+    width: 1226px;
+    height: 628px;
+}
+.box-list .box-hd {
+    width: 1226px;
+}
+.box-list .box-hd .title{
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    color: #333;
+}
+
+.span3{
+    width: 234px;
+    height: 628px;
+}
+
+.box-list-right{
+    width: 992px;
+    height: 628px;
+}
+.box-list-right li{
+    width: 234px;
+    height: 307px;
+    padding: 20px 0;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    
+}

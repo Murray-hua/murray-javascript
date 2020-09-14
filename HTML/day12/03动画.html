@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../通用样式.css">
+    <style>
+
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /* animation: move 2s; */
+            /* animation: move2 2s; */
+            /* animation: move3 2s ease 2 infinite alternate; */
+            /* animation: w 2s 2 alternate; */
+            animation: w 2s forwards;
+
+
+
+            /* 第一个值动画的名字
+                动画执行的时间
+                动画运行的曲线，默认是ease
+                规定动画运行的次数 默认1次 infinite 表示无限次
+                规定动画是否逆向播放 默认是Nomal 如果想要逆向播放 设置 alternate
+                规定动画结束以后是不是回到起始点，默认值是backwards  如果想要停在终点
+                可以设置 forwards保持结束状态；
+            */
+
+            /* transform: all 2s; */
+        }
+/* 
+        div:hover{
+            transform: translateX(1000px);
+        } */
+
+
+        div:hover{
+
+            animation-play-state: paused;
+
+            /* 改变动画的状态，值为paused表示暂停状态 */
+
+        }
+
+
+        /* 需求是打开网页，盒子就有平移效果 */
+
+        /* 写动画的步骤
+            1：定义动画
+            2：使用动画
+            */
+
+        /* 1.定义动画 */
+        @keyframes move{
+            from{
+                transform: translate(0px,0px);
+
+            }
+            to{
+                transform: translate(1000px, 0px);
+            }
+        }
+
+        @keyframes move2{
+            0%{
+                transform: translate(0px, 0px);
+            }
+            100%{
+                transform: translate(1000px, 0px);
+            }
+        }
+
+        @keyframes move3{
+            0%{
+                transform: translate(0px, 0px);
+            } 
+            25%{
+                /* 2.5s */
+                transform: translate(200px, 0px);
+            }
+            55%{
+                /* 5.5s */
+                transform: translate(200px, 200px);
+            }
+            75%{
+                /* 7.5 */
+                transform: translate(0px, 200px);
+            }
+            100%{
+                transform: translate(0px, 0px);
+            }
+        
+        }
+
+        /* 百分比是对时间的划分 */
+        /* from to 等价于0% 100% */
+
+
+
+        @keyframes w{
+            0%{
+                width: 500px;
+            }
+
+            30%{
+                width: 1000px;
+            }
+        }   
+    </style>
+</head>
+<body>
+    <!-- 动画是CSS3中具有颠覆性的特征之一
+    可以通过设置多个节点来精确控制一组或者一个动画，
+    常常用来实现复杂的动画效果，相对于过渡，可以实现更多的变化
+    更多的空，连续自动变化等效果
+    -->
+    <div>
+
+
+
+    </div>
+
+
+
+
+
+
+</body>
+</html>

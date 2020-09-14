@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* p{
+            color: salmon;
+
+        }
+        h1{
+            color: royalblue;
+        }
+        span{
+            color: salmon;
+
+        } */
+        /* 并集选择器 选择器1，选择器2，选择器n...{} 给这些选择器同一个样式 */
+        p,h1,span{
+            color: salmon;
+        }
+
+        /* -------------------------------------------------------- */
+        /* 交集选择器 选择器1选择器2{} 给同时包含了选择器1 和选择器2 的标签设置样式*/
+        .red{
+            color: salmon;
+        }
+        p.red{
+            font-size: 50px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <p>我是P标签</p>
+    <h1>我是h1标签</h1>
+    <p class="red">我是p2标签</p>
+    <p>我是p3标签</p>
+    <span class="red">我是span标签</span>
+</body>
+</html>

@@ -1,0 +1,465 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+body {
+    padding-top: 30px;
+    line-height: 1.62;
+    font: 12px Helvetica, Arial, sans-serif
+}
+
+
+.head_container {
+
+    background-color: white;
+}
+
+.head_main {
+    width: 1080px;
+    height: 34px;
+    /* border: 1px solid blue; */
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.head_logo {
+    width: 160px;
+    height: 34px;
+    background-image: url("../images/logo_db.png");
+    background-repeat: no-repeat;
+    float: left;
+    margin-right: 20px
+}
+
+.head_nav {
+    width: 515px;
+    height: 22px;
+    /* border: 1px solid green; */
+    float: right;
+    margin-top: calc((34px - 20px) /2);
+
+}
+
+.head_input {
+    width: 272px;
+    height: 32px;
+    border: 1px solid #c3c3c3;
+    float: left;
+    padding-left: 5px;
+}
+
+.head_input input {
+    border: none;
+    outline: none;
+    width: 240px;
+    height: 32px;
+    /* border: 1px solid red; */
+    float: left;
+
+}
+
+.head_input span {
+    width: 30px;
+    height: 30px;
+    float: right;
+    /* border: 1px solid red; */
+    background-image: url("../images/bn_srh_1.png");
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+
+}
+
+.head_nav ul li {
+    width: 40px;
+    height: 20px;
+    background-image: url("../images/anony_nav_logo.png");
+    float: left;
+    margin-left: 14px;
+
+}
+
+.login_container {
+    margin-bottom: 25px;
+    background-size: contain;
+    border: 1px solid lightgreen;
+    background-repeat: no-repeat;
+    background-color: #edf4ed;
+    background-position: calc(50% - 305px) top
+}
+
+.login_container .login_wrapper {
+    position: relative;
+    padding: 0 0 4px;
+    overflow: visible;
+}
+
+.login_wrapper {
+    width: 950px;
+    border: 1px solid skyblue;
+    margin: 0px auto;
+}
+
+.login_container .login_wrapper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-position: 0 -150px;
+}
+
+.login_container .login_wrapper:after {
+    content: "\0220";
+    display: block;
+    clear: both;
+}
+
+.login_container .login_wrapper .login_right {
+    position: relative;
+}
+
+.login_container .login_right {
+    width: 300px;
+    float: right;
+    font-size: 0;
+
+
+}
+
+/* .login_right {
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    float: right;
+} */
+
+.login_container .app {
+    margin: auto 0 auto 460px;
+    position: absolute;
+    width: 150.03px;
+    height: 120px;
+    top: 0px;
+    bottom: 0px;
+}
+
+.login_container .app-title {
+    border: 1px solid green;
+    margin: 7px 0;
+    font-size: 25px;
+    color: #111;
+    line-height: 24px;
+
+}
+
+.login_container .app-title span {
+    color: #111;
+    margin-left: 10px;
+    font-weight: 100;
+}
+
+.login_container .app-slopan {
+    margin: 0 0 18px;
+    font-size: 0;
+    color: #111;
+}
+
+.login_container .app-slogan:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+.login_container .link-app:link,
+.login_container .link-app:visited,
+.login_container .link-app:hover,
+.login_container .link-app:active {
+    background: #00B51D;
+    color: #fff;
+}
+
+.login_container .link-app {
+    display: inline-block;
+    padding: 9px 21px;
+    margin-right: 2px;
+    vertical-align: top;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 1;
+
+}
+
+.login_container .app-qr {
+    display: inline-block;
+    position: relative;
+}
+
+.login_container .link-qr:link,
+.login_container .link-qr:visited,
+.login_container .link-qr:hover,
+.login_container .link-qr:active {
+    background: transparent;
+}
+
+.login_container .link-qr {
+    display: inline-block;
+    border: 1px solid #48aa0d;
+    border-radius: 2px;
+
+}
+
+a {
+    cursor: pointer;
+}
+
+a img {
+    border-width: 0;
+    vertical-align: middle;
+}
+
+.body {
+    padding-top: 30px;
+    line-height: 1.62;
+    font: 12px Helvetica, Arial, sans-serif;
+}
+/* .body,div,p,ul{
+    margin: 0;
+    padding: 0;
+} */
+
+
+.account-anonymous {
+    height: 296px;
+    min-height: 200px;
+    max-width: 300px;
+    width: 300px;
+    padding: 30px 10px 10px;
+    overflow: hidden;
+    background: transparent;
+}
+
+.account-body {
+    position: relative;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.account-anonymous .account-body-tabs {
+    margin-bottom: 10px
+}
+
+.account-body-tabs {
+    color: #9b9b9b;
+    font-size: 0;
+}
+
+.account-anonymous .account-body-tabs ul {
+    border-bottom: 1px solid #ececec;
+}
+
+.account-body-tabs {
+    margin-bottom: 10px;
+    color: #9b9b9b;
+    font-size: 0;
+}
+
+.account-anonymous .account-body-tabs ul li.on {
+    border-bottom: 1px solid #494949;
+}
+
+.account-anonymous .account-body-tabs ul li {
+    font-size: 13px;
+}
+
+.account-body-tabs ul li.on {
+    border-bottom: 2px solid #494949;
+    color: #333;
+    font-weight: 600;
+}
+
+.account-body-tabs ul li {
+    display: inline-block;
+    width: 50%;
+    font-size: 18px;
+    line-height: 2;
+    text-align: center;
+    cursor: pointer;
+}
+
+.login-quick .account-tabcon-start,
+.login-quick .quick,
+.login-quick .tab-start,
+.login-start .account-tabcon-quick,
+.login-start .start,
+.login-start .tab-quick {
+    display: none;
+}
+
+
+.account-body-tabs ul li.account-tab-scan {
+    color: #333;
+    font-weight: 600;
+    text-align: left;
+}
+
+.account-body-tabs .account-tab-switch {
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    overflow: visible;
+}
+
+
+.account-body-tabs .account-tab-switch-icon .icon-switch.quick {
+    background-image: url("../images/下载.png");
+
+}
+    
+.account-anonymous .account-tab-switch-icon .icon-switch {
+    height: 30px;
+    width: 30px;
+    background-size: 30px;
+}
+
+.account-body-tabs .account-tab-switch-icon .icon-switch {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-size: 40px;
+    overflow: visible;
+}
+
+.account-body-tabs .account-tab-switch-icon .icon-switch.start {
+    background-image: url("../images/computer.png");
+}
+
+
+.account-anonymous .account-form {
+    position: relative;
+}
+
+.account-anonymous .account-form-tips {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.account-form-tips {
+    color: #9b9b9b;
+}
+.account-form-tips a {
+    color: #41ac52;
+}
+a {
+    text-decoration: none;
+    border: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.account-anonymous .account-form-tips {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.t-right {
+    text-align: right;
+}
+
+.account-form-tips {
+    color: #9b9b9b;
+}
+
+
+.account-anonymous .account-form-error {
+    width: 100%;
+    position: absolute;
+    top: -60px;
+    display: none;
+    overflow: hidden;
+}
+.account-form-error {
+    min-height: 20px;
+    position: static;
+    margin-bottom: 5px;
+    background: none;
+}
+.account-form-error {
+    position: absolute;
+    top: -10px;
+    left: 0;
+}
+
+
+.account-anonymous .account-form-error span.hide {
+    display: none;
+}
+
+
+.account-anonymous .account-form-raw {
+    margin-bottom: 10px;
+}
+.account-form-raw {
+    position: relative;
+}
+.account-form-raw:after {
+    content: "";
+    clear: both;
+}
+
+.account-anonymous .account-form-label {
+    display: none;
+}
+.account-form-label {
+    float: left;
+    line-height: 40px;
+    height: 40px;
+    width: 60px;
+    font-size: 13px;
+}
+label {
+    user-select: none;
+}
+
+.account-form-field {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+.account-form-field {
+    margin-bottom: 10px;
+    margin: 0;
+}
+
+.account-anonymous .account-form-field input {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    box-shadow: none;
+    background: #fff;
+}
+
+input[type=number], input[type=password], input[type=phone], input[type=text], textarea {
+
+    background: transparent;
+}
+.account-form-input {
+    width: 280px;
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    border: 1px solid #e4e6e5;
+}
+a:focus, button, input {
+    outline: 0;
+}
+.app-hide, .hide {
+    display: none;
+}
+

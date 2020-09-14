@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .shopping{
+            width: 120px;
+            height: 40px;
+            border: 1px solid red;
+            background-color: salmon;
+            color: #eee;
+            text-align: center;
+            line-height: 40px;
+        }
+        .shopping-bottom{
+            width: 316px;
+            height: 0px;
+            background-color: #fff;
+            box-shadow: 0px 5px 5px #aaaaaa;
+            text-align: center;
+            line-height: 100px;
+            overflow: hidden;
+            transition: height 1s;
+
+        }
+
+        .shopping:hover+ .shopping-bottom{
+            height: 100px;
+
+        }
+        .shopping:hover{
+           background-color: #fff;
+           color: orange;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="shopping">
+        <p>购物车(0)</p>
+    </div>
+    <div class="shopping-bottom">
+        <p>
+            购物车中还没有商品，赶紧选购吧！
+        </p>
+    </div>
+ 
+
+
+  
+</body>
+</html>
