@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function say() {
+        //     console.log('hi');
+        // }
+    // say()
+        // say.call()
+        // say.apply()
+        // say.bind()()
+
+
+        let arr = ['ace', 'roger', 'simba']
+
+        let obj = {
+            nickname: "ace",
+            test() {
+                console.log(arr.some(r => r === this.nickname));
+                console.log(this.nickname);
+                // let that = this
+                // return function () {
+                //     console.log(that.nickname);
+                // }
+                return () => {
+                    console.log(this.nickname);
+                }
+
+            },
+            say(a, b, c) {
+                console.log('hi, i am ' + this.nickname);
+            }
+        }
+        let fn = obj.test()
+        obj.say(10, 20, 30)
+        let zz = {
+            nickname: 'murray'
+        }
+        obj.say.call(zz, 10, 20, 30)
+        obj.say.apply(zz, [10, 20, 30])
+        let newfn =obj.say.bind(zz, 10, 20, 30)//返回一个绑定过this的函数
+        newfn()
+
+
+
+
+
+        // let fake_array = {
+        //     0: 111,
+        //     1: 22,
+        //     2: 33,
+        //     length: 3,
+        //     join(str) {
+        //         return Array.prototype.join.call(this, str)
+        //     }
+        // }
+
+        // for (var i = 0)
+    </script>
+</body>
+
+</html>

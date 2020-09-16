@@ -9,37 +9,22 @@
 
 <body>
     <script>
-        //trim去掉字符串的头尾空格，不会改变原始字符串。
-        // function myTrim(str) {
-        //     // 如果是null或undefined 直接返回空字符串
-        //     if (!str) {
-        //         return ''
-        //     } else {
-        //         return str.trim()
-        //     }
-        // }
-
-        function showWelComPage() {
-            let type = prompt('欢迎来到宠物世界，请选择操作：1.登录 2.注册 3.退出')
-            switch (type) {
-                case '1':
-                    console.log('登录');
-                    break;
-                case '2':
-                    console.log('注册');
-                    break;
-                case '3':
-                    console.log('退出成功，欢迎再来');
-                    break;
-
-                default:
-                    console.log('输入有误，请重新操作');
-                    arguments.callee()
-                    break;
+        let obj = {
+            nickname: "ace",
+            test() {
+                console.log(arr.some(r => r === this.nickname));
+                console.log(this.nickname);
+                let fn = obj.test()
+                obj.say(10, 20, 30)
+                let zz = {
+                    nickname: 'murray'
+                }
+                obj.say.call(zz, 10, 20, 30)
+                obj.say.apply(zz, [10, 20, 30])
+                let newfn = obj.say.bind(zz, 10, 20, 30) //返回一个绑定过this的函数
+                newfn()
             }
-
         }
-        showWelComePage()
     </script>
 </body>
 
