@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // [11, 2, 3].forEach(r => {
+        //     console.log(r);
+        // })
+        //限制函数的触发频率   节流函数
+        function throttle(callback, wait) {
+            let endTime = 0
+            return function () {
+                if (new Date() - endTime < wait) return console.log('too busy');
+                callback.apply(this, arguments)
+                endTime = new Date()
+            }
+        }
+
+        let obj = {
+            nickname: "Simba",
+            pay: throttle(function (money) {
+                console.log(this.nickname + '付钱', money);
+            }, 60000),
+            eat: throttle(function (a, b, c, d) {
+                console.log(this.nickname + '吃饭', a, b, c, d);
+            }, 60000),
+            zz: throttle(function (a,  d) {
+                console.log(this.nickname + 'zz', a, d);
+            }, 60000)
+        }
+
+        obj.pay(50)
+        obj.eat(60, 70, 80, 90)
+        obj.zz(60, 90)
+
+
+
+
+
+
+        // function sayHi() {
+        //     console.log('hi');
+        // }
+
+        // let fn = throttle(sayHi, 2000)
+
+        // setInterval(() => {
+        //     fn()
+        // }, 1000);
+
+    </script>
+</body>
+
+</html>

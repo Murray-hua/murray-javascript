@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./simba.js"></script>
+    <script>
+        function User(userName, password) {
+            this.userName = userName
+            this.password = password
+        }
+
+        function Pet(nickName, gender, type, master) {
+            this.name = nickName
+            this.gender = gender
+            this.type = type
+            this.master = master
+            this.state = 60
+
+            this.play = _.throttle(function () {
+                console.log(this.name + "做游戏咯~");
+                this.state += 5
+                if (this.state > 100) this.state = 100
+            }, 3000)
+
+            this.eat = _.throttle(function () {
+                console.log(this.name + "吃东西咯~");
+                this.state += 10
+                if (this.state > 100) this.state = 100
+            }, 5000)
+
+            this.introduceSelf = function () {
+                console.log(`
+                    你好，
+                    我叫${this.name}，
+                    我是个${this.type === '1' ? '狗' : "猫"}，
+                    我的性别是${this.gender === '1' ? 'GG' : "MM"}，
+                    我的主人是${this.master}，
+                    我的状态是${this.state}`);
+            }
+
+        }
+
+        let game = {
+            //当前登录用户
+            currentUser: null,
+            //敏感词数组
+            sensitiveWord: ['CNM', 'QNM', 'NMSL'],
+            //使用数组模拟用户数据库
+            userList: [
+                new User('ace', '123123'),
+                new User('simba', '123123')
+            ],
+            //宠物数组
+            petList: [],
+            //登录页
+            showLoginPage() {
+                console.log('欢迎登录');
+                let userNameIsOk = true, passwordIsOk = true
+                let password = '', userName = ''
+
+                do {
+                    userName = prompt('请输入用户名：')
+                    if (!userName) {
+                        userNameIsOk = false
+                        console.log('用户名不能为空');
+                    } else {
+                        userNameIsOk = true
+                    }
+                } while (!userNameIsOk);
+
+                do {
+                    password = prompt('请输入密码：')
+                    if (!password) {
+                        passwordIsOk = false
+                        console.log('密码不能为空');
+                    } else if (password.length < 6) {
+                        passwordIsOk = false
+                        console.log('密码至少大于6位');
+                    } else {
+                        passwordIsOk = true
+                    }
+                } while (!passwordIsOk);
+
+                //拿用户输入的用户名和密码，判断是否存在
+                let user = this.userList.find(function (item) {
+                    return item.userName === userName
+                })
+
+                if (!user) {
+                    console.log('此用户不存在！');
+                    arguments.callee.call(this)
+                } else {
+                    //用户存在，则判断密码对不对
+                    if (user.password !== password) {
+                        console.log('密码错误');
+                        //有错则再次输入
+                        arguments.callee.call(this)
+                    } else {
+                        this.currentUser = userName
+                        //找到用户，登录成功
+                        console.log(userName + ' login success');
+                        this.showMainPage()
+                    }
+                }
+            },
+            showGetPetPage() {
+                console.log('领养宠物');
+                // let currentUser = this.currentUser
+                //判断是否已有宠物
+                let hasPet = this.petList.some(item => {
+                    return item.master === this.currentUser
+
+                })
+                if (hasPet) {
+                    console.log('你已有宠物，不能重复领养！');
+                    return this.showMainPage()
+                }
+
+                let nickNameIsOk = true, typeIsOk = true, genderIsOk = true
+                let nickName = '', type = '', gender = ''
+                do {
+                    type = _.trim(prompt('请选择宠物类型：1:狗  2:猫'))
+                    if (!['1', '2'].includes(type)) {
+                        typeIsOk = false
+                        console.log('宠物类型不正确');
+                    } else {
+                        typeIsOk = true
+                    }
+                } while (!typeIsOk);
+
+                do {
+                    gender = _.trim(prompt('请选择宠物性别：1:GG  2:MM'))
+                    if (!['1', '2'].includes(gender)) {
+                        genderIsOk = false
+                        console.log('宠物性别不正确');
+                    } else {
+                        genderIsOk = true
+                    }
+                } while (!genderIsOk);
+
+                do {
+                    nickName = _.trim(prompt('请输入宠物昵称：'))
+                    if (!nickName) {
+                        nickNameIsOk = false
+                        console.log('宠物昵称不能为空');
+                    } else {
+                        let isSensitive = this.sensitiveWord.some(function (item) {
+                            return nickName.toUpperCase().includes(item.toUpperCase())
+                        })
+
+                        if (isSensitive) {
+                            nickNameIsOk = false
+                            console.log('宠物昵称不合法');
+                        } else {
+                            nickNameIsOk = true
+                        }
+                    }
+                } while (!nickNameIsOk);
+
+
+                let pet = new Pet(nickName, gender, type, this.currentUser)
+                //加入宠物数组
+                this.petList.push(pet)
+
+                console.log(this.petList);
+
+                this.showMainPage()
+
+            },
+            showPetInfoPage() {
+                // let currentUser = this.currentUser
+                //从宠物数组中找到自己的宠物
+                let mypet = this.petList.find(item => {
+                    return item.master === this.currentUser
+                })
+                if (!mypet) {
+                    console.log('你还没有宠物');
+                    return this.showMainPage()
+                }
+
+                //找到宠物，则自我介绍
+                mypet.introduceSelf()
+
+                let type = prompt('请选择互动方式：1.喂食  2.逗TA玩  3.返回主菜单')
+                switch (type) {
+                    case '1':
+                        mypet.eat()
+                        break;
+                    case '2':
+                        mypet.play()
+                        break;
+                    case '3':
+                        return this.showMainPage()
+                    default:
+                        console.log('输入有误，请重新操作');
+                        break;
+                }
+
+                arguments.callee.call(this)
+
+            },
+            showMainPage() {
+                let type = prompt('欢迎来到宠物世界，请选择操作：1.领养宠物  2.查看宠物  3.注销登录')
+                switch (type) {
+                    case '1':
+                        this.showGetPetPage()
+                        break;
+                    case '2':
+                        this.showPetInfoPage()
+                        break;
+                    case '3':
+                        this.currentUser = null
+                        this.showWelComePage()
+                        break;
+                    default:
+                        console.log('输入有误，请重新操作');
+                        arguments.callee.call(this)
+                        break;
+                }
+            },
+            //注册页
+            showRegisterPage() {
+                console.log('欢迎注册');
+                //定义状态，代表用户名和密码验证是否通过
+                let userNameIsOk = true, passwordIsOk = true, cPasswordIsOk = true
+                //在外面定义userName和password，便于后续使用
+                let password = '', userName = ''
+                //因为当前场景需要先执行后判断，所以采用do-while
+                do {
+                    userName = _.trim(prompt('请输入用户名：'))
+
+                    //如果去完空格是空字符串，则提示，设置验证为不通过
+                    if (!userName) {
+                        userNameIsOk = false
+                        console.log('用户名不能为空');
+                    } else {
+                        //通过some方法检查用户名是否包含敏感词，
+                        let isSensitive = this.sensitiveWord.some(function (item) {
+                            //统一设置为大写再比对，以此忽略大小写
+                            return userName.toUpperCase().includes(item.toUpperCase())
+                        })
+
+                        if (isSensitive) {
+                            userNameIsOk = false
+                            console.log('用户名不合法');
+                        } else {
+
+                            //判断用户数组中是否已存在同样的用户名
+                            let isRepeat = this.userList.some(function (item) {
+                                return item.userName === userName
+                            })
+
+                            if (isRepeat) {
+                                userNameIsOk = false
+                                console.log('用户名已存在');
+                            } else {
+                                userNameIsOk = true
+                            }
+
+
+                        }
+                    }
+                } while (!userNameIsOk);//不管是因为什么而验证不通过，就继续循环要求重新输入
+
+                do {
+                    password = _.trim(prompt('请输入密码：'))
+
+                    if (!password) {
+                        passwordIsOk = false
+                        console.log('密码不能为空');
+                    } else if (password.length < 6) {
+                        passwordIsOk = false
+                        console.log('密码至少大于6位');
+                    } else {
+                        passwordIsOk = true
+                    }
+                } while (!passwordIsOk);
+
+                do {
+                    let passwordConfirm = _.trim(prompt('请输入确认密码：'))//将字符串左右去除空格
+
+                    if (passwordConfirm !== password) {
+                        console.log('两次密码输入不一致');
+                        cPasswordIsOk = false
+                    } else {
+                        cPasswordIsOk = true
+                    }
+                } while (!cPasswordIsOk);
+
+                //往用户数组中添加一条用户数据
+
+                let newUser = new User(userName, password)
+
+                this.userList.push(newUser)
+                console.log('当前用户：', this.userList);
+                //注册完成，回到欢迎页
+                this.showWelComePage()
+
+            },
+            //欢迎页
+            showWelComePage() {
+                let type = prompt('欢迎来到宠物世界，请选择操作：1.登录  2.注册  3.退出')
+                switch (type) {
+                    case '1':
+                        this.showLoginPage()
+                        break;
+                    case '2':
+                        this.showRegisterPage()
+                        break;
+                    case '3':
+                        console.log('退出成功，欢迎再来');
+                        break;
+                    default:
+                        console.log('输入有误，请重新操作');
+                        arguments.callee.call(this)//指向本函数，与函数名无关
+                        break;
+                }
+            }
+        }
+
+        //页面初始显示欢迎页
+        game.showWelComePage()
+
+        //  call/apply/bind
+
+
+
+
+    </script>
+</body>
+
+</html>
