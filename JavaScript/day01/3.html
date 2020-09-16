@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = true
+        var b = false
+
+        console.log(a && b); //必须同时满足，判断两个值是否都为true
+        console.log(a || b); //满足其中一个即可，只要有一个为true结果为true
+        console.log(2 > 1 || 10 > 2);//满足其中一个即可，只要有一个为true结果为true
+        //使用 || 或 运算符， 如果前面的条件满足了，后面的条件就不会再判断了
+        //使用&& 与 运算符， 如果前面的条件满足了，则走后面的，如果前面就不满足，则后面也不走了
+
+        console.log(!a);  //非   取反，即！true=>false   !false => true 
+
+        //比较运算符
+
+        var x = 10
+        var y = 20 //赋值运算符
+
+        // == 相等  ！= 不相等 ===全等  ！== 不全等
+        console.log(x > y);//false
+        console.log(x >= y);//false
+        console.log(x < y);//true
+        console.log(x <= y); //true
+        console.log(x ===y); //相等 false
+        console.log(x !== y);  //true 不全等
+        console.log(1 == true); //true
+        console.log(1 === true); //false
+
+
+        var res = prompt('请输入一个数字')
+        console.log(res);//2210
+
+        res += 10
+
+        console.log(res);//2210
+        // console.log(22);//22
+
+
+        // var res = '22' + 10 //会将10 变成’10‘
+        // console.log(res);
+
+        var res = prompt('请输入数字')
+
+        // NaN not a number
+
+        // res = parseInt(res)
+        // res = parseFloat(res)//将 ’10‘=> 10
+        console.log();
+
+        console.log(parseInt(1.11)); //1.11=>1
+
+    </script>
+</body>
+
+</html>
