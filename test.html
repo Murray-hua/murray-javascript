@@ -9,22 +9,7 @@
 
 <body>
     <script>
-        let obj = {
-            nickname: "ace",
-            test() {
-                console.log(arr.some(r => r === this.nickname));
-                console.log(this.nickname);
-                let fn = obj.test()
-                obj.say(10, 20, 30)
-                let zz = {
-                    nickname: 'murray'
-                }
-                obj.say.call(zz, 10, 20, 30)
-                obj.say.apply(zz, [10, 20, 30])
-                let newfn = obj.say.bind(zz, 10, 20, 30) //返回一个绑定过this的函数
-                newfn()
-            }
-        }
+       
     </script>
 </body>
 
