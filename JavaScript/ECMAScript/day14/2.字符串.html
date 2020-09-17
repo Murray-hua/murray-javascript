@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let str = '111'
+        // console.log(str.__proto__.constructor);//找到一个对象的构造函数
+
+        //给字符串类型的对象，扩展了翻转方法
+        String.prototype.reverse = function () {
+            return this.split('').reverse().join('')
+        }
+
+        //类的prototype === 该类的实例的__proto__
+        console.__proto__.line = function () {
+            this.log('-'.repeat(30))
+        }
+        console.line();
+
+
+
+        // // console.log(console.__proto__.constructor);
+
+        // let str = 'hello'
+        // console.log(str.reverse());
+        // console.log('zzz11122'.reverse());
+        // console.log('123fafldjas'.reverse());
+
+        // let date = new Date()
+        // let y = date.getFullYear()
+        // let m = date.getMonth()+1
+        // let d = date.getDate()
+        // let h = date.getHours()
+        // let mi = date.getMinutes()
+        // let s = date.getSeconds()
+
+        // let ymd = [y,m,d].join('-')
+        // let hms = [h,mi,s].join('-')
+
+        // console.log(new Date);
+
+
+        //-----------------------------------------------------
+
+        Date.prototype.getChinaText = function () {
+            let date = this
+            let y = date.getFullYear()
+            let m = date.getMonth() + 1
+            let d = date.getDate()
+            let h = date.getHours()
+            let mi = date.getMinutes()
+            let s = date.getSeconds()
+            let ymd = [y, m, d].join('-')
+            let hms = [h, mi, s].join(':')
+            let all = [ymd, hms].join(' ')
+            return all
+        }
+
+        let str = 'hello'
+        console.log(str.reverse());
+        console.log( new Date().getChinaText() );
+
+
+    </script>
+</body>
+
+</html>

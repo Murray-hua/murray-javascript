@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="./1.html">index</a>
+
+    <div id="app">Murray</div>
+    <div class="demo" name='a'>ace</div>
+    <div class="demo">ace</div>
+    <div class="demo" name='a'>ace</div>
+    <div class="demo">ace</div>
+
+
+    <script>
+        //jquery
+
+        let app = document.querySelector('#app') //单个 find
+        console.log(app);
+        let demo = document.querySelector('.demo')
+        console.log(demo);
+        let demos = document.querySelectorAll('.demo') //多个 filter
+        console.log(demos);
+
+        //id=app的元素的里面的class为demo的元素
+        let demos1 = document.querySelector('#app .demo') 
+        console.log(demos1);
+
+
+
+
+
+        // decument.querySelectorAll() // 多个 filter
+
+
+
+
+
+        // document.body.style.background = 'red'
+        // document.title = 'Hello'
+        //id选择器
+        // function $(id) {
+        //     return document.getElementById(id)
+        // }
+        // let app = $('app')
+        // console.log(app);
+        // //相当于以上
+        // // let app = document.getElementById('app')
+        // // console.log(app);
+
+        // //class选择器
+        // let demos = document.getElementsByClassName('demo')
+        // for (let i = 0; i < demos.length; i++) {
+        //     console.log(demos[i]);
+        // }
+        // //标签选择器
+        // let divs = document.getElementsByTagName('div')
+        // for (let i = 0; i < divs.length; i++) {
+        //     console.log(divs[i]);
+
+        // }
+        // //name选择器
+        // let as = document.getElementsByName('a')
+        // for (let i = 0; i < as.length; i++) {
+        //     console.log(as[i]);
+        // }
+    </script>
+</body>
+
+</html>

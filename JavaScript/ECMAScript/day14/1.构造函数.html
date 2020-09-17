@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function Chess(name, color) {
+        //     this.color = color
+        //     this.name = name
+        //     this.x = x
+        //     this.y = y
+
+        //     this.move = function () {
+        //         this.x = x
+        //         this.y = y
+        //     }
+        // }
+
+        // let c1 = new Chess('马', '红', 4, 5)
+        // c1.move(6, 8)
+        // console.log(c1);
+
+
+
+        //---------------------------------------------------------
+        // function move(x, y) {
+        //     this.x = x
+        //     this.y = y
+        // }
+
+        // function Chess(name, color, x, y) {
+
+        //     this.color = color
+        //     this.name = name
+        //     this.x = x
+        //     this.y = y
+        //     this.move = move
+        // }
+        // //一个类的原型对象上的数据会被这个类的实例所继承
+        // // console.log(Chess.prototype);
+        // Chess.prototype.age = 20 
+
+        // let c1 = new Chess('马', '红', 4, 5)
+        // c1.move(6, 8)
+        // console.log(c1.age);
+
+
+
+
+        //---------------------------------------------------------
+
+        function Chess(name, color, x, y) {
+
+            this.color = color
+            this.name = name
+            this.x = x
+            this.y = y
+        }
+        //一个类的原型对象上的数据会被这个类的实例所继承
+        // console.log(Chess.prototype);
+        Chess.prototype.move = function (x, y) {
+            this.x = x
+            this.y = y
+        }
+
+        let c1 = new Chess('马', '红', 4, 5)
+        c1.move(6, 8)
+        console.log(c1);
+    </script>
+</body>
+
+</html>

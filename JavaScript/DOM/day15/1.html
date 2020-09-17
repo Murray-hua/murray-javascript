@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    BOM 浏览器对象模型
+    DOM 文档对象模型
+    <input type="text">
+    <script>
+        // window.open('http://naver.com')
+
+        // alert()
+        // confirm()//确认删除
+        // prompt()
+
+        // //三秒之后只执行一次
+        setTimeout(() => {
+            // history.forward()
+            history.back()
+            //history.go(-2)
+
+            // location.reload() //刷新页面
+            //     console.log(1111);
+            //     location.href = ''
+        }, 1000)
+
+        //-----------------------------------
+
+
+
+
+
+        //三秒之后只执行一次
+        // setTimeout(() => {
+        //     //设置浏览器地址的地址
+        //     location.href = 'http://baidu.com'
+        // }, 3000)
+
+
+        //--------------------------------------
+
+        //每隔三秒执行一次
+        setInterval(() => {
+            console.log(2222);
+        }, 1000);
+
+        //--------------------------------------
+    </script>
+</body>
+
+</html>

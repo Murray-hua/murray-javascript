@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app" style="border:1px solid red; width:300px; height: 300px;">Ace</div>
+    <script>
+        let div = document.createElement('div')
+        div.innerHTML = 'Murray'
+        div.classList.add('demo')
+
+        //将此div放到body的末尾
+        document.body.appendChild(div)
+        // console.log(div);
+
+
+        let ace = document.querySelector('#app')
+
+        //绑定单击事件      当鼠标单击时，执行此方法
+        ace.onclick = function () {
+            // ace.remove() //删除此标签
+            app.style.background = 'red'
+        }
+
+        // document.body.removeChild(ace)
+    </script>
+</body>
+
+</html>
