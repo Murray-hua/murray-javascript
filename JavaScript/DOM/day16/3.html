@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo {
+            width: 300px;
+            height: 300px;
+            background: #fff;
+            position: absolute;
+            box-shadow: 0 0 2px #666;
+        }
+
+        #title {
+            background: #ccc;
+            padding: 10px;
+            columns: #222;
+            cursor: move;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #close {
+            width: 30px;
+            height: 30px;
+            cursor: default;
+            text-align: center;
+            line-height: 20px;
+            color: #eee;
+            font-size: 13px;
+            border-radius: 50%;
+            border: 1px solid #eee;
+        }
+
+        #tip {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        <div id="title">
+            <div>标题</div>
+            <div>X</div>
+        </div>
+    </div>
+    <script>
+        let demo = document.querySelector("#demo")
+        let title = document.querySelector("#title")
+        let close = document.querySelector("#close")
+        let canMove = false
+        close.onclick = function () {
+            demo.remove()
+        }
+        let canMove = false
+
+
+        let x = 0
+        let y = 0
+        title.onmousedown = function (e) {
+            // e.pageX - demo.style.left
+            //获取鼠标按下时的初始位置
+            //offsetLeft 与定位父级的x轴距离
+            x = e.pageX - demo.offsetLeft
+            Y = e.pageY - demo.offsetTop
+            canMove = true
+        }
+
+        window.onmouseup = function () {
+            canMove = false
+        }
+
+        window.onmousemove = function (e) {
+            if (canMove) {
+                let left = e.pageX - x
+                let top = e.pageY - y
+
+                if (left < 0) left = 0
+                if (top < 0) top = 0
+                //window.innerWidth 屏幕宽度   x.offsetWidth 自身宽度
+                let maxLeft = window.innerWidth - demo.offsetWidth
+                let maxTop = window.innerHeight - demo.offsetHeight
+                if (left > maxLeft) left = maxLeft
+                if (top > maxTop) top = maxTop
+
+                demo.style.left = left + "px"
+                demo.style.top = top + "px"
+                // console.log(e.pageX, e.pageY);
+                // demo.style.left = e.pageX - x + "px"
+                // demo.style.top = e.pageY - y + "px"
+
+            }
+        }
+    </script>
+</body>
+
+</html>

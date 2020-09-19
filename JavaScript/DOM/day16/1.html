@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tb {
+            text-align: center;
+            width: 800px;
+            border-collapse: collapse;
+        }
+
+        .tb img {
+            width: 80px;
+            height: 90px;
+        }
+
+        .tb th,
+        .tb td {
+            border: 2px solid #ccc;
+            padding: 10px;
+        }
+
+        .counter input {
+            width: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function c(str) {
+            return document.createElement(str)
+        }
+
+        let list = [{
+                name: "可比克",
+                img: "https://img13.360buyimg.com/n7/jfs/t1/146714/4/279/253714/5edf3844E3467d2ff/16a13dd05f2718c5.jpg",
+                count: 1,
+                price: 5
+            },
+            {
+                name: "可乐",
+                img: "https://img12.360buyimg.com/n7/jfs/t1/96849/17/18079/410136/5e8e9758Ea1c71cf5/6e0fec624f062801.jpg",
+                count: 2,
+                price: 6
+            },
+            {
+                name: "薯片",
+                img: "https://img11.360buyimg.com/n7/jfs/t1/145964/39/276/359713/5edf33edE7f144f23/de5598ce85f7182e.jpg",
+                count: 2,
+                price: 8
+            }
+        ]
+
+        // let tb = document.createElement("table")
+        // document.body.appendChild(tb)
+
+        // let tr = document.createElement("tr")
+        // document.body.appendChild(tr)
+
+
+        // let tb =c("table")
+        // document.body.appendChild(tb)
+
+        // let tr = c("tr")
+        // tb.appendChild(tr)
+
+        let theader = ['名称', '图片', '价格', '数量', '小计', '操作']
+
+        //创建表格
+        let tb = c('table')
+        tb.classList.add('tb')
+        document.body.appendChild(tb)
+
+        //创建表头
+        let tr = c("tr")
+        theader.forEach(function (item) {
+            let th = c('th')
+            th.innerHTML = item
+            tr.appendChild(th)
+        })
+        tb.appendChild(tr)
+
+        //生成内容
+        list.forEach(function (item) {
+            let tr = c("tr")
+
+            let td = c('td')
+            td.innerHTML = item.name
+            tr.appendChild(td)
+
+            let td1 = c('td')
+            let img = c('img')
+            img.src = item.img
+            td1.appendChild(img)
+            tr.appendChild(td1)
+
+            let td2 = c('td')
+            td2.innerHTML = item.price
+            tr.appendChild(td2)
+
+            let td3 = c('td')
+            td3.classList.add('counter')
+            let btn1 = c('button')
+            btn1.innerHTML = '-'
+            btn1.onclick = function () {
+                let val = parseInt(input.value)
+                val--
+                if (val < 1) val = 1
+                input.value = val
+                //更新小计
+                td4.innerHTML = val * item.price
+            }
+            td3.appendChild(btn1)
+            let input = c('input')
+            input.value = item.count
+            // input.oninput=function(e){
+            //     //e.target 代表出发本次事件的对象
+            //     console.log(e.target.value);
+            // }
+
+            //当文本框输入时，触发input事件
+            input.oninput = function (e) {
+                //e.target 代表出发本次事件的对象
+                let val = e.target.value
+                //不能为空
+                if (!val) val = 1
+                //如果输入非常数字，则还原为1
+                if (isNaN(val)) val = 1
+                else {
+                    val = parseInt(val)
+                    if (val < 1) input.value = 1
+                }
+                //拿过滤之后的有效值，进行计算小计
+                td4.innerHTML = val * item.price
+                //拿过滤之后的有效值，更新掉input
+                input.value = val
+            }
+
+
+            // let input = c('input')
+            // input.value = item.count
+            td3.appendChild(input)
+            let btn2 = c('button')
+            btn2.innerHTML = '+'
+            btn2.onclick = function () {
+                let val = parseInt(input.value)
+                val++
+                input.value = val
+                //更新小计
+                td4.innerHTML = val * item.price
+            }
+            td3.appendChild(btn2)
+            tr.appendChild(td3)
+
+
+            let td4 = c('td')
+            td4.innerHTML = item.count * item.price
+            tr.appendChild(td4)
+
+
+            let td5 = c("td")
+            td5.innerHTML = '删除'
+            td5.onclick = function () {
+                tr.remove()
+            }
+            tr.appendChild(td5)
+            tb.appendChild(tr)
+        })
+
+
+
+        //-----------------------------------------------------------
+    </script>
+</body>
+
+</html>
