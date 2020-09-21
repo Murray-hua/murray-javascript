@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+
+        #left {
+            width: 300px;
+            border: 1px solid green;
+            height: 300px;
+            margin: 50px;
+            position: relative;
+        }
+
+        #left img {
+            width: 300px;
+            height: 300px;
+        }
+
+        #right {
+            width: 500px;
+            height: 500px;
+            display: none;
+            position: absolute;
+            border: 1px solid #eee;
+            background: url('http://img12.360buyimg.com//n0/jfs/t19636/352/2649701424/228978/4658db61/5b03bfc7Ncca6740d.jpg')center;
+        }
+
+        .shadow {
+            width: 140px;
+            height: 140px;
+            position: absolute;
+            cursor: move;
+            background: rgba(255, 255, 0, 0.349);
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="left">
+        <div class="shadow"></div>
+        <img src="https://img12.360buyimg.com/n1/jfs/t19636/352/2649701424/228978/4658db61/5b03bfc7Ncca6740d.jpg"
+            alt="">
+    </div>
+    <div id="right"></div>
+
+    <script>
+        let shadow = document.querySelector('.shadow')
+        let left = document.querySelector('#left')
+        let right = document.querySelector('#right')
+        // console.log(left.offsetTop);
+        right.style.top = left.offsetTop + 'px'
+        right.style.left = left.offsetLeft + left.offsetWidth + 10 + 'px'
+
+        left.onmousemove = function (e) {
+            // console.log(e.pageX - left.offsetLeft, e.pageY - left.offsetTop);
+            let offsetX = e.pageX - left.offsetLeft
+            let offsetY = e.pageY - left.offsetTop
+
+            let percent_x = (offsetX / left.offsetWidth) * 100 + '%'
+            let percent_y = (offsetY / left.offsetHeight) * 100 + '%'
+            right.style.backgroundPosition = `${percent_x} ${percent_y}`
+
+            //shadow
+            // shadow.style.left = offsetX - shadow.offsetWidth / 2
+            let x = offsetX - shadow.offsetWidth / 2
+            let y = offsetY - shadow.offsetHeight / 2
+
+            if (x < 0) x = 0
+            if (y < 0) y = 0
+
+            let maxLeft = left.offsetWidth - shadow.offsetWidth
+            let maxTop = left.offsetHeight - shadow.offsetHeight
+            if (x > maxLeft) x = maxLeft
+            if (y > maxTop) y = maxTop
+
+            shadow.style.left = x + 'px'
+            shadow.style.top = y + 'px'
+
+        }
+        left.onmouseenter = function () {
+            shadow.style.display = 'block'
+            right.style.display = 'block'
+
+        }
+        left.onmouseleave = function () {
+            shadow.style.display = 'none'
+            right.style.display = 'none'
+        }
+    </script>
+</body>
+
+</html>

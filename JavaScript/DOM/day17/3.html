@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #container {
+            width: 500px;
+            height: 300px;
+            border: 1px solid red;
+        }
+
+        #container .menu {
+            width: 100px;
+            height: 200px;
+            background: #ccc;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <script>
+        let container = document.querySelector('#container')
+        container.oncontextmenu = function (e) {
+            e.preventDefault();
+            //找目前的菜单
+            let menu = document.querySelector('#container .menu')
+            //如果不存在则新建一个
+            if (!menu) {
+                menu = document.createElement('ul')
+                menu.classList.add('menu')
+
+                let li = document.createElement('li')
+                li.innerHTML = '复制'
+                menu.appendChild(li)
+                container.appendChild(menu)
+
+            }
+
+            menu.style.left = e.pageX + 'px'
+            menu.style.top = e.pageY + 'px'
+
+        }
+
+        //点击页面，关闭菜单
+        window.onclick = function (e) {
+            //触发本次事件的DOM元素
+            console.log(e.traget);
+            let menu = document.querySelector('#container .menu')
+            if (menu) {
+                //如果e.traget是menu 内部的元素，则不关闭
+                if (!menu.contains(e.traget))
+                    menu.remove()
+            }
+        }
+    </script>
+</body>
+
+</html>

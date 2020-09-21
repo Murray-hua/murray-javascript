@@ -19,15 +19,15 @@
             padding: 10px;
             columns: #222;
             cursor: move;
-            /* user-select: none; */
+            user-select: none;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
         #close {
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             cursor: default;
             text-align: center;
             line-height: 20px;
@@ -35,10 +35,6 @@
             font-size: 13px;
             border-radius: 50%;
             border: 1px solid #eee;
-        }
-
-        #tip {
-            display: none;
         }
     </style>
 </head>
@@ -49,19 +45,19 @@
     <div id="demo">
         <div id="title">
             <div>标题</div>
-            <div>X</div>
+            <div id="close">X</div>
         </div>
     </div>
     <script>
-        let btn = document.querySelector("btn")
-        btn.onclick= function(e){
-            e.preventDefault();//阻止默认行为
-            console.log(1);
-        }
-        window.oncontextmenu = function(e){
-            e.preventDefault();//阻止默认行为
-            console.log(111);
-        }
+        // let btn = document.querySelector("btn")
+        // btn.onclick= function(e){
+        //     e.preventDefault();//阻止默认行为
+        //     console.log(1);
+        // }
+        // window.oncontextmenu = function(e){
+        //     e.preventDefault();//阻止默认行为
+        //     console.log(111);
+        // }
 
 
         let demo = document.querySelector("#demo")
@@ -87,11 +83,20 @@
             canMove = true
         }
 
+
+
+        //失去焦点
+        window.onblur= function(){
+            canMove= false
+
+        }
+        
         window.onmouseup = function () {
             canMove = false
         }
 
         window.onmousemove = function (e) {
+            e.preventDefault()
             if (canMove) {
                 //window.innerWidth 屏幕宽度   x.offsetWidth 自身宽度
                 let maxLeft = window.innerWidth - demo.offsetWidth
@@ -100,9 +105,9 @@
                 let left = e.pageX - x
                 let top = e.pageY - y
 
+                //限制活动区域
                 if (left < 0) left = 0
                 if (top < 0) top = 0
-
                 if (left > maxLeft) left = maxLeft
                 if (top > maxTop) top = maxTop
 
@@ -114,6 +119,11 @@
 
             }
         }
+
+        setTimeout(()=>{
+            alert(1111)
+        },2000)
+
     </script>
 </body>
 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #username1 {}
+    </style>
+</head>
+
+<body>
+    <input type="text" id="username1" style="width:100px">
+    <script>
+        let username = document.querySelector('#username1')
+
+        // 获取焦点
+        username.onfocus = function () {
+            username.style.width = '300px'
+        }
+
+        //失去焦点
+        username.onblur = function () {
+            username.style.width = '100px'
+            if (!username.value) {
+                console.log('不能为空!');
+                username.style.borderColor = 'red'
+            }
+        }
+    </script>
+</body>
+
+</html>
