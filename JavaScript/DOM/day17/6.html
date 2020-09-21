@@ -43,28 +43,51 @@
             background: rgba(255, 255, 0, 0.349);
             display: none;
         }
-        .side{
+
+        .side {
             margin: 50px;
             width: 300px;
             border: 1px solid red';
+
         }
-        .indexes{
+
+        .indexes {
             display: flex;
             justify-content: space-between;
+            padding: 5px;
         }
 
         .indexes li {
             width: 70px;
             height: 70px;
-            background: red;
         }
 
+        .indexes li.active {
+            box-shadow: 0 0 2px red;
+        }
     </style>
 </head>
 
 <body>
     <div class="side">
-
+        <div id="left">
+            <div class="shadow"></div>
+            <img src="" id="img">
+        </div>
+        <ul class="indexes">
+            <li class="active">
+                <img src="" alt="">
+            </li>
+            <li>
+                <img src="" alt="">
+            </li>
+            <li>
+                <img src="" alt="">
+            </li>
+            <li>
+                <img src="" alt="">
+            </li>
+        </ul>
     </div>
     <ul class="indexes">
         <li class="active">
@@ -79,8 +102,8 @@
         <li>
             <img src="" alt="">
         </li>
-       
-       
+
+
     </ul>
 
 
