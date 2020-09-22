@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./倒计时.css">
+    <style>
+    
+
+    </style>
+</head>
+
+<body>
+    <div class="timer flex a-c">
+        <div class="item flex j-c a-c">00</div>
+        <div class="code">:</div>
+        <div class="item flex j-c a-c">00</div>
+        <div class="code">:</div>
+        <div class="item flex j-c a-c">00</div>
+    </div>
+
+
+    
+    <script>
+        let endtime = '2020-09-22 15:00:00'
+        let end = new Date(endtime)
+
+        function getHMSFromMS(ms) {
+            let sec = Math.floor(ms / 1000)
+            let h = Math.floor(sec / 3600)
+            let m = Math.floor(sec % 3600 / 60)
+            let s = Math.floor(sec % 3600 & 60)
+            return {
+                h,
+                m,
+                s
+            }
+        },
+        repairZero: function (num) {
+            return num < 10 ? ('0' + num) : num
+        }
+
+        setInterval(() => {
+            let now = new Date()
+            let {
+                h,
+                m,
+                s
+            } = getHMSFromMS(end - now)
+
+            let h_lable = document.querySelector('.h')
+            h_lable.innerHTML = h
+            let m_lable = document.querySelector('.m')
+            m_lable.innerHTML = m
+            let s_lable = document.querySelector('.s')
+            s_lable.innerHTML = s
+
+        }, 1000);
+    </script>
+
+
+</body>
+
+</html>

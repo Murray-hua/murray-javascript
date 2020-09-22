@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	    /*子代选择器：先选择父亲，然后通过 > 选儿子*/
+	    div>p{
+	    	color:red;
+	    	font-size:30px;
+	    	text-align:center;
+	    }
+	</style>
+</head>
+<body>
+	<div>
+		<p>p是div1的儿子</p>
+	</div>
+	<p>p是div的兄弟</p>
+</body>
+</html>

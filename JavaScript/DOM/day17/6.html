@@ -12,12 +12,11 @@
             list-style: none;
         }
 
-
         #left {
             width: 300px;
-            border: 1px solid green;
+            /* border: 1px solid green; */
             height: 300px;
-            margin: 50px;
+            /* margin: 50px; */
             position: relative;
         }
 
@@ -32,7 +31,7 @@
             display: none;
             position: absolute;
             border: 1px solid #eee;
-            background: url('http://img12.360buyimg.com//n0/jfs/t19636/352/2649701424/228978/4658db61/5b03bfc7Ncca6740d.jpg')center;
+            background: url('./images/big1.jpg') center;
         }
 
         .shadow {
@@ -72,50 +71,24 @@
     <div class="side">
         <div id="left">
             <div class="shadow"></div>
-            <img src="" id="img">
+            <img src="./images/middle1.jpg" id="img">
         </div>
         <ul class="indexes">
             <li class="active">
-                <img src="" alt="">
+                <img src="./images/small1.jpg" alt="">
             </li>
             <li>
-                <img src="" alt="">
+                <img src="./images/small2.jpg" alt="">
             </li>
             <li>
-                <img src="" alt="">
+                <img src="./images/small3.jpg" alt="">
             </li>
             <li>
-                <img src="" alt="">
+                <img src="./images/small4.jpg" alt="">
             </li>
         </ul>
     </div>
-    <ul class="indexes">
-        <li class="active">
-            <img src="" alt="">
-        </li>
-        <li>
-            <img src="" alt="">
-        </li>
-        <li>
-            <img src="" alt="">
-        </li>
-        <li>
-            <img src="" alt="">
-        </li>
-
-
-    </ul>
-
-
-
-
-    <div id="left">
-        <div class="shadow"></div>
-        <img src="https://img12.360buyimg.com/n1/jfs/t19636/352/2649701424/228978/4658db61/5b03bfc7Ncca6740d.jpg"
-            alt="">
-    </div>
     <div id="right"></div>
-
     <script>
         let shadow = document.querySelector('.shadow')
         let left = document.querySelector('#left')
@@ -123,6 +96,34 @@
         // console.log(left.offsetTop);
         right.style.top = left.offsetTop + 'px'
         right.style.left = left.offsetLeft + left.offsetWidth + 10 + 'px'
+
+
+        let imgs = [
+            { small: 'small1.jpg', middle: 'middle1.jpg', large: 'big1.jpg' },
+            { small: 'small2.jpg', middle: 'middle2.jpg', large: 'big2.jpg' },
+            { small: 'small3.jpg', middle: 'middle3.jpg', large: 'big3.jpg' },
+            { small: 'small4.jpg', middle: 'middle4.jpg', large: 'big4.jpg' }
+        ]
+
+
+        let indexes = document.querySelectorAll('.indexes li')
+        let img = document.querySelector('#img')
+
+        for (let i = 0; i < indexes.length; i++) {
+            indexes[i].onmouseenter = function () {
+                //
+                img.src = './images/' + imgs[i].middle
+                //
+                right.style.backgroundImage = `url(./images/${imgs[i].large})`
+                //
+                document.querySelector('.indexes li.active').classList.remove('active')
+                indexes[i].classList.add('active')
+            }
+
+        }
+
+
+
 
         left.onmousemove = function (e) {
             // console.log(e.pageX - left.offsetLeft, e.pageY - left.offsetTop);

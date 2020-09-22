@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo {
+            width: 300px;
+            height: 300px;
+            background: red;
+            transition: .5s;
+            position: absolute;
+        }
+
+        #child {
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        <div id="child"></div>
+    </div>
+    <script>
+        // console.log(demo);
+        //移动到内部元素时不会重复触发
+        demo.onmouseenter = function () {
+            // console.log('移入1');//enter
+            demo.style.background = 'green'
+        }
+        demo.onmouseleave = function () {
+            // console.log('离开1');//leave
+            demo.style.background = 'red'
+
+        }
+
+
+
+
+
+
+
+        // child.onmouseenter = function(){
+        //     demo.style.background ='black'
+        // }
+        child.onclick = function (e) {
+            //阻止事件冒泡
+            e.stopPropagation();
+            demo.style.background = 'black'
+        }
+
+        demo.onclick = function (e) {
+            e.stopPropagation();
+            demo.style.width = '500px'
+        }
+        document.body.onclick = function () {
+            document.body.style.background = 'green'
+        }
+
+
+        //--------------------------------------------------
+
+        // child.onmouseenter = function(){
+        //     demo.style.background ='black'
+        // }
+        child.onclick = function (e) {
+            //阻止事件冒泡
+            e.stopPropagation();
+            demo.remove()
+        }
+
+        demo.onclick = function () {
+            e.stopPropagation();
+        }
+
+
+
+
+
+
+
+
+        //移动到内部元素时不会重复触发
+        demo.onmouseover = function () {
+            // console.log('移入2');//over
+            child.style.display = 'block'
+
+        }
+        demo.onmouseout = function () {
+            // console.log('离开');//out
+            child.style.display = 'none'
+
+        }
+    </script>
+</body>
+
+</html>

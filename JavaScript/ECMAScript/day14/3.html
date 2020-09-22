@@ -10,14 +10,12 @@
 <body>
     <script>
         //字符串马赛克  18899998989  188****8989
-        let phnumber = 18899998989
         // String.prototype.mosaic = function (start, end) {}
-        function phone(phnumber, start = 3, end = 7) {
-            const length = end - start
-            return String(phnumber).replace(String(phnumber).slice(start, end), '*'.repeat(length))
+        String.prototype.mosaic = function () {
+            let phone = '17778000516'
+            
         }
 
-        // console.log(phnumber);
 
 
 

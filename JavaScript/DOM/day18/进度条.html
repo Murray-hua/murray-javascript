@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .player {
+            width: 100%;
+            height: 45px;
+            background-color: #2d2d2d;
+            border-top: 1px solid #4a4a4a;
+            border-bottom: 1px solid #4a4a4a;
+            position: fixed;
+            bottom: 50%;
+        }
+
+        /* slider 中间滑动条 */
+        .slider {
+            width: 700px;
+            height: 10px;
+            background-color: #181818;
+            border-top: 1px solid #0b0b0b;
+            border-bottom: 1px solid #4a4a4a;
+            border-radius: 6px;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        /* buffbar 缓冲进度条  */
+        .buffbar {
+            width: 30%;
+            height: 100%;
+            background-color: #535353;
+            border-radius: 6px;
+            position: absolute;
+        }
+
+        .processor {
+            width: 8px;
+            height: 100%;
+            background-color: #c70c0c;
+            border-radius: 6px;
+            position: absolute;
+        }
+
+        .controller {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border: 10px solid #f3f3f6;
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 50%;
+            top: -8px;
+            left: -8px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="player">
+        <!-- slider 滑动条 -->
+        <div class="slider">
+            <!-- buffbar 缓冲进度条 -->
+            <div class="buffbar"></div>
+            <!-- processor 播放进度条 -->
+            <div class="processor"></div>
+            <!-- controller 控制点 -->
+            <div class="controller"></div>
+        </div>
+    </div>
+
+    <script>
+        // 先获取各个控件元素
+        // 缓冲条可以先进行写入， 这个并不需要用户操作。
+        let slider = document.querySelector('.slider')
+        let buffbar = document.querySelector('.buffbar')
+        let step = 0.5 //每次5%
+
+        let timer = window.setInterval(function () {
+            let sw = slider.offsetWidth
+            let bw = buffbar.offsetWidth
+
+            buffbar.style.width = bw + sw * step + 'px'
+
+            if (bw + sw * step == sw) {
+                window.clearInterval(timer)
+            }
+            //  buffbar.style.width +=
+        }, 2000)
+
+        let processor = document.querySelector('.processor')
+        let controller = document.querySelector('.controller')
+
+
+        // 鼠标事件发生，主要是三个事件，左键按下（mousedown），移动（mousemove）
+        // 和抬起（mouseup）。使用选择进行判断。
+        
+    </script>
+
+</body>
+
+</html>

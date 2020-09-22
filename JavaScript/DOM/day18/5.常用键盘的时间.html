@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="keyword" autocomplete="off">
+    <button id="search">搜索</button>
+    <script>
+        let search = document.querySelector('#search')
+        let keyword = document.querySelector('#keyword')
+        let fn = function () {
+            console.log('搜索商品');
+        }
+        
+        search.onclick = fn
+
+        window.onkeydown = function (e) {
+            // console.log(e.keyCode);
+
+            if (e.keyCode === 13) {
+                // console.log('回车');
+                fn()
+            }
+        }
+    </script>
+</body>
+
+</html>

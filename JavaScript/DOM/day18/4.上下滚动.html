@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./murray.css">
+    <style>
+        .item {
+            width: 100vw;
+            height: 100vh;
+            color: #fff;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100vh;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            transform: translateY(-100vh);
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item" style="background: rgb(218, 91, 218);">오늘 날씨가 좋아요!</div>
+        <div class="item" style="background: rgb(91, 210, 218);">네~ 가음왔어요~</div>
+        <div class="item" style="background: rgb(91, 121, 218);">요즘 잘지냈어요?</div>
+        <div class="item" style="background: rgb(211, 184, 63);">괞찬아요~</div>
+        <div class="item" style="background: rgb(65, 18, 151);">그럼, 나 갔어요~</div>
+    </div>
+    
+
+    <script src="./murray.js"></script>
+
+    <script>
+        let container = document.querySelector('.container')
+        let i = 0
+
+        let endTime = 0
+
+        // window.onclick = function () {
+        window.onmousewheel = function (e) {
+            if (new Date() - endTime < 1000) return
+            // console.log(e.wheelDeltaY);
+            if (e.wheelDeltaY < 0) {
+
+                if (i === 4) return;
+                i++
+            } else {
+                if (i === 0) return;
+                i--
+            }
+            container.style.transform = `translateY(-${100*i}vh)`
+            endTime = new Date()
+        }
+
+
+        // window.onmousewheel = _.throttle(function (e) {
+        //     // console.log(e.wheelDeltaY);
+        //     if (e.wheelDeltaY < 0) {
+
+        //         if (i === 4) return;
+        //         i++
+        //     } else {
+        //         if (i === 0) return;
+        //         i--
+        //     }
+        //     container.style.transform = `translateY(-${100*i}vh)`
+        // }, 1000)
+    </script>
+
+
+
+    <script>
+
+    </script>
+</body>
+
+</html>
