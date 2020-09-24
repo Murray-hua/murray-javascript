@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        密码
+        <input type="text" id="password">
+        <div id="msg"></div>
+
+    </div>
+
+    <script>
+        password.oninput = function () {
+            let level = 0
+            let val = password.value.trim()
+            if (val.length < 8) {
+                msg.innerHTML = '密码长度不足'
+                return
+            }
+            if (/\d/.test(val)) level++
+            if (/[a-z]/.test(val)) level++
+            if (/[A-Z]/.test(val)) level++
+            if (/\W/.test(val)) level++
+            // if (/[\.\!\@\#\$\%\^\&\*\(\)\-\=]/.test(val)) level++
+            if (val.length > 12) level++
+
+            if (level < 3) msg.innerHTML = '密码较弱'
+            else if (level < 5) msg.innerHTML = '密码中等'
+            else msg.innerHTML = '密码较强'
+            // console.log(level);
+        }
+    </script>
+</body>
+
+</html>

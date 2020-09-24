@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        //页面加载完成
+        // DOMContentLoaded 页面标签加载完成    先走
+        // Load 页面包括资源全部加载完成
+        window.onload = function () {
+            console.log(1);
+        }
+    </script> -->
+
+</head>
+
+<body>
+    <div id="app" style="width: 100px; height: 100px;background: red;">
+        <div id="demo" style="width: 50px; height: 50px; background:green;"></div>
+    </div>
+    <div style="height: 2000px;"></div>
+    <script>
+        // window.onscroll = function(){
+        //     console.log(document.documentElement.scrollTop);
+        // }
+
+
+        window.onscroll = function () {
+            //把卷起的高度
+            if (document.documentElement.scrollTop > 300) {
+                app.style.position = 'fixed'
+                app.style.top = 0
+            } else {
+                app.style.position = 'static'
+            }
+        }
+
+
+
+        window.onresize = function () {
+            console.log(window.innerWidth);
+        }
+
+
+        //页面加载完成
+        // DOMContentLoaded 页面标签加载完成    先走
+        // Load 页面包括资源全部加载完成
+        window.addEventListener('DOMContentLoaded', function () {
+
+            //传统on方式会覆盖绑定
+            // let obj ={}
+            // obj.onclick = function(){console.log(1);}
+            // obj.onclick = function(){console.log(2);}
+            // obj.onclick()
+
+
+            // app.onclick=function(){
+            //     this.style.width ='200px'
+            // }
+            // app.onclick=function(){
+            //     this.style.height ='200px'
+            // }
+
+
+            // 添加实践监听器  可以重复绑定事件
+            //第三个参数如果true则代表事件捕获，从外往内执行
+            //如果为flase或为空，则代表事件冒泡，从内往外执行
+            // app.addEventListener('click', function () {
+            //     console.log(1111);
+            //     app.style.width = '200px'
+
+            // }, true)
+            // app.addEventListener('click', function () {
+            //     console.log(222222);
+            //     app.style.height = '200px'
+            // }, true)
+
+
+            let fn = function () {
+                console.log(1111);
+                app.style.width = '200px'
+            }
+
+            demo.addEventListener('click', fn)
+
+            setTimeout(() => {
+                demo.click()
+            }, 2000);
+
+
+
+            // setInterval(() => {
+            //     demo.removeEventListener('click', fn)
+            // }, 2000);
+
+        })
+
+
+        window.addEventListener('load', () => {
+            console.log(22222222);
+        })
+    </script>
+</body>
+
+</html>

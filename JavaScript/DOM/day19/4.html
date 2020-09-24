@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="keyword">
+    <button id="search">搜索</button>
+    <div>
+        上次搜索
+        <span id="lastkey"></span>
+    </div>
+
+    <script>
+        search.onlick = function () {
+            // console.log(keywords.value);
+            document.cookie = 'keywords=' + keywords.value
+        }
+        window.onload =function(){
+            // console.log(document.cookie.split('=')[1]);
+            lastkey.innerHTML=document.cookie.split('=')[1]
+        }
+        
+    </script>
+</body>
+
+</html>

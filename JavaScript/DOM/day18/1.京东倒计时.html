@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../murray.css">
+    <style>
+        .item {
+            width: 30px;
+            height: 30px;
+            background: #000;
+            color: #fff;
+        }
+
+        .code {
+            padding: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="timer flex a-c">
+        <div class="h item flex j-c a-c">00</div>
+        <div class="code">:</div>
+        <div class="m item flex j-c a-c">00</div>
+        <div class="code">:</div>
+        <div class="s item flex j-c a-c">00</div>
+    </div>
+
+    <script src="../murray.js"></script>
+    <script>
+        let endtime = '2020-09-24 16:00:00'
+        let end = new Date(endtime)
+        // console.log(end.getTime());
+
+
+
+        // function getHMSFromMS(ms) {
+        //     let sec = Math.floor(ms / 1000)
+        //     let h = _.repairZero(Math.floor(sec / 3600))
+        //     // console.log(h);
+        //     let m = _.repairZero(Math.floor(sec % 3600 / 60))
+        //     // console.log(m);
+        //     let s = _.repairZero(sec % 3600 % 60)
+        //     // console.log(s);
+        //     return {
+        //         h,
+        //         m,
+        //         s
+        //     }
+        // }
+
+        //以上去掉后加入js
+        setInterval(() => {
+            let now = new Date()
+
+            // console.log(end);
+            // console.log(end - now);
+            // console.log((end - now) / 1000);
+            // console.log(Math.floor((end - now) / 1000));
+            let {
+                h,
+                m,
+                s
+            } = _.getHMSFromMS(end - now)
+
+            // let h = getHMSFromMS(end-now).h
+            // let m = getHMSFromMS(end-now).m
+            // let s = getHMSFromMS(end-now).s
+
+            let h_lable = document.querySelector('.h')
+            h_lable.innerHTML = h
+            let m_lable = document.querySelector('.m')
+            m_lable.innerHTML = m
+            let s_lable = document.querySelector('.s')
+            s_lable.innerHTML = s
+        }, 1000);
+    </script>
+
+
+</body>
+
+</html>

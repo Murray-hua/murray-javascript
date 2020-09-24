@@ -11,9 +11,12 @@ let _ = {
 
     getHMSFromMS(ms) {
         let sec = Math.floor(ms / 1000)
-        let h = Math.floor(sec / 3600)
-        let m = Math.floor(sec % 3600 / 60)
-        let s = Math.floor(sec % 3600 & 60)
+        let h = _.repairZero(Math.floor(sec / 3600))
+        // console.log(h);
+        let m = _.repairZero(Math.floor(sec % 3600 / 60))
+        // console.log(m);
+        let s = _.repairZero(sec % 3600 % 60)
+        // console.log(s);
         return {
             h,
             m,

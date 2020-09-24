@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let reg = new RegExp('', '')
+        // let reg = /xxx/
+        // let str = '1张无忌'
+        // console.log(str==='1');
+
+        //正则表达式
+        //\d 数字
+
+        // ^张 以张开头
+        let reg = /^张/
+        console.log(reg.test('张无忌'));
+
+
+        // 8$ 以8结尾
+        let reg1 = /8$/
+        console.log(reg1.test('19898889898'));
+        console.log('-'.repeat(30));
+
+
+        // [689]$ 尾号是否是6/8/9
+        let reg3 = /[689]$/
+        console.log(reg3.test('19898889898'));
+        console.log(reg3.test('19898889896'));
+        console.log(reg3.test('19898889899'));
+        console.log(reg3.test('19898889895'));
+        console.log('-'.repeat(30));
+
+        // ^(183|137|138) 手机号是否是183/138/137
+        let reg4 = /^(183|137|138)/
+        console.log(reg4.test('19898889898'));
+        console.log(reg4.test('13898889899'));
+        console.log(reg4.test('13798889899'));
+        console.log('-'.repeat(30));
+
+        // \d\d$  必须是两位数字
+        let reg5 = /^\d\d$/
+        console.log(reg5.test('1'));
+        console.log(reg5.test('12'));
+        console.log(reg5.test('13898889896'));
+        console.log('-'.repeat(30));
+
+        // \d{11}$  必须是11位数字
+        let reg6 = /^\d{11}$/
+        console.log(reg6.test('1'));
+        console.log(reg6.test('12'));
+        console.log(reg6.test('13898889896'));
+        console.log('-'.repeat(30));
+
+        // ^\d{6,}$  必须是6位以上数字
+        let reg7 = /^\d{6,}$/
+        console.log(reg7.test('132'));
+        console.log(reg7.test('123444'));
+        console.log(reg7.test('13898889896'));
+        console.log('-'.repeat(30));
+
+
+        // ^\d{16,18}$  必须是16位到18之间数字
+        let reg8 = /^\d{16,18}$/
+        console.log(reg8.test('1323233232323232'));
+        console.log(reg8.test('123444233232323233'));
+        console.log(reg8.test('13898889893232323336'));
+        console.log('-'.repeat(30));
+
+
+        // ^\d+$  至少一位数字{1,}
+        let reg9 = /^\d+$/
+        console.log(reg9.test(''));
+        console.log(reg9.test('12'));
+
+        console.log('-'.repeat(30));
+
+
+        // ^\d?$  出现0次或1次 {0,1}
+        let reg10 = /^\d?$/
+        console.log(reg10.test(''));
+        console.log(reg10.test('1'));
+        console.log(reg10.test('12'));
+
+        console.log('-'.repeat(30));
+         // ^\d*$  出现0次或多次 {0,}
+         let reg11 = /^\d*$/
+        console.log(reg11.test(''));
+        console.log(reg11.test('1'));
+        console.log(reg11.test('12'));
+
+        console.log('-'.repeat(30));
+         // ^\w*$  出现0次或多次 数字、字母、_
+         let reg12 = /^\w*$/
+        console.log(reg12.test('aa'));
+        console.log(reg12.test('1asdf'));
+        console.log(reg12.test('1as-df'));
+
+        console.log('-'.repeat(30));
+         // ^\W*$  出现0次或多次 非数字、字母、_
+         let reg13 = /^\W*$/
+        console.log(reg13.test('aa'));
+        console.log(reg13.test('--'));
+        console.log(reg13.test('@'));
+
+
+        console.log('-'.repeat(30));
+         // ^\D*$  出现0次或多次 非数字
+         let reg14 = /^\D*$/
+        console.log(reg14.test('aa'));
+        console.log(reg14.test('11'));
+
+        console.log('-'.repeat(30));
+         // ^\.$  
+         let reg15 = /^\.$/
+        console.log(reg15.test('.'));
+        console.log(reg15.test('11'));
+
+        console.log('-'.repeat(30));
+         // ^[a-eA-E]$  abcde/ABCDE中某字符
+         let reg16 = /^[a-eA-E]$/
+        console.log(reg16.test('a'));
+        console.log(reg16.test('z'));
+        console.log(reg16.test('B'));
+        console.log(reg16.test('h'));
+
+
+        console.log('-'.repeat(30));
+         // ^a$/i  a/A
+         let reg17 = /^a$/i
+        console.log(reg17.test('a'));
+        console.log(reg17.test('A'));
+
+        console.log('-'.repeat(30));
+        let key = 's'
+        let reg18 = new RegExp(key,'g')
+        // console.log('simon say hi'.replace(/+key+/g,'$'));
+        console.log('simon say hi'.replace(reg18,'$'));
+
+        console.log('-'.repeat(30));
+        //验证手机号
+        let reg19 = /^1(38|58|37|48|99|53|50)\d{8}$/
+        console.log(reg19.test('1213123131'));
+        console.log(reg19.test('13800000123'));
+        console.log(reg19.test('15890909090'));
+    
+        console.log('-'.repeat(30));
+        //验证中文
+        let reg20 = /^[\u4e00-\u9fa5]$/
+        console.log(reg20.test('李'));
+        console.log(reg20.test('韩'));
+        console.log(reg20.test('a'));
+        console.log(reg20.test('안녕하쎄요~'));
+
+
+        console.log('-'.repeat(30));
+        //开头
+        console.log('simon say hi'.replace('s','$'));
+        //全部相应字母
+        console.log('simon say hi'.replace(/s/g,'$'));
+
+
+
+      
+    </script>
+</body>
+
+</html>
