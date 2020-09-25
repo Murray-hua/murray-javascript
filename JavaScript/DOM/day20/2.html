@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+    </ul>
+    <script>
+        //创建对象
+        let ajax = new XMLHttpRequest()
+        // 打开通道，进行请求设置
+        ajax.open('GET', 'http://service.envicloud.cn:8082/v2/weatherforecast/YWNLMTYWMTAXOTYWNDQ4NQ==/101190101', true)
+        // 发送请求
+        ajax.send()
+        // 监听状态，获取响应
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState === 4 && ajax.status === 200) {
+                // console.log(ajax.response); //response 请求返回
+                // console.log(JSON.parse(ajax.response)); //json=>js
+                let data = JSON.parse(ajax.response)
+                console.log(data);
+                data.forecast.forEach(r => {
+                    let li = document.createElement('li')
+                    li.innerHTML = `${r.date}--温度: ${r.tmp.min}~${r.tmp.max}`
+                    list.appendChild(li)
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+    </ul>
+    <input type="text" id="input">
+    <button id="search">搜索</button>
+    <script>
+            // let input = document.querySelector('#input')
+            // let search = document.querySelector('#search')
+        //根据城市名称获取城市编号
+        let ajax1 = new XMLHttpRequest()
+        // 打开通道，进行请求设置
+        ajax1.open('GET', 'http://service.envicloud.cn:8082/v2/citycode/YWNLMTYWMTAXOTYWNDQ4NQ==/徐州', true)
+        // 发送请求
+        ajax1.send()
+        // 监听状态，获取响应
+        ajax1.onreadystatechange = function () {
+            if (ajax1.readyState === 4 && ajax1.status === 200) {
+                // console.log(ajax.response); //response 请求返回
+                // console.log(JSON.parse(ajax.response)); //json=>js
+                let data = JSON.parse(ajax1.response)
+                console.log(data.citycode);
+
+                //根据城市编号获取天气信息
+                let ajax = new XMLHttpRequest()
+                // 打开通道，进行请求设置
+                ajax.open('GET', 'http://service.envicloud.cn:8082/v2/weatherforecast/YWNLMTYWMTAXOTYWNDQ4NQ==/' + data.citycode, true)
+                // 发送请求
+                ajax.send()
+                // 监听状态，获取响应
+                ajax.onreadystatechange = function () {
+                    if (ajax.readyState === 4 && ajax.status === 200) {
+                        let data = JSON.parse(ajax.response)
+                        console.log(data);
+                        data.forecast.forEach(r => {
+                            let li = document.createElement('li')
+                            li.innerHTML = `${r.date}--温度: ${r.tmp.min}~${r.tmp.max}`
+                            list.appendChild(li)
+                        })
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
