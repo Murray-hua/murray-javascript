@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function removeCookie(key) {
+            setCookie(key, null, -1)
+        }
+
+        function getCookie(key) {
+            let arr = document.cookie.split(';')
+            for (let i = 0; i < arr.length; i++) {
+                let kv = arr[i].split('=')
+                if (kv[0] === key)
+                    return kv[1]
+
+            }
+        }
+
+        function setCookie(key, val, date) {
+            let now = new Date()
+            now.setDate(now.getDate() + date)
+            document.cookie = key + '=' + val + ';expires=' + now.toUTCString()
+        }
+        // setCookie('a', 10, 3)
+        // setCookie('b', 20, 5)
+        // setCookie('c', 30, 15)
+
+        // console.log(getCookie('b'));
+        // console.log(getCookie('a'));
+        // console.log(getCookie('c'));
+
+        removeCookie('a')
+        removeCookie('b')
+    </script>
+</body>
+
+</html>

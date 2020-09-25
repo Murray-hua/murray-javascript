@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = 'kw33';
+        // console.log(str.charAt(0)); //k
+        // 根据下标找元素
+        // console.log(str.charAt(1)); //w
+        // 根据下标找元素的Unicode编码
+        console.log(str.charCodeAt(1)); //
+
+        // a-z => 97-122
+        // A-Z => 65-90
+        // 0-9 
+        console.log('a'.charCodeAt(0));
+
+        // alert('清华' > '北大') //true
+        // alert('王东' > '温志豪') //true
+        // alert('王东' > '周洋') //true
+        // alert('王东' > '刘轩') //true
+
+
+        console.log('王东'.charCodeAt(0)); //编码29579
+
+
+        //根据Unicode编码获取对应的字符
+        console.log(String.fromCharCode(29579)); //‘王’
+    </script>
+</body>
+
+</html>
