@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = 'kw33';
+        // 根据下标找元素
+        // console.log(str.charAt(1));
+        // 根据下标找元素的Unicode编码
+        // console.log(str.charCodeAt(0));
+
+        // a-z => 97-122
+        // A-Z => 65-90
+        // 0-9 => 48-57
+        // console.log('9'.charCodeAt(0));
+
+        // Unicode：49-49-48
+
+        // alert('清华' > "北大") // true
+        // alert('王东' > "温志豪") // true
+        // alert('王东' > "周洋") // true
+        // alert('王东' > "刘轩") // true
+
+        // console.log('北大'.charCodeAt(0)); // 28165  21271
+        // console.log('王东'.charCodeAt(0)); // 29579
+        // console.log('温志豪'.charCodeAt(0)); // 28201
+        // console.log('周洋'.charCodeAt(0)); // 21608
+        // console.log('刘轩'.charCodeAt(0)); // 21016
+
+        // 根据Unicode编码获取对应的字符
+        console.log(String.fromCharCode(29579)); // '王'
+
+    </script>
+</body>
+</html>

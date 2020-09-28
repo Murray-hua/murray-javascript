@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let arr = [['张三','李四','王五'],[100, 200],['a','b','c','d']];
+
+         for (let i = 0; i < arr.length; i++) {
+             for (let j = 0; j < arr[i].length; j++) {
+                 console.log(arr[i][j]);
+             }
+         }
+
+        //  外层循环走一次，内层循环走一遍
+        //  i=0, 0<3 
+                // j=0, j<3 => arr[0][0]
+        //  i=0, 0<3 
+                // j=1, 1<3 => arr[0][1]
+        //  i=0, 0<3 
+                // j=2, 2<3 => arr[0][2]
+        //  i=0, 0<3 
+                // j=3, 3<3 停止
+        //  i=1, 1<3 
+                // j=0, 0<3 => arr[1][0]
+        // ...
+    </script>
+</body>
+</html>

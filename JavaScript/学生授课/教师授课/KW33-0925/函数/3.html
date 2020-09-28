@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数传参
+        // 形参：形式上的参数
+        // 实参：调用时传的实际的参数
+        function fn(a,b){ // a => 形参
+            alert(a+b)
+        }
+        // fn(10086,10010); // 10086 => 实参
+
+        function fn2(str){
+            console.log(str.charAt(1));
+        }
+        fn2('hello')
+
+        function fn3(obj) {
+            let result = obj.map(item => item+1)
+            console.log(result);
+        }
+        fn3([1,2,3])
+
+        function fn4(para) {
+            if (typeof para == "string") {
+                console.log(para.split(''));
+            } else if(typeof para == "number"){
+                console.log(para+100);
+            } else if (typeof para == "object"){
+                console.log(para);
+            }
+        }
+        fn4(100)
+        fn4('javascipt')
+        fn4({a:1})
+    </script>
+</body>
+</html>

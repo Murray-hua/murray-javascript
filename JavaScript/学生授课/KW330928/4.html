@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>价格: <span id="span1"></span>元</h1>
+    <script>
+        // return 语句终止函数的执行，并返回一个指定的值给函数调用者
+        // function sum(a, b) {
+        //     console.log(a + b);
+        //     let mysum = a + b;
+        //     document.document.querSelector('#span1').innerHTML = mysum
+        // }
+        // sum(100, 200)
+
+        // 函数名() == return 后面的东西
+        // return 后面的值可以是任何数据类型
+        function sum(a, b) {
+            return a + b;
+        }
+        alert(sum(100, 200))
+
+        let mysum = sum(100,200)
+
+        document.querySelector('#span1').innerHTML = mysum
+    </script>
+</body>
+
+</html>

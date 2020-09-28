@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- slice(start,end) 截取数组中的元素；不操作数组本身，（字符串也有这个方法，用法一样,但是数组没有substring方法）
+返回start（包含）到end（不包含）之间的元素组成的数组，位置从0开始
+如果start大于或等于end，返回一个空数组
+如果只有一个参数，则默认为start，则返回start（包含）到数组的末尾
+如果值为负数，会被当做  数组长度+负数 处理 -->
+
+<script>
+    let arr = ['a','b','c','d','e','f']
+    console.log(arr.slice(3,5)); // ['d','e']
+    console.log(arr.slice(5,3)); // []
+    console.log(arr.slice(5,5)); // []
+    console.log(arr.slice(3)); // ["d", "e", "f"]
+    console.log(arr.slice(-5,-3)); // 1,3
+
+    let str = "实践是检验真理的唯一标准"
+    console.log(str.slice(2,7)); // 是检验真理
+    console.log(str.slice(7,2)); // ""
+    console.log(str.slice(-3)); // 一标准
+    console.log(str.substring(2,7)); // // 是检验真理
+    console.log(str.substring(7,2)); // // 是检验真理 , 会调换位置
+    console.log(str.substring(-3)); // // 是检验真理 , 负数当作0处理
+</script>
+
+
+</body>
+</html>

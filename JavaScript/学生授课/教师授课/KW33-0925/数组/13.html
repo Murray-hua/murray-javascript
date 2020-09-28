@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // reduce(), (累加求和)每次把回调函数的返回值进行累计处理的结果，将其结果汇总为单个返回值。
+        let arr = [1,3,5,6,8];
+        // 求和？
+        // let sum = 0;
+        // for (let i = 0; i < arr.length; i++) {
+        //     sum += arr[i];
+        // }
+        // console.log(sum);
+
+        // let sum = arr.reduce(function(a,b){
+        //     console.log(a,b);
+        //     return a+b;
+        // });
+        let sum = arr.reduce(function(a,b){
+            console.log(a,b);
+            return a+b;
+        }, 100);
+        console.log(sum);
+    </script>
+</body>
+</html>

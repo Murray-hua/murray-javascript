@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [11,25,36,43,59]
+        // 判断arr是否有一个大于50？
+        // 判断arr是否都小于10？
+        let result = arr.some(function(item){
+            return item > 50
+        })
+        console.log(result);
+        let result2 = arr.every(item => item < 10)
+        console.log(result2);
+        let result3 = arr.filter(item => item > 30)
+        console.log(result3);
+        
+    </script>
+</body>
+</html>

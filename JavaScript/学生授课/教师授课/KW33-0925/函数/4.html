@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 每创建一个函数，该函数就会隐式创建一个arguments对象，它包含了当前函数的所有实参。
+        // function fn(){
+        //     console.log(arguments);
+        //     console.log(arguments.length);
+        //     console.log(arguments[0]);
+        //     let sum = 0;
+        //     for (let i = 0; i < arguments.length; i++) {
+        //         sum += arguments[i]
+        //     }
+        //     console.log(sum);
+        // }
+        // fn(100,300,400,500)
+
+        // 剩余参数： ...rest
+        function fn(...rest){
+            console.log(rest); // [100, 300, 400, 500]
+            let result = rest.reduce((a,b) => {
+                return a+b;
+            })
+            console.log(result);
+        }
+        fn(100,300,400,500)
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        function say() {
+            alert("大家好，上午好！");
+        }
+        // 调用函数方法：
+        // 1，函数名+小括号
+        // say();
+
+        // 2.通过事件调用函数
+        let btn = document.querySelector('#btn');
+        btn.onclick = say; 
+
+        // 3，函数的自调用
+        // (function() {
+        //     alert("我是一个函数")
+        // })()
+
+        // 4，通过函数的apply或call或bind方法调用
+        function myfn(){
+            alert('中博你好')
+        };
+        // myfn.apply();
+        // myfn.call();
+        // let newfn = myfn.bind();
+        // newfn();
+
+    </script>
+</body>
+</html>

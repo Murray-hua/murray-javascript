@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // NaN not a number : 当程序中出现了非法运算时会出现NaN
+        // 1-"1px" , 5*"你好": NaN
+        function fn(x, y, z, a) {
+            console.log(x + y + z + a);
+        }
+        fn(1, 3, 6)
+        // 见名知意  rest剩余部分
+        function fn(...abc) {
+            console.log(abc);
+        }
+        fn(1, 3, 6)
+
+        
+
+
+
+    </script>
+</body>
+
+</html>
