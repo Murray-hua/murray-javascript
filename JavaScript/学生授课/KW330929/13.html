@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            font-size: 14px;
+        }
+
+        .nav {
+            width: 200px;
+            height: 50px;
+            border: 1px solid #ccc;
+            margin: 50px auto;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav>a {
+            text-align: center;
+            display: block;
+            line-height: 50px;
+        }
+
+        .nav>a:hover {
+            color: red;
+
+        }
+
+        .list {
+            display: none;
+            width: 200px;
+            border: 1px solid #ccc;
+        }
+
+        .list li {
+            line-height: 40px;
+            text-align: center;
+            border-bottom: 1px dashed #fff;
+        }
+
+        .list li:hover {
+            background-color: #ccc;
+        }
+
+        .list li:last-of-type {
+            border-bottom: none;
+        }
+
+        .list li a {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <a href="#">千牛卖家中心</a>
+        <ul class="list">
+            <li><a href="#">免费开店</a></li>
+            <li><a href="#">免费开店</a></li>
+            <li><a href="#">免费开店</a></li>
+            <li><a href="#">免费开店</a></li>
+
+        </ul>
+    </div>
+
+    <script>
+        let myNav = document.querySelector('.nav');
+        let myList = document.querySelector('.list');
+
+        // myNav.onclick = function () {
+        //     if (myList.style.display == "block") {
+        //         myList.style.display = "onne"
+        //     }else{
+        //         myList.style.display = "block"
+        //     }
+        // }
+        let onOff = true;
+        myNav.onclick = function () {
+            if (onOff) {
+                myList.style.display = "block"
+            } else {
+                myList.style.display = "onne"
+            }
+            onOff = !onOff
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 50px
+        }
+
+        button {
+            padding: 5px 20px;
+        }
+
+        #txt {
+            font-size: 15px;
+            width: 800px;
+            height: 800px;
+        }
+
+        .yellow {
+            background-color: yellow;
+            color: red;
+        }
+
+        .red {
+            background-color: red;
+            color: yellow;
+        }
+
+        .black {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <button>大</button>
+    <button>小</button>
+    <button>红</button>
+    <button>黄</button>
+    <button>黑</button>
+    <p id="txt" class="yellow red">
+        呢，这个字体颜色呢，哪个什么红色号背景对吧背景是号颜色是红，红桂花糖糖啊，然后我们给
+        他叫yellow，然后他孙子就有了，就有了吧没有，然后呢，我再把它复制一个。然后把它反过来
+        就叫瑞的，这个叫一样。然后呢刷新一下号，然后呢，我给他变成一个red，然后刷新是吧OK这也就
+        有了，那我现在。不是。对吧，那是不是第3个按钮？一天s第3个就下班了一起啊，下面有没有也给他
+        做一个合理的吧。当一个牌子怎么给他加课了啊？加快了谁量的方法。天气，一个是天津的卡司吗？他
+        在等，等一下，这是一个方面。刷新，给我点明了吧，那再点黄色的，那所以呢咱们就可以把它复制。黄
+        色的是第3个案例，就是给人家另外一个开发商，那我刷下，点开了吧，但还有一种方法，除了这种价格的
+        方法，是不是还有一种这是叫TNT点，累死了点是吧，这个是啥？对吧，那你这个这个其实不太方便。在这
+        点的话你说还把基础梁对吧，之前呢还要引出来。是最佳，你现在要加个v的，这个价位的，这个价格让他
+        放在一起来那两个都讲了，咱们来看一下。对点是吧，他们两个都讲了。所以呢，你这个地方还得每次还要
+        移除，但我这里是不是只想每次只要一个呀，所以这就是这就是这两个不同，不同之处，这里呢，其实这里
+        用这个更合适一点，当你需要的时候你在用，但你不需要追加的时候，你就用克丝奈来再刷新一下，是不是
+        有一个yellow？是不是有一个他不会追加上去，他是替换把你之前的替换掉。然后呢，这个我就会带着大家
+        做，大家自己把它做一下。自己动手敲一会儿吧，等一下我在再讲一遍，还有。我已经过了，还有个啥呢，还
+        有一个顶级的，你要点出来点点，对吧，类似于淘宝网。他往那上面是一个下拉菜单，可以把这个做，你坚持
+        做不用想，现在也不错。好。嗯
+
+        
+    </p>
+
+
+    <script>
+
+        let btns = document.querySelectorAll('button');
+        let txt = document.querySelector('#txt');
+        let num = 16;
+        btns[0].onclick = function () {
+            if (num >= 30) {
+                alert('哥们，别点了，够大了');
+            } else {
+                num++
+                txt.style.fontSize = num + 'px'
+            }
+            console.log(num);
+        }
+
+        btns[1].onclick = function () {
+            if (num <= 10) {
+                alert('哥们，别点了，再小就看不清了')
+            } else {
+                num--
+                txt.style.fontSize = num + 'px'
+            }
+            console.log(num);
+        }
+
+        btns[2].onclick = function () {
+            txt.className = 'yellow'
+            // txt.classList.add = ('yellow')
+        }
+        btns[3].onclick = function () {
+            txt.className = 'red'
+            // txt.classList.add = ('red')
+        }
+        btns[4].onclick = function () {
+            txt.className = 'black'
+            // txt.classList.add = ('red')
+        }
+
+
+    </script>
+</body>
+
+</html>

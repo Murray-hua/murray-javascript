@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .box {
+            width: 300px;
+            height: 300px;
+            border-color: orangered;
+            padding: 20px;
+            border: 5px solid blue;
+        } */
+
+
+        .box {
+            width: 300px;
+            height: 300px;
+            border-color: orangered;
+            padding: 20px;
+            border: 5px solid blue;
+            overflow: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" style="color: red;">
+
+    </div>
+    <script>
+        let mybox = document.querySelector('.box')
+
+        // 只能获取style行内式的宽高
+        console.log(mybox.style.width);
+
+        //computed 过去式：估计、计算
+        //  getComputedStyle(obj) 可以获取行间样式和样式表里的css属性
+        console.log(getComputedStyle(mybox).width); //300px
+        console.log(getComputedStyle(mybox).color); //
+        console.log(getComputedStyle(mybox).padding);
+
+ 
+        console.log(mybox.clientWidth); //340=>width+padding(左右)
+
+
+        console.log(mybox.offsetWidth); //350=>width+padding+border
+        console.log(mybox.offsetHeight); //350=>Height+padding+border
+
+        console.log(mybox.scrollHeight); //760 =>height+padding +溢出部分
+    </script>
+</body>
+
+</html>

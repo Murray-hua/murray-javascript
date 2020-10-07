@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 50px
+        }
+
+        button {
+            padding: 5px 20px;
+        }
+
+        #txt {
+            font-size: 14px;
+        }
+
+        .yellow {
+            background-color: yellow;
+            color: red;
+        }
+
+        .red {
+            background-color: red;
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <button>大</button>
+    <button>小</button>
+    <button>红</button>
+    <button>黄</button>
+    <p id="txt" class="yellow red">sdfasddddddddddddddddddddddddffffffffffffffffffffffffffffffffffffffffffffffffffffffsf</p>
+
+
+    <script>
+        let btns = document.querySelector('button')
+        let txt = document.querySelector('#txt')
+        let txt = document.querySelector('#txt')
+        let txt = document.querySelector('#txt')
+
+        let sum = 14;
+        btns[0].onclick = function () {
+            num++
+            if (num >= 30) {
+                alert('哥们，别点了，够大了')
+                num = 30
+            } else {
+                txt.style.fontSize = num + 'px'
+
+            }
+        }
+
+        btns[1].onclick = function () {
+            num--
+            if (num <= 10) {
+                alert('哥们，别点了，再小就看不清了')
+                num = 10
+            } else {
+                txt.style.fontSize = num + 'px'
+            }
+        }
+
+        btns[2].onclick = function () {
+            txt.className ='yellow'
+            // txt.classList.add = ('yellow')
+        }
+        btns[3].onclick = function () {
+            txt.className = 'red'
+            // txt.classList.add = ('red')
+
+        }
+    </script>
+</body>
+
+</html>
