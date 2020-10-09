@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let num = 1;
+        // function add(){
+        //     num++;
+        //     console.log(num);
+        // }
+        // add(); // 2
+        // add(); // 3
+
+
+        // 闭包
+        function add() {
+            let num = 1;
+            function sonfn() {
+                num++;
+                console.log(num);
+            }
+            return sonfn
+        }
+        
+        let myfn = add();
+        myfn();
+        myfn();
+        myfn();
+        myfn();
+
+
+    </script>
+</body>
+
+</html>

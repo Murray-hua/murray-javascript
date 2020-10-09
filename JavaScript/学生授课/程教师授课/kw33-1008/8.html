@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建对象方法四：构造函数（掌握）
+
+        function God(pname,pweapon,paddress){
+            this.name = pname;
+            this.weapon = pweapon;
+            this.address = paddress;
+            this.intro = function(){
+                console.log('我叫' + this.name + '，我住在' + this.address);
+            }
+        }
+
+        let p1 = new God('猪八戒','九齿钉耙','天河')
+        console.log(p1.name);
+        console.log(p1.address);
+        p1.intro()
+
+        let p2 = new God('孙悟空','金箍棒','花果山')
+        console.log(p2.name);
+        console.log(p2.address);
+        p2.intro()
+
+        // let p3 = Person("白骨精",'骨头剑','荒山野岭')
+        // p3.intro()
+
+        // 可以看出类型
+        // 判断对象的具体类型：instanceof
+        console.log(p1 instanceof Object); // true
+        console.log(p1 instanceof God); // true
+
+        function Monster(pname,pweapon,paddress){
+            this.name = pname;
+            this.weapon = pweapon;
+            this.address = paddress;
+            this.intro = function(){
+                console.log('我叫' + this.name + '，我住在' + this.address);
+            }
+        }
+        let m1 = new Monster("白骨精",'骨头剑','荒山野岭')
+        console.log(m1.name);
+        console.log(m1.address);
+        m1.intro()
+
+        console.log(m1 instanceof Object); // true
+        console.log(m1 instanceof God); // false
+        console.log(m1 instanceof Monster); // true
+
+        // 打印对象的构造函数：
+        // ƒ Array() { [native code] }
+        console.log( [1].constructor );
+        console.log( [1] instanceof Array );
+
+        let str = new String('abc')
+        // ƒ String() { [native code] }
+        console.log(str.constructor);
+        console.log( str instanceof String );
+        
+        // 创建对象方法四：原型
+    </script>
+</body>
+</html>

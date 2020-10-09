@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 预解析：var声明的变量 和 函数声明
+        //  function a() { console.log(4); }
+        // -----------------
+        // 预解析走完开始执行代码，表达式可以修改预解析的值
+        console.log(a); // function a() { console.log(4); }
+        var a = 1;
+        console.log(a); // 1
+        function a() { console.log(2); }
+        console.log(a);  // 1
+        var a = 3;
+        console.log(a); // 3
+        function a() { console.log(4); }
+        console.log(a); // 3
+
+    </script>
+</body>
+</html>

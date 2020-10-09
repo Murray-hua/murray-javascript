@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <h2>我也要让它显示</h2>
+    <div class="box"></div>
+    <script>
+        let btn = document.querySelector('#btn');
+        let box = document.querySelector('.box');
+        let h2 = document.querySelector('h2');
+        
+        // 有名字的函数
+        // function show(){
+        //     box.style.display = "block"
+        // }
+
+        // btn.onclick = show;
+        // h2.onclick = show;
+
+        // 匿名函数
+        btn.onclick = function(){
+            box.style.display = "block"
+        }
+        h2.onclick = function(){
+            box.style.display = "block"
+        }
+
+        
+    </script>
+</body>
+</html>

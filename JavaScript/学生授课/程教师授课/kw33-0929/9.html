@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding: 50px;
+        }
+        button {
+            padding: 5px 20px;
+        }
+        #txt {
+            font-size: 16px;
+        }
+        .yellow {
+            background-color: yellow;
+            color: red;
+        }
+        .red {
+            background-color: red;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <button>大</button>
+    <button>小</button>
+    <button>红</button>
+    <button>黄</button>
+    <p id="txt">从创立之初,百度便将“让人们最平等便捷地获取信息,找到所求”作为自己的使命,成立以来,公司秉承“用户至上”的 理念,不断坚持技术创新,致力于为用户提供“简单可依赖”的互联网搜索产品及服务,其中包括:以网络搜索为主的功能 性搜索;以贴吧为主的社区搜索,针对各区域、行业所需的垂直搜索;以及门户频道、IM等,全面覆盖了中文网络世界所有 的搜索需求。根据第三方权威数据,在中国,百度PC端和移动端市场份额总量达73.5%,覆盖了中国97.5%的网 民,拥有6亿用户,日均响应搜索60亿次。</p>
+
+    <script>
+        let btns = document.querySelectorAll('button');
+        let txt = document.querySelector('#txt');
+        let num = 16;
+        btns[0].onclick = function(){
+            if (num >= 30) {
+                alert("哥们，别点了，够大了");
+            } else {
+                num++
+                txt.style.fontSize = num + 'px'
+            }
+            console.log(num);
+        }
+        btns[1].onclick = function(){
+            if (num <= 12) {
+                alert("哥们，别点了，再小就看不清了");
+            } else {
+                num--
+                txt.style.fontSize = num + 'px'
+            }
+            console.log(num);
+        }
+
+        btns[2].onclick = function(){
+            txt.className = "yellow"
+            // txt.classList.add('yellow')
+        }
+        btns[3].onclick = function(){
+            txt.className = "red"
+            // txt.classList.add('red')
+        }
+    </script>
+</body>
+</html>

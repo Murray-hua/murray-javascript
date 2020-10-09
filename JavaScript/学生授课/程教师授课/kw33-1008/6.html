@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建对象方法二：对象字面量(推荐)
+        let person = {
+            name: '李四',
+            age: 19,
+            gender: '女',
+            play: function(){
+                alert('我会踢足球')
+            },
+            learn: function(){
+                console.log('我喜欢学前端');
+            }
+        };
+        console.log( person.name );
+        console.log( person['age'] );
+        person.play();
+        person.learn();
+
+
+        // 
+    </script>
+</body>
+</html>

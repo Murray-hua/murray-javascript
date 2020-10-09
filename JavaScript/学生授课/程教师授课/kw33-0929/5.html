@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        我是一个小太阳
+    </div>
+    <input type="text" > <button>提交</button>
+    <script>
+        let btn = document.querySelector('button');
+        let txt = document.querySelector('input');
+        btn.onclick = function(){
+            alert(txt.value)
+            txt.value = ""
+        }
+
+        let mybox = document.querySelector('#box');
+        console.log( mybox.innerHTML );
+        // mybox.innerHTML = "<h1 style='color:red'>啦啦啦~</h1>"
+        mybox.innerText = "<h1 style='color:red'>啦啦啦~</h1>"
+        
+    </script>
+</body>
+</html>

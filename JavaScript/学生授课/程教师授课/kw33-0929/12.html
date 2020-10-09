@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 14px;
+        }
+
+        .nav {
+            width: 200px;
+            height: 50px;
+            border: 1px solid #ccc;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .nav>a {
+            text-align: center;
+            display: block;
+            line-height: 50px;
+        }
+
+        .nav>a:hover {
+            color: red;
+        }
+
+        .list {
+            position: absolute;
+            top: 50px;
+            left: -1px;
+            display: none;
+            width: 200px;
+            border: 1px solid #ccc;
+            z-index: 10000000000;
+            background-color: #fff;
+        }
+
+        .list li {
+            line-height: 40px;
+            text-align: center;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .list li:last-of-type {
+            border-bottom: none;
+        }
+
+        .list li a {
+            display: block;
+        }
+
+        .list li:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <a href="#">千牛卖家中心</a>
+        <ul class="list">
+            <li><a href="#">免费开店</a></li>
+            <li><a href="#">免费开店</a></li>
+            <li><a href="#">免费开店</a></li>
+            <li><a href="#">免费开店</a></li>
+            <li><a href="#">免费开店</a></li>
+        </ul>
+    </div>
+<p>新冠肺炎疫情在全球蔓延，我国外贸外资发展前景如何？怎样稳住外贸外资基本盘？构建新发展格局对稳外贸稳外资工作提出了哪些要求？记者采访了商务部国际贸易经济合作研究院院长顾学明。</p>
+<p>新冠肺炎疫情在全球蔓延，我国外贸外资发展前景如何？怎样稳住外贸外资基本盘？构建新发展格局对稳外贸稳外资工作提出了哪些要求？记者采访了商务部国际贸易经济合作研究院院长顾学明。</p>
+<p>新冠肺炎疫情在全球蔓延，我国外贸外资发展前景如何？怎样稳住外贸外资基本盘？构建新发展格局对稳外贸稳外资工作提出了哪些要求？记者采访了商务部国际贸易经济合作研究院院长顾学明。</p>
+
+    <script>
+        let myNav = document.querySelector('.nav');
+        let myList = document.querySelector('.list');
+        
+        // myNav.onclick = function(){
+        //     if (myList.style.display == "block") {
+        //         myList.style.display = "none"
+        //     } else {
+        //         myList.style.display = "block"
+        //     }
+        // }
+
+        let onOff = true;
+        myNav.onclick = function(){
+            if (onOff) {
+                myList.style.display = "block"
+            } else {
+                myList.style.display = "none"
+            }
+            onOff = !onOff;
+        }
+    </script>
+</body>
+
+</html>

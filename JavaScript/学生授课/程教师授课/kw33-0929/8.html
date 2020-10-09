@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            user-select: none;
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 5px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px;
+            line-height: 30px;
+            overflow: auto;
+        }
+        #username {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <span id="username">猪八戒：</span>
+    <input type="text" id="txt">
+    <button id="send">发送</button>
+
+    <script>
+        let btn = document.querySelector('#send');
+        let box = document.querySelector('.box');
+        let txt = document.querySelector('#txt');
+        let myspan = document.querySelector('#username');
+
+        let kg = true;
+        myspan.onclick = function(){
+            if (kg) {
+                myspan.innerHTML = "孙悟空："
+            } else {
+                myspan.innerHTML = "猪八戒："
+            }
+            kg = !kg;
+        }
+
+        btn.onclick = function () {
+            if (txt.value == "") {
+                alert("不能发送空消息！")
+            } else {
+                box.innerHTML += myspan.innerHTML + txt.value + "<br>"
+                txt.value = ""
+                box.scrollTop = box.scrollHeight - box.offsetHeight;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

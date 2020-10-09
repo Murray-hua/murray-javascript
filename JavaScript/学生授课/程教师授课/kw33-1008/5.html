@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建对象的方法:
+        // 方法一：new方法
+        let person = new Object();
+        // 通过点方式给对象添加属性或方法
+        person.name = "张三",
+        person.age = 18;
+        person.play = function(){
+            alert('我会打篮球！')
+        }
+        console.log(person);
+        console.log(person.name);
+        console.log(person.age);
+        person.play()
+
+        // 通过中括号添加属性或方法
+        person['gender'] = '男'
+        console.log(person['gender']);
+        person['eat'] = function(){
+            console.log('我喜欢吃冰激凌');
+        }
+        person['eat']()
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: orangered;
+            padding: 20px;
+            border: 5px solid blue;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>
+            新冠肺炎疫情在全球蔓延，我国外贸外资发展前景如何？怎样稳住外贸外资基本盘？构建新发展格局对稳外贸稳外资工作提出了哪些要求？记者采访了商务部国际贸易经济合作研究院院长顾学明。
+        </p>
+        <p>
+            新冠肺炎疫情在全球蔓延，我国外贸外资发展前景如何？怎样稳住外贸外资基本盘？构建新发展格局对稳外贸稳外资工作提出了哪些要求？记者采访了商务部国际贸易经济合作研究院院长顾学明。
+        </p>
+        <p>
+            新冠肺炎疫情在全球蔓延，我国外贸外资发展前景如何？怎样稳住外贸外资基本盘？构建新发展格局对稳外贸稳外资工作提出了哪些要求？记者采访了商务部国际贸易经济合作研究院院长顾学明。
+        </p>
+        <p>
+            新冠肺炎疫情在全球蔓延，我国外贸外资发展前景如何？怎样稳住外贸外资基本盘？构建新发展格局对稳外贸稳外资工作提出了哪些要求？记者采访了商务部国际贸易经济合作研究院院长顾学明。
+        </p>
+        <p>
+            新冠肺炎疫情在全球蔓延，我国外贸外资发展前景如何？怎样稳住外贸外资基本盘？构建新发展格局对稳外贸稳外资工作提出了哪些要求？记者采访了商务部国际贸易经济合作研究院院长顾学明。
+        </p>
+    </div>
+    <script>
+        let mybox = document.querySelector('.box');
+
+        // 只能获取style行内式的宽高
+        console.log(mybox.style.width); // 500px
+
+        // getComputedStyle(obj) 可以获取行间样式和样式表里的css属性
+        console.log( getComputedStyle(mybox).width ); // 300px
+        console.log( getComputedStyle(mybox).color ); 
+
+        console.log( mybox.clientWidth ); // 340 => width+padding
+
+        console.log(mybox.offsetWidth); // 350 => width+padding+border
+        console.log(mybox.offsetHeight); // 350 => height+padding+border
+
+        console.log(mybox.scrollHeight); // 760 => height+padding+溢出部分
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = 'javascript'
+        String.prototype.reverseString = function(){
+            return this.split("").reverse().join("")
+        }
+        
+
+        let str2 = str.reverseString()
+        console.log(str2);
+
+        let a = 'hello js'
+        console.log( a.reverseString() );
+
+    </script>
+</body>
+</html>

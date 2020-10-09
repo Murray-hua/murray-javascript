@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p = {
+            name: '张三',
+            gender: '男'
+        }
+        console.log(p.gender);
+
+        // 只有对象才可以添加属性或方法
+
+        let str = 'hello';
+        str.gender = "男"
+        console.log(str.gender); // undefined
+
+        // 基本包装对象？Number类型，String类型，Boolean类型都有基本包装对象
+        // let str = new String('hello')
+        // str.length
+        // 销毁创建的基本包装对象
+        console.log( str.length );
+        let result = str.charAt(2);
+        console.log(result);
+
+        let str2 = new String('a');
+        str2.gender ="男"
+        console.log(str2.gender);
+    </script>
+</body>
+</html>

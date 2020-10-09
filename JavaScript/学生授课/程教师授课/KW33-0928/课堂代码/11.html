@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let callback = function(){
+            alert("恭喜您，中了100万")
+        }
+
+        function fn(a){
+            alert(1);
+            setTimeout(() => {
+                a();
+            }, 2000);
+        }
+        fn(callback)
+    </script>
+</body>
+</html>

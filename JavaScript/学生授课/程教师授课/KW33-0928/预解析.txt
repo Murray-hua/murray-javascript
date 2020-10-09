@@ -1,0 +1,147 @@
+1．实例
+<script>
+    console.log(a); //
+    var a = 1;
+</script>
+
+<script>
+    console.log(a); // 
+    a = 1;
+</script>
+
+<script>
+    console.log(a); 
+    var a = 1;
+    console.log(a); // 
+</script>
+
+<script>
+    console.log(a); // 
+    a = 1;
+    console.log(a); // 
+</script>
+
+后面script块中定义的变量和函数不能在前面的script块中使用
+<script>
+    alert(a); // 
+</script>
+
+<script>
+    var a = 1;
+</script>
+
+前面script块中定义的变量和函数可以在后面的script块中使用
+<script>
+    var a = 1;
+</script>
+
+<script>
+    console.log(a); // 
+</script>
+
+
+二、函数的预解析
+JS会对整个script块中的代码进行预解析，把函数声明的整个函数块（函数名称和函数体）提前至作用域的顶部
+函数重名的：只留后一个函数
+变量和函数名重名了，就只留下函数
+如果预解析这一步出现错误：整个script块的代码都不会执行，但是不会影响其他script块的代码
+预解析完毕后，执行代码，表达式可以修改预解析的值，表达式：= + - * / ++ -- %
+如果执行代码这一步错误：只会影响其后代码的执行，不会影响其他script块的代码
+函数执行的时候会对函数中的变量和函数进行预解析
+1．实例
+
+<script>
+    console.log(a); // 
+    var a = 1;
+    console.log(a); // 
+    function a() { console.log(2); }
+    console.log(a); // 
+    var a = 3;
+    console.log(a); // 
+    function a() { console.log(4); }
+    console.log(a); // 
+    a(); // 
+</script>
+
+
+
+<script>
+    var a = 1;
+    function fn() {
+        console.log(a);
+        var a = 2;
+    }
+    fn();
+    console.log(a);
+
+</script>
+
+<script>
+    var a = 1;
+    function fn(a) {
+        console.log(a);
+        a = 2;
+    }
+    fn();
+    console.log(a);
+
+</script>
+
+<script>
+    var a = 1;
+    function fn(a) {
+        console.log(a);
+        a = 2;
+    }
+    fn(a);
+    console.log(a);
+
+</script>
+
+<script>
+    console.log(total);
+    var total = 0;
+    function fn(num1, num2) {
+        console.log(total);
+        total = num1 + num2;
+        console.log(total);
+    }
+    fn(100, 200);
+    console.log(total);
+
+
+</script>
+
+<script>
+    fn(); // 
+    function fn() { console.log(1) }
+    fn(); // 
+    var fn = 10;
+    fn(); // 
+    function fn() { console.log(2) }
+    fn(); // 
+</script>
+
+<script>
+    console.log(num); // 
+    var num = 100;
+    console.log(num); // 
+    fn(num, 200);
+    function fn(num1, num2) {
+        var total = num1 + num2;
+        console.log(total); // 
+    }
+</script>
+
+<script>
+    console.log(foo);
+    foo(); // 
+
+    var foo = function () {
+        alert(1)
+    };
+    function foo(){
+        alert(2)
+    }
+    foo(); // 
+</script>

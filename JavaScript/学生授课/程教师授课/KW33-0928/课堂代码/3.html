@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // NaN not a number : 当程序中出现了非法运算时会出现NaN
+        // 见名知意
+
+        // arguments.length:返回实参的数量
+// arguments.callee:返回当前函数块（就是函数本身）（匿名函数可以使用该属性实现递归调用）
+        function fn(a,...r) {
+            console.log(r);
+            // console.log(arguments.callee);
+        }
+        fn(1,3,6)
+    </script>
+</body>
+</html>

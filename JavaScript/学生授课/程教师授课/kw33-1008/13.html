@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/1.jpg" alt="" id="img1">
+    <script>
+        let myimg = document.querySelector('#img1');
+        let kg = true;
+        myimg.onclick = function(){
+            if (kg) {
+                myimg.src = "images/2.jpg"
+            } else {
+                myimg.src = "images/1.jpg"
+            }
+            kg = !kg;
+        }
+    </script>
+</body>
+</html>

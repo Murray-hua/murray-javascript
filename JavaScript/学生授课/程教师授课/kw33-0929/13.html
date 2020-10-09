@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="txt">
+    <button id="btn">请输入口令</button>
+    <script>
+        let txt = document.querySelector('#txt');
+        let btn = document.querySelector('#btn');
+
+        // btn.onclick = function(){
+        //     if (txt.value === '') {
+        //         alert("输入一点内容吧~")
+        //     } else if (txt.value === 'html') {
+        //         alert("您输入的是html，恭喜口令正确！")
+        //     } else if(txt.value === 'css') {
+        //         alert("您输入的是css，恭喜口令正确！")
+        //     } else if(txt.value === '芝麻开门') {
+        //         alert("您输入的是芝麻开门，恭喜口令正确！")
+        //     } else {
+        //         alert('您输入的是'+ txt.value + '，口令错误，88~')
+        //     }
+        //     txt.value = ""
+        // }
+
+        btn.onclick = function(){
+            switch (txt.value) {
+                case '':
+                alert("输入一点内容吧~")
+                    break;
+                case 'html':
+                alert("您输入的是html，恭喜口令正确！")
+                    break;
+                case 'css':
+                alert("您输入的是css，恭喜口令正确！")
+                    break;
+                default:
+                alert('您输入的是'+ txt.value + '，口令错误，88~')
+                    break;
+            }
+            txt.value = ""
+        }
+
+        
+    </script>
+</body>
+</html>

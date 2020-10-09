@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建对象方法三：工厂模式(了解)
+        function Person(pname,pweapon,paddress){
+            let obj = {};
+            obj.name = pname;
+            obj.weapon = pweapon;
+            obj.address = paddress;
+            obj.intro = function(){
+                console.log('我叫' + this.name + '，我住在' + this.address);
+            }
+            return obj;
+        }
+
+        let p1 = Person('猪八戒','九齿钉耙','天河')
+        console.log(p1.name);
+        console.log(p1.address);
+        p1.intro()
+
+        let p2 = Person('孙悟空','金箍棒','花果山')
+        console.log(p2.name);
+        console.log(p2.address);
+        p2.intro()
+
+        let p3 = Person("白骨精",'骨头剑','荒山野岭')
+        p3.intro()
+
+        // 看不出类型
+        // 判断对象的具体类型：instanceof
+        console.log(p1 instanceof Object);
+        console.log(p3 instanceof Object);
+        console.log( [1] instanceof Array);
+
+        // let p1 = {
+        //     name: '猪八戒',
+        //     weapon: '九齿钉耙',
+        //     address: '天河',
+        //     intro: function(){
+        //         console.log('我叫' + this.name + '，我住在' + this.address);
+        //     }
+        // };
+
+        // let p2 = {
+        //     name: '孙悟空',
+        //     weapon: '金箍棒',
+        //     address: '花果山',
+        //     intro: function(){
+        //         console.log('我叫' + this.name + '，我住在' + this.address);
+        //     }
+        // };
+        // p2.intro()
+
+       
+
+
+        // 创建对象方法四：构造函数
+        // 创建对象方法四：原型
+    </script>
+</body>
+</html>
