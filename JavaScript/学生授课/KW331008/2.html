@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 内联调用事件 -->
+    <button id="btn" onclick="sayHi()">按钮</button>
+
+    <script>
+        let btn = document.querySelector('#btn')
+        // 事件类型方法二： 事件处理器
+        btn.onclick = function () {
+            alert('hello')
+        }
+        // btn.addEventListener('click',function(){
+        //     alert('kw33, do you fun?')
+        // })
+        // 事件类型方法三：
+        btn.addEventListener('mouseover', function () {
+            console.log('kw33, do you fun?');
+        })
+        btn.addEventListener('mouseout', function () {
+            alert('kw33, do you fun?')
+        })
+
+        // document.onmousemove = function(){
+        //     console.log('1');
+        // }
+
+        document.onscroll = function () {
+            console.log('1');
+        }
+
+    </script>
+</body>
+
+</html>
