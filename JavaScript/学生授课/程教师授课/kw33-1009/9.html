@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="start">设置定时炸弹</button>
+    <button class="stop">清除定时炸弹</button>
+    <script>
+        // 见名知意
+        let startBtn = document.querySelector('.start');
+        let stopBtn = document.querySelector('.stop');
+        let timer = null;
+        // 开始按钮的点击事件
+        startBtn.onclick = function(){
+            clearTimeout(timer)
+            console.log("炸弹已经设置，3秒后爆炸！");
+            timer = setTimeout(() => {
+                alert('BOOM!爆炸了')
+            }, 3000);
+        }
+
+        stopBtn.onclick = function(){
+            console.log('炸弹已经清除');
+            clearTimeout(timer)
+        }
+        
+    </script>
+</body>
+</html>

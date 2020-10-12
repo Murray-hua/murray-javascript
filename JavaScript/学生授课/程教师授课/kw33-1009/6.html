@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            display: none;
+        }
+        .red {
+            color: red;
+        }
+        .td {
+            text-decoration: underline;
+        }
+        .font40 {
+            font-size: 40px;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <button>
+        显示
+    </button>
+    <h1 id="mytitle" class="td">我是一个小太阳，天天充满正能量！</h1>
+    <script>
+
+        let myh = document.querySelector('#mytitle');
+        myh.classList.add('red',"font40")
+
+        myh.onclick = function(){
+            myh.classList.remove('td')
+            // toggle => 有则删除，无则添加
+            myh.classList.toggle('red')
+        }
+
+        let kg = true;
+        document.querySelector('button').onclick = function(){
+           if (kg) {
+               myh.style.display = "block"
+           } else {
+            myh.style.display = "none"
+           }
+           kg =!kg;
+        }
+        
+
+        
+    </script>
+</body>
+</html>

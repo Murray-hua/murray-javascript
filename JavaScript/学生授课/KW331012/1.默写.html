@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.获取元素的宽高
+        // 只能获取行内式：
+        obj.style.width
+        obj.style.height
+
+        // 可以获取行内式和样式表：
+        getComputedStyle(obj).width/height
+
+        // 自身宽/高+padding
+        clientWidth/clientHeight
+
+        // 自身宽/高+padding + border
+        offsetWidth/offsetHeight 
+
+        // 自身宽/高+padding + border + + 溢出部分宽度/高度
+        scrollWidth/scrollHeight
+
+        // 获取元素到定位上级的距离
+        offsetLeft / offsetTop
+
+        // -------------------------
+
+        // 滚动条滚动的距离
+        document.documentElement.scrollTop/scrollLeft
+
+        // 操作节点方法（添加，删除，复制）
+        appendChild()  //添加到末尾
+        insertBefore() //添加到指定节点之前
+        cloneNode() //复制节点
+        removeChild()//删除节点
+        replaceChild()//替换节点dad
+
+    </script>
+</body>
+</html>

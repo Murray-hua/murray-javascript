@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // a=1&b=2转换成a:1,b:2的正则？
+        // let str = "a=1&b=2"
+
+        // console.log("a=1&b=2".replace(/[=&]/g, function (match) {
+        //     return match == '=' ? ":" : ","
+        // }));
+
+
+
+        console.log("{a:1,b:2}".replace(/[{}:,]/g, function (match) {
+            return match == '{}' ? " " : "&"
+        }));
+
+
+        // console.log(str.match());
+
+
+        // function stringify(obj) {
+        //     let arr = []
+        //     //for-in遍历对象的所有属性
+        //     for (let key in obj) {
+        //         let val = obj[key]//对象[属性名]=>属性值
+        //         let str = key + '=' + val //a=1 
+        //         arr.push(str);
+        //     }
+        //     return arr.join('&')
+        // }
+
+
+    </script>
+</body>
+
+</html>

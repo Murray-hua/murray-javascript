@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://img30.360buyimg.com/pop/s1180x940_jfs/t1/149303/6/9577/101662/5f72df07Ea3cbdb35/cb99699befac60c8.jpg.webp" alt="" width="500" class="hide">
+    <script>
+        let myimg = document.querySelector('.hide');
+        setTimeout(() => {
+            myimg.style.display = "block"
+            setTimeout(() => {
+                myimg.style.display = "none"
+            }, 2000);
+        }, 3000);
+    </script>
+</body>
+</html>

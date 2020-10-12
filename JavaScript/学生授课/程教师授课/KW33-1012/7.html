@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>橙子</li>
+        <!-- 我是注释 -->
+    </ul>
+
+    <script>
+        let myul = document.querySelector('#list');
+        // 只读，元素类型的子节点集合
+        console.log(myul.children.length);
+        console.log(myul.children);
+        for (let i = 0; i < myul.children.length; i++) {
+            myul.children[i].style.color = 'red'
+        }
+
+        console.log(myul.firstElementChild);
+        console.log(myul.lastElementChild);
+
+        console.log(myul.firstElementChild.nextElementSibling);
+        console.log(myul.lastElementChild.previousElementSibling);
+
+    </script>
+</body>
+</html>

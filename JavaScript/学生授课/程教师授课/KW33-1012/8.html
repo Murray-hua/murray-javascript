@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1,.box2 {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+            <div class="box3"></div>
+        </div>
+    </div>
+    <script>
+        // 元素.offsetParent
+        // 如果上级元素没有定位，父节点是body
+        // 如果上级元素有定位，则父节点offsetParent是离元素最近的一个有定位属性的上级节点 
+        
+        let box3 = document.querySelector('.box3');
+        console.log(box3.offsetParent);
+        
+    </script>
+</body>
+</html>

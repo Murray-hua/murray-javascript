@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+        .qq2 {
+            position: absolute;
+            left: 370px;
+            top:10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/qq.jpg" alt="" width="300" class="qq1">
+    <img src="images/qq2.png" alt="" class="qq2" width="300">
+    <script>
+        let qq1 = document.querySelector('.qq1');
+        let qq2 = document.querySelector('.qq2');
+        let t = null;
+
+        function show(){
+            clearTimeout(t)
+            qq2.style.display = "block"
+        };
+
+        qq1.onmouseover = show;
+        qq2.onmouseover = show;
+        
+        function hide(){
+            t = setTimeout(() => {
+                qq2.style.display = "none"
+            }, 500);
+        }
+        qq1.onmouseout = hide;
+        qq2.onmouseout = hide;
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="start">开始</button>
+    <button id="stop">停止</button>
+    <h1 id="txt">北大青鸟中博软件学院</h1>
+    <script>
+        let start = document.querySelector('#start');
+        let stop = document.querySelector('#stop');
+        let txt = document.querySelector('#txt');
+        
+        let arr = ['red','yellow','blue'];
+        let i = 0;
+        let timer = null;
+
+        start.onclick = function(){
+            // this.disabled = true;
+            // this.style.display = 'none';
+            clearInterval(timer)
+            timer = setInterval(() => {
+                txt.style.color = arr[i]
+                i++
+                if(i>=3){i=0}
+            }, 1000);
+        }
+
+        stop.onclick = function(){
+            clearInterval(timer)
+        }
+
+    </script>
+</body>
+</html>

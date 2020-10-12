@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <p id="myp">一些文字</p>
+    </div>
+
+    <ul id="list">
+        <li>html</li>
+        <li>css</li>
+        <li>javascipt</li>
+    </ul>
+
+    <p class="a">11111</p>
+    <p class="b">2222</p>
+    <p class="a">3333</p>
+    <script>
+        let myp = document.querySelector('.box p');
+        console.log(myp.innerHTML);
+
+        let list = document.querySelector('#list');
+        let myli = list.querySelectorAll('li');
+        // let myli = document.querySelectorAll('#list li');
+        console.log(myli);
+
+        let myp2 = document.querySelectorAll('p.a');
+        console.log(myp2);
+        
+        document.querySelector('.a');
+        
+        
+    </script>
+</body>
+</html>

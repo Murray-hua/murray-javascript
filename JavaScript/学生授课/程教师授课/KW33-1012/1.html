@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 50px;
+        }
+        .box1,.box2,.box3 {
+            padding: 100px;
+        }
+        .box1 {
+            background-color: red;
+            position: relative;
+        }
+        .box2 {
+            background-color: blue;
+            position: relative;
+        }
+        .box3 {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+            <div class="box3">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let mybox3 = document.querySelector('.box3');
+
+        console.log(mybox3.offsetLeft);
+        console.log(mybox3.offsetTop);
+        
+    </script>
+</body>
+</html>

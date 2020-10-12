@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        setInterval(function () {
+            alert('hello')
+        }, 2000)
+
+        setTimeout(function () {
+            alert('hello')
+        }, 2000);
+
+
+        setInterval(() => {
+            alert('hello')
+        }, 2000);
+
+
+
+        let fn = function () {
+            console.log('good study');
+        };
+        setInterval(fn, 1000)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cc {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1 box2 aa b" id="box">
+        一些文字
+    </div>
+    <script>
+        let mybox = document.querySelector('#box');
+        console.log(mybox.classList.length);
+
+        console.log(mybox.classList.contains('aa'));
+        mybox.classList.replace("aa",'cc')
+        
+    </script>
+</body>
+</html>

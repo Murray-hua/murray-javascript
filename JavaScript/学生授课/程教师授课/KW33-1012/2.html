@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 每打开一个浏览器窗口，就会创建一个window对象
+        // window对象的方法和属性，可以省略window，直接调用
+        console.log(window);
+
+        // window.alert(1)
+        // window.confirm()
+        // window.prompt()
+        // window.setInterval(fn,1000)
+        // window.setTimeout(fn,1000)
+
+        // window.location对象包含着当前页面URL的全部信息。
+
+        // location.href 返回当前加载页面的完整URL。
+        console.log(location.href);
+
+        document.onclick = function(){
+            location.href = "http://jd.com"
+        }
+
+        // 返回页面使用的协议。通常是 http: 或 https:
+        console.log(location.protocol);
+
+        // 返回主机地址和端口号（如果有）
+        // 127.0.0.1:5500
+        console.log(location.host);
+
+        // 返回不带端口号的主机地址
+        // 127.0.0.1
+        console.log(location.hostname);
+
+        // 返回 URL 中指定的端口号。
+        // 5500
+        console.log(location.port);
+
+        // 返回URL中的目录（路径名）
+        // /abc/2.html
+        console.log(location.pathname);
+
+        // 返回 URL 中的 hash（#号后跟零或多个字符），
+        // location.hash
+
+        // location.search
+        // '?section=435'
+        // 返回URL的查询字符串。这个字符串以问号开头
+
+    </script>
+</body>
+</html>

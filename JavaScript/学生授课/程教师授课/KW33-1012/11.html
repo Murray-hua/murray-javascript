@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>教育改变生活</h1>
+    <h2>好好学习，天天向上</h2>
+
+    <div class="box">
+        <p>一些文字</p>
+    </div>
+
+    <script>
+        let myh1 = document.querySelector('h1');
+        let myh2 = document.querySelector('h2');
+        let myp = document.querySelector('p');
+        let box = document.querySelector('.box');
+
+        // document.body.appendChild(myh1)
+
+        // insertBefore()
+        // 这个方法有两个参数：要插入的新节点，指示插入位置的节点（插入到这个节点前面）
+        // box.insertBefore(myh1,myp)
+
+        // ③ replaceChild()
+// 可以把父元素现有的一个子节点替换为另一个节点。它有两个参数：一个是新的子节点，一个是现有子节点。
+            // box.replaceChild(myh2,myp)
+
+            // 
+// ④ removeChild()
+// 专门用于从DOM树里删除子节点；返回的是已删除的节点：
+
+box.removeChild(myp)
+        
+    </script>
+</body>
+</html>
