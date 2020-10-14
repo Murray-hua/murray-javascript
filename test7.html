@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        let num = 1
+        let myid = setInterval(() => {
+            num++
+            if (num >= 10) {
+                clearInterval(myid)
+            }
+            console.log(num);
+        }, 1000)
+    </script> -->
+    <h1> </h1>
+    <button id="start">设置定时炸弹</button>
+    <button id="end">在爆炸前停止</button>
+    <script>
+        let h1 = document.querySelector('h1')
+        let start = document.querySelector('#start')
+        let end = document.querySelector('#end')
+        let txt = document.querySelector('#txt')
+        let i = 0
+        h1.innerHTML = 10
+        let timer
+        start.onclick = function () {
+            console.log('定啥炸弹已设置，3秒后爆炸');
+            h1.innerHTML = 10
+            timer = setInterval(() => {
+                if (h1.innerHTML > 0) {
+                    h1.innerHTML = h1.innerHTML - 1
+                } else {
+                    h1.innerHTML = 0
+                }
+            }, 1000);
+
+
+        }
+
+        end.onclick = function () {
+            console.log('炸弹已拆除');
+            clearInterval(timer)
+            // start.disabled=true;
+        }
+    </script>
+</body>
+
+</html>

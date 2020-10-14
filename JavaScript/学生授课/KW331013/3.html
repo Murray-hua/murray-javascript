@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 浮动的盒子脱离文档流，不再占据空间，浮动的盒子层级高半级*/
+        .box {
+            width: 500px;
+            border: 2px solid red;
+            overflow: hidden;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            float: left;
+        }
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            float: left;
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1，空标签清除浮动 ，推荐-->
+    <!-- 2，br标签清除浮动 ， 缺点：产生了一个换行，产生一定的高度-->
+    <!-- 3，给父盒子设置高度， 缺点：限制了高度，扩展性差-->
+    <!-- 4，给父盒子设置浮动, 缺点：影响父盒子后的元素-->
+    <!-- 5，给父盒子设置overflow , 缺点：对需要显示在父盒子外的元素造成影响-->
+    <!-- 6，通过伪元素清除浮动 推荐，没有缺点-->
+    <div class="box clearfix">
+        <div class="box2">我是一个小太阳1</div>
+        <div class="box3">我是一个小太阳2</div>
+    </div>
+
+</body>
+</html>

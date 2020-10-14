@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 设置cookie封装
+        console.log(function setCookie(key, value, expires) {
+            let now = new Date();
+            now.setDate(now.getDate() + expires);
+            document.cookie = `${key} = ${value}; expires= ${now.toUTCString()}`;
+        });
+
+
+        // 提取cookie封装
+        function getCookie() {
+            let obj = {};
+            let cookies = document.cookie.split('; ');
+            cookies.forEach(r => {
+                let kv = r.split('=');
+                let key = kv[0];
+                let val = kv[1];
+                obj[key] = val;
+            });
+            if (key) { return obj[key] }
+            return obj
+        }
+
+        //删除cookie封装
+        console.log(function removeCookie(key) {
+            setCookie(key, null, -1)
+        });
+
+    </script>
+</body>
+
+</html>
