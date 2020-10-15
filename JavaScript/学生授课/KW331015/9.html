@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #ccc;
+        }
+
+        .box {
+            width: 280px;
+            margin: 0 auto;
+        }
+
+        .box img{
+            transition: all 2s;
+            /* x=> left center right number % */
+            /* y=> top center bottom number % */
+            /* z=> number  */
+            /* transform-origin: 50% 50%; */
+            transform-origin: left bottom;
+        }
+        .box img:hover{
+            transform: rotate(60deg);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="" alt="">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "microsoft yahei";
+            font-size: 14px;
+        }
+        .box {
+            width: 700px;
+            min-height: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .post-btn {
+            width: 200px;
+            height: 50px;
+            background-color: rgb(5, 168, 92);
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 3px ;
+            outline: none;
+            cursor: pointer;
+        }
+        .line {
+            margin-top: 10px;
+            height: 1px;
+            background-color: #ccc;
+            border: none;
+        }
+        .list {
+            list-style: none;
+        }
+        .list li {
+            border-bottom: 1px dashed #ccc;
+            padding: 10px 0;
+        }
+        .list li img {
+            width: 70px;
+            border-radius: 50%;
+            float: left;
+            margin-right: 10px;
+        }
+        .list li h3 {
+            margin-top: 5px;
+        }
+        .list li p {
+            margin-top: 10px;
+        }
+        .list li p span {
+            margin-right: 20px;
+        }
+        .list li::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .post-box {
+            width: 600px;
+            height: 400px;
+            border: 1px solid #ccc;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            background-color: #fff;
+            padding: 10px;
+            display: none;
+        }
+        .post-box .txt{
+            width: 500px;
+            height: 40px;
+            border: 1px solid #ccc;
+            padding-left: 20px;
+        }
+        .post-box .ssbk {
+            margin-top: 20px;
+        }
+        .ssbk select {
+            width: 200px;
+            height: 30px;
+        }
+        .post-content {
+            margin-top: 20px;
+        }
+        .post-content textarea {
+            width: 500px;
+            resize: none;
+        }
+        .post-box .fabu-btn {
+            width: 150px;
+            height: 40px;
+            background-color: rgb(9, 165, 105);
+            color: #fff;
+            border: none;
+            margin-top: 15px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <button class="post-btn">我要发帖</button>
+        <hr class="line">
+        <ul class="list"></ul>
+
+        <div class="post-box">
+            <input type="text" placeholder="请输入标题" class="txt">
+            <div class="ssbk">
+                所属版块：
+                <select name="" id="sel-bk">
+                    <option value="0">请选择版块</option>
+                    <option>电子书籍</option>
+                    <option>新课来了</option>
+                    <option>新手报到</option>
+                </select>
+            </div>
+            <div class="post-content">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <button class="fabu-btn">发布</button>
+        </div>
+    </div>
+
+    <script>
+        let postBtn = document.querySelector('.post-btn');
+        let postBox = document.querySelector('.post-box');
+        let fabuBtn = document.querySelector('.fabu-btn');
+        let list = document.querySelector('.list');
+        let arrtou = ['./images/tou01.jpg','./images/tou02.jpg','./images/tou03.jpg','./images/tou04.jpg']
+        
+        
+        postBtn.onclick = function(){
+            postBox.style.display = "block"
+        };
+
+        fabuBtn.onclick = function(){
+            let txt = document.querySelector('.txt');
+            if (txt.value == '') {
+                alert("请输入标题~");
+                return;
+            } 
+
+            let selbk = document.querySelector('#sel-bk');
+            if (selbk.value == '0') {
+                alert("你还没有选择版块呢");
+                return;
+            } 
+
+            let newli = document.createElement('li');
+
+            let newimg = document.createElement('img');
+            // 生成一个0-3随机整数 => 随机数公式：Math.floor(Math.random() * (max-min) + min)
+            let randomNum = Math.floor(Math.random() * 4)
+            newimg.src = arrtou[randomNum];
+
+            let myh3 = document.createElement('h3');
+            
+            myh3.innerHTML = txt.value;
+            txt.value = ""
+
+            let myp = document.createElement('p');
+            let myspan = document.createElement('span');
+            myspan.className = 'ban-kuai'
+           
+            myspan.innerHTML = "版块：" + selbk.value;
+            myp.appendChild(myspan)
+
+            let myspanTime = document.createElement('span');
+            myspanTime.className = 'post-time'
+            let now = new Date();
+            let mytime = now.getFullYear() + '-' + (now.getMonth()+1) + '-' + now.getDate()
+            // myspanTime.innerHTML = "发表时间：" + now.toLocaleDateString();
+            myspanTime.innerHTML = "发表时间：" + mytime;
+            myp.appendChild(myspanTime)
+
+            newli.appendChild(newimg);
+            newli.appendChild(myh3);
+            newli.appendChild(myp);
+            
+            // list.appendChild(newli)
+            console.log(list.firstChild);
+            if (list.firstChild) {
+                list.insertBefore(newli,list.firstChild)
+            } else {
+                list.appendChild(newli)
+            }
+
+            postBox.style.display = 'none'
+        }
+
+
+    </script>
+</body>
+</html>

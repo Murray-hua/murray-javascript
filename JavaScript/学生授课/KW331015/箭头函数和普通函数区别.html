@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 200px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // function fn() {
+        //     console.log(this);
+        // }
+        // // fn()
+        // document.body.onclick = fn;
+
+        // document.body.onclick = () => {
+        //     console.log(this);
+        // }
+        function Person(name){
+            this.name = name;
+
+        }
+        new Person('张三');
+
+        //箭头函数不能使用new，不能用做构造函数
+        let Person=()=>{}
+        new Person()
+    </script>
+</body>
+
+</html>

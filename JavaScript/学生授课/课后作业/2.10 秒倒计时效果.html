@@ -25,7 +25,7 @@
 <body>
     <button id="start">开始</button>
     <button id="end">停止</button>
-    <div class="time">10</div>
+    <div id="time">10</div>
     <script>
         let startBtn = document.querySelector('#start')
         let endBtn = document.querySelector('#end')
@@ -36,10 +36,10 @@
             timer = setInterval(() => {
                 if (num === 0) {
                     alert('时间到')
-                    return ;
+                    return;
                 } else {
                     num--
-                    time.innerHTML = time
+                    time.innerHTML = num
                 }
 
             }, 1000);
@@ -48,7 +48,6 @@
             clearTimeout(timer)
             alert('倒计时结束')
         }
-
     </script>
 </body>
 

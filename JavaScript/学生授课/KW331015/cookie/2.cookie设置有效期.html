@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var date1 = new Date('December 17, 1995 03:24:00');
+        // var date2 = new Date('Oct 17, 2018 03:24:00');
+        // var date3 = new Date('1995-12-17T03:24:00');
+        // var date4 = new Date('2020/12/8  11:59:00');
+        // console.log(date1);
+        // console.log(date2);
+        // console.log(date3);
+        // console.log(date4);
+
+        //设置时间
+        // let t = new Date(2020, 9, 16, 23, 11, 12)
+        // console.log(t);
+        //给cookie设置有效期
+        let t = new Date();
+        // t.setDate(t.getDate() + 7)
+        // console.log(t.getDate() + 7);
+        t.setDate(t.getDate() + 7)
+        // document.cookie = 'class=kw33;expires' + new Date(2020, 9, 16)
+        document.cookie = 'class=kw33;expires=' + t
+
+        // 删除cookie
+        // document.cookie = 'class=;expires=' + new Date(0)
+
+        // let t = new Date();
+        // t.setDate(t.getDate() - 1)
+        // // document.cookie = 'class=;expires=' + t
+        // console.log(document.cookie);
+    </script>
+</body>
+
+</html>

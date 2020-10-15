@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>
+            <span>今天（10月12日），第三届数字中国建设峰会在福州开幕。峰会以“创新驱动数字化转型，智能引领高质量发展”为主题，设有专业论坛、成果展览会、创新大赛等环节。同时，举办数字福建建设20周年相关活动。本届峰会上还设立了“云上峰会”平台，通过云计算、VR、人工智能等方式，展示数字中国建设的最新成果，推动各地一批数字经济项目在峰会期间签约落地。</span>
+            <a href="" id="mya">&lt;&lt;收缩</a>
+        </p>
+    </div>
+
+    <script>
+        let mya = document.querySelector('#mya');
+        let kg = true;
+        let oldspan = document.querySelector('.box p span').innerHTML;
+        mya.onclick = function(e){
+            e.preventDefault()
+            let myspan = document.querySelector('.box p span')
+            if (kg) {
+                myspan.innerHTML = myspan.innerHTML.slice(0,100)
+                mya.innerHTML = "扩展&gt;&gt;"
+            } else {
+                myspan.innerHTML = oldspan
+                mya.innerHTML = "&lt;&lt;收缩"
+            }
+            kg = !kg;
+        }
+    </script>
+</body>
+</html>

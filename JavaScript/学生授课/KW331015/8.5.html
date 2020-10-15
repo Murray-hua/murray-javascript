@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <h1>我是标题</h1>
+    <script>
+        当函数被用作事件处理时,它的this
+        function fn() {
+            console.log(this);
+        }
+        fn()
+        // document.querySelector('button').onclick = fn;
+        // document.querySelector('h1').onclick = fn;
+
+        document.querySelector('button').onclick = function(){
+            console.log(this);
+        };
+
+
+    </script>
+</body>
+
+</html>

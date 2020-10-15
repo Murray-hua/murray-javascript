@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .mark {
+            background-color: black;
+            opacity: 0.3;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .modal {
+            width: 300px;
+            height: 200px;
+            background-color: #fff;
+            position: fixed;
+            z-index: 100;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -100px;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            right: 10px;
+            top: 0px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./images/bj.png" alt="" width="100%">
+    </div>
+
+    <script>
+
+        function modal() {
+            let markDiv = document.createElement('div');
+            markDiv.className = 'mark'
+            document.body.appendChild(markDiv)
+
+            let modalDiv = document.createElement('div');
+            modalDiv.className = 'modal'
+            let span = document.createElement('span')
+            span.innerHTML = '&times;'
+            span.classList.add('close')
+            modalDiv.appendChild(span)
+            document.body.appendChild(modalDiv)
+
+            let mytime = document.querySelector('.close');
+            mytime.onclick = function() {
+                // document.querySelector('.modal').style.display = 'none';
+                document.body.removeChild(markDiv)
+                document.body.removeChild(modalDiv)
+                document.body.style.overflow = "auto"
+            }
+
+            markDiv.addEventListener('click',function(){
+                document.body.removeChild(markDiv)
+                document.body.removeChild(modalDiv)
+                document.body.style.overflow = "auto"
+            })
+
+            // 谷歌/ie
+            markDiv.onmousewheel = function(e){
+                e.preventDefault();
+            }
+            // 火狐
+            markDiv.addEventListener('DOMMouseScroll',function(e){
+                e.preventDefault();
+            })
+            document.body.style.overflow = "hidden"
+        }
+
+        setTimeout(modal, 2000);
+
+
+    </script>
+</body>
+
+</html>

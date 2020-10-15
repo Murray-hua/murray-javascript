@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body {
+            padding: 40px;
+        }
+        .box {
+            width: 300px;
+            min-height: 200px;
+            border: 3px solid red;
+            line-height: 30px;
+        }
+        .box span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        
+    </div>
+    <input type="text"><button>提交</button>
+
+    <script>
+        let box = document.querySelector('.box');
+        let txt = document.querySelector('input');
+        let btn = document.querySelector('button');
+        let mycolors = ['red','yellow','green','purple','pink','orange','skyblue','orangered']
+        btn.onclick = function(){
+            let arr = txt.value.split("")
+            for (let i = 0; i < arr.length; i++) {
+                // arr[i] = '<span>' + arr[i] + '</span>'
+                arr[i] = `<span style="color:${mycolors[i%mycolors.length]}"> ${arr[i]} </span>`
+            }
+            box.innerHTML += arr.join("") + '<br>'
+
+        }
+        
+        
+    </script>
+</body>
+</html>

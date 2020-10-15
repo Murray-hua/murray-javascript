@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //创建cookie
+        function createCookie(key, value, days) {
+            let t = new Date();
+            t.setDate(t.getDate() + days)
+            // 假设 document.cookie = 'calss=kw33;expires=' + t
+            document.cookie = `${key}=${value};expires=${t}` //days = t
+        }
+        // createCookie('school', '中博', 30)
+        // createCookie('class', 'kw33', 15)
+        // createCookie('username', 'xiaoming', 7)
+
+
+
+        //获取cookie
+        function getCookie(key) {
+            //'school=中博;username=xiaoming; class=kw33'
+            // console.log(document.cookie);
+            let arr = document.cookie.split('; ')
+            //['school=中博;username=xiaoming; class=kw33']
+            for (let i = 0; i < arr.length; i++) {
+                let arr2 = arr[i].split('=')
+                if (arr2[0 == key]) {
+                    return arr2[1]
+
+                }
+            }
+        }
+        // console.log(getCookie('username'));
+        getCookie('username')
+
+        //删除cookie
+        function removeCookie(key) {
+            let t = new Date();
+            t.setDate(t.getDate() - 1)
+            document.cookie = `${key}=;expires=${t}`
+        }
+        removeCookie('class')
+        removeCookie('school')
+    </script>
+</body>
+
+</html>
