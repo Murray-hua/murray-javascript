@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 当一个函数用作构造函数时（使用new关键字），它的this被绑定到正在构造的新对象。
+        function Person(pname) {
+            this.name = pname;
+        }
+        let p1 = new Person("张三")
+        console.log(p1.name);
+
+        let p2 = new Person("李四")
+        console.log(p2.name);
+    </script>
+</body>
+</html>

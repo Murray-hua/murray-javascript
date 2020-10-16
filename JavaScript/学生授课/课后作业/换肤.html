@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            margin-top: 20px;
+        }
+
+        ul {
+            width: 400px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        #gray {
+            width: 50px;
+            height: 20px;
+            background-color: gray;
+            border: 2px solid white;
+        }
+
+        #blue {
+            width: 50px;
+            height: 20px;
+            background-color: blue;
+            border: 2px solid white;
+
+        }
+
+        #red {
+            width: 50px;
+            height: 20px;
+            background-color: red;
+            border: 2px solid white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <ul>选择颜色：
+        <li id="gray"></li>
+        <li id="blue"></li>
+        <li id="red"></li>
+    </ul>
+    <script>
+        window.οnlοad = function() {
+            var oGray = document.getElementById('#gray');
+            var oBlue = document.getElementById('#blue');
+            var oRed = document.getElementById('red');
+            oRed.οnclick = function() {
+                oBg.href = "css/skin_red.css";
+            };
+            oBlue.οnclick = function() {
+                oBg.href = "css/skin_blue.css";
+            };
+            oGreen.οnclick = function() {
+                oBg.href = "css/skin_green.css";
+            };
+        };
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let bird = {
+            name: '鸟',
+            fly: function(){
+                console.log(this.name + '会飞');
+            }
+        };
+        // bird.fly();
+
+        let pig = {
+            name: '猪'
+        }
+        // 让猪也会飞
+        bird.fly.call(pig);
+        bird.fly.apply(pig);
+
+        function fn(){
+            console.log(this)
+        }
+        fn();
+        fn.call(pig)
+        fn.call(bird)
+    </script>
+</body>
+</html>

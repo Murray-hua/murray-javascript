@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1．全局环境 ,无论是否在严格模式下，在全局执行环境中（在任何函数体外部）this 都指向全局对象。
+
+        // 开启严格模式，遵守严格模式的各种规则
+        "use strict"
+        a = 1; // window.a = 1;
+        console.log(window.a);
+        console.log(this == window);
+    </script>
+</body>
+</html>

@@ -14,7 +14,6 @@
         body {
             margin: 50px 800px 0px;
         }
-
         .time {
             font-size: 20px;
             font-weight: bold;
@@ -24,7 +23,7 @@
 
 <body>
     <button id="start">开始</button>
-    <button id="end">停止</button>
+    <button id="end" class="top">停止</button>
     <div id="time">10</div>
     <script>
         let startBtn = document.querySelector('#start')
@@ -34,7 +33,7 @@
 
         startBtn.onclick = function () {
             timer = setInterval(() => {
-                if (num === 0) {
+                if (num == 0) {
                     alert('时间到')
                     return;
                 } else {

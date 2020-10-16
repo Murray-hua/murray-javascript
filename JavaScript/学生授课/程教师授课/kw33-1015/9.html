@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #ccc;
+        }
+        .box {
+            width: 284px;
+            margin: 0 auto;
+        }
+        .box img {
+            transition: all 2s;
+            /* x => left center right number % */
+            /* y => top center bottom number % */
+            /* z => number */
+            transform-origin: right top;
+        }
+        .box img:hover {
+            transform: rotate(60deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="cardKingClub.png" alt="">
+    </div>
+</body>
+</html>

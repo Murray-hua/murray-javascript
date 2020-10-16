@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 2．作为对象的方法 
+        // 当函数作为对象里的方法被调用时，它们的 this 是调用该函数的对象。
+        let obj = {
+            name: '张三',
+            say: function(){
+                console.log(this); // obj
+                console.log(this.name); // obj.name
+            }
+        };
+        obj.say()
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //原型创建模式
+        function Person(pname, page) {
+            this.name = pname;
+            this.age = page;
+            this.say = function() {
+                console.log('我的名字是：' + this.name);
+            }
+        }
+        let p1 = new Person('张三', 19);
+        let p2 = new Person('张三', 19);
+
+        console.log(p1);
+        console.log(typeof p1);
+        console.log(p1 instanceof Object);//true
+        console.log(p1 instanceof Person);//true
+
+        p1.say();//我的名字是：张三，19
+        p2.say();//我的名字是：张三，19
+
+        console.log(p1.say == p2.say);//flase
+
+        // function fn(){}
+        // console.log(fn instanceof Object);
+        // console.log(fn instanceof Function);
+        // // new Function
+    </script>
+</body>
+
+</html>

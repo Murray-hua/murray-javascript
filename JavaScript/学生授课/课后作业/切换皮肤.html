@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>网页换肤</title>
+
+    <!-- 连接到初始背景为蓝色样式表 -->
+    <!-- JavaScriptl需要通过id来操作link标签 -->
+    <link id="background" rel="stylesheet" href="./css/gray.css">
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+
+    <!-- #代表不跳转 onclick为鼠标单击事件 xxx()代表调用的JavaScript函数 -->
+    <a href="#" οnclick="change('red')">[红色地带]</a>
+    <a href="#" οnclick="change('blue')">[蓝色背景]</a>
+    <a href="#" οnclick="change('gray')">[灰色空间]</a>
+</body>
+
+</html>

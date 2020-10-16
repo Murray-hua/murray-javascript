@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Pet类：属性 name, age, ower,方法： introduce
+        //     Dog类 => 属性： type, 方法：play => 飞盘
+        //     Fish类 =>属性： type, 方法：play => 吐泡泡
+        //     Cat类 => 属性： type, 方法：play => 毛线球
+
+        // 第一种方法：
+        // Pet类
+        // function Pet(pname, page, ponwer) {
+        //     this.name = pname;
+        //     this.age = page;
+        //     this.onwer = ponwer;
+        //     this.introduce = function() {
+        //         console.log('我叫' + this.name + ',我今年' + this.age + '岁了，我的主人是' + this.owner);
+        //     }
+        // }
+
+        // // Pet.prototype.introduce = function() {
+        // //     console.log('宠物是:' + this.name);
+        // // }
+
+        // // Dog类
+        // function Dog() {
+        //     Pet.apply(this, arguments)
+        //     this.type = '狗狗'
+        //     this.play = function() {
+        //         console.log(this.name + '最喜欢玩飞盘了');
+        //     }
+        // }
+
+        // let dog = new Dog('哮天犬', '100', '二郎神')
+        // console.log(dog.name);
+        // dog.introduce()
+        // dog.play()
+
+
+        // 第二种方法：
+        function Pet(pname, page, ponwer) {
+            this.name = pname;
+            this.age = page;
+            this.onwer = ponwer;
+            // this.introduce = function() {}
+        }
+        Pet.prototype.introduce = function() {
+            console.log('我叫' + this.name + ',我今年' + this.age + '岁了，我的主人是' + this.owner);
+
+        }
+        // Dog类
+        function Dog() {
+            Pet.apply(this, arguments)
+            this.type = '狗狗'
+            this.play = function() {
+                console.log(this.name + '最喜欢玩飞盘了');
+            }
+        }
+        
+        Dog.prototype = new Pet()
+        let dog = new Dog('哮天犬', '100', '二郎神')
+        console.log(dog.name);
+        dog.introduce()
+        dog.play()
+
+    </script>
+</body>
+
+</html>

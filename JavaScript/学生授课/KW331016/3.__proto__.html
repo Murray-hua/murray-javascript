@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //每个函数都有一个prototype（原型）属性，它是个对象，这个对象的用途是包含所有实例共享的属性和方法。
+        //每个prototype对象都有一个constructor属性，这个属性指向构造函数
+        //每个实例对象都有一个__proto__属性，它指向prototype     (重点难点☆☆☆☆☆)
+
+        function Person(pname, page) {
+            this.name = pname;
+            this.age = page;
+        }
+
+        Person.prototype.type = "人类";
+        Person.prototype.say = function() {
+            console.log('我的名字是：' + this.name);
+        }
+
+        console.log(Person.prototype);
+
+        console.log(Person.prototype.constructor);
+
+        let p1 = new Person('孙悟空', '1')
+        console.log(p1.name);
+        console.log(p1.__proto__);
+    </script>
+</body>
+
+</html>
