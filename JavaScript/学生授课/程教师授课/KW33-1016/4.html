@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 父类
+        function Person(pname, page) {
+            this.country = '中国'
+            this.name = pname;
+            this.age = page;
+        }
+
+        Person.prototype.intro = function () {
+            console.log('我是' + this.name);
+        }
+        
+
+        // 子类
+        function njPerson() {
+            this.city = '南京';
+            Person.apply(this, arguments)
+        }
+
+        // 原型链继承
+        njPerson.prototype = new Person();
+        njPerson.prototype.constructor = njPerson;
+
+        let nj1 = new njPerson('南小明', 19);
+        console.log(nj1.name, nj1.age);
+        nj1.intro();
+
+        console.log(njPerson.prototype.constructor);
+
+
+        function szPerson() {
+            this.city = '苏州';
+            // 构造函数继承
+            Person.apply(this, arguments)
+        }
+        szPerson.prototype = new Person();
+        let sz1 = new szPerson('苏小明', 29);
+        console.log(sz1.name, sz1.age);
+        sz1.intro();
+    </script>
+</body>
+
+</html>

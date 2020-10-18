@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>用户中心-注册</h1>
+    <h2>
+        <a href="login.html">登录</a>
+        <a href="register.html">注册</a>
+    </h2>
+    <form action="#" method="get" id="myform">
+        <p>
+            用户名：<input type="text" id="txt">
+        </p>
+        <p>
+            密码：<input type="password" id="pwd">
+        </p>
+        <p>
+            确认密码：<input type="password" id="pwd2">
+        </p>
+        <button type="submit">注册</button>
+    </form>
+
+    <script src="./js/cookie.js"></script>
+    <script>
+        let myform = document.querySelector('#myform');
+        myform.onsubmit = function(e){
+
+            let txt = document.querySelector('#txt');
+            // 字母和数字组成，6,12位
+            let reg = /^[a-zA-Z0-9]{6,12}$/;
+            if (!reg.test(txt.value)) {
+                alert("用户名格式不对：字母和数字组成，6,12位")
+                e.preventDefault()
+                return;
+            }
+
+            let pwd = document.querySelector('#pwd');
+            // 字母和数字,下划线组成，3,10位
+            let reg2 = /^\w{3,10}$/;
+            if (!reg2.test(pwd.value)) {
+                alert("密码格式不对：字母和数字,下划线组成，3,10位")
+                e.preventDefault()
+                return;
+            }
+
+            let pwd2 = document.querySelector('#pwd2');
+            if (pwd.value != pwd2.value) {
+                alert("两次密码不一致")
+                e.preventDefault()
+                return;
+            }
+
+            // 把用户名和密码存储起来 => 数据库（关系型数据库：mysql ,关系型数据库：mongodb）
+            // 本地存储：cookie 或 localStorage
+            createCookie('username', txt.value, 30);
+            createCookie('password', pwd.value, 30);
+
+        }
+    </script>
+    
+</body>
+</html>

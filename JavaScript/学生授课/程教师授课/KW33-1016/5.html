@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Pet类: 属性 name, age, owner, 方法：introduce
+        //     Dog类  => 属性：type, 方法：play => 飞盘
+        //     Fish类 => 属性：type, 方法：play => 吐泡泡
+        //     Cat类 => 属性：type, 方法：play => 毛线球
+
+        // Pet类: 
+        function Pet(name, age, owner) {
+            this.name = name;
+            this.age = age;
+            this.owner = owner;
+        }
+
+        Pet.prototype.introduce = function () {
+            console.log('我叫' + this.name + ',我今年' + this.age + '岁了，我的主人是：' + this.owner);
+        }
+
+        // Dog类
+        function Dog() {
+            Pet.apply(this, arguments)
+            this.type = '狗狗'
+            this.play = function () {
+                console.log(this.name + '最喜欢玩飞盘了');
+            }
+        }
+
+        Dog.prototype = new Pet();
+
+        let dog = new Dog('哮天犬', '100', '二郎神')
+        console.log(dog.name);
+        dog.introduce()
+        dog.play()
+
+
+        
+        function Cat() {
+            Pet.apply(this, arguments)
+            this.type = '猫猫'
+            this.play = function () {
+                console.log(this.name + '最喜欢玩毛线球了');
+            }
+        }
+
+        Cat.prototype = new Pet();
+
+        let cat = new Cat('滚滚', '12', '小明')
+        console.log(cat.name);
+        cat.introduce()
+        cat.play()
+
+
+    </script>
+</body>
+
+</html>

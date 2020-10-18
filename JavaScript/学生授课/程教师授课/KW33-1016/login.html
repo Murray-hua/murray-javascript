@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>用户中心-登录</h1>
+    <h2>
+        <a href="login.html">登录</a>
+        <a href="register.html">注册</a>
+    </h2>
+    <p>
+        用户名：<input type="text" id="login-name">
+    </p>
+    <p>
+        密码：<input type="password" id="login-pass">
+    </p>
+    <button id="login-btn">登录</button>
+
+    <script src="js/cookie.js"></script>
+    <script>
+        let loginBtn = document.querySelector('#login-btn');
+        let loginName = document.querySelector('#login-name');
+        let loginPass = document.querySelector('#login-pass');
+
+        loginBtn.addEventListener('click',function(){
+            let login_name = loginName.value;
+            if (getCookie('username') != login_name) {
+                alert('用户名不存在！')
+            } 
+            if (getCookie('password') != loginPass.value) {
+                alert('密码不正确')
+            } 
+        })
+    </script>
+    
+</body>
+</html>

@@ -9,7 +9,7 @@
     <style>
         .change-bg {
             height: 40px;
-            border: 1px solid red;
+            /* border: 1px solid red; */
             display: flex;
             justify-content: center;
         }
@@ -18,10 +18,10 @@
             width: 60px;
             height: 20px;
             margin-left: 5px;
+            cursor: pointer;
         }
 
         .change-bg span:nth-of-type(1) {
-
             background-color: #ccc;
         }
 
@@ -29,7 +29,7 @@
             background-color: blue;
         }
 
-        .change-bg span:nth-of-type(2) {
+        .change-bg span:nth-of-type(3) {
             background-color: red;
         }
     </style>
@@ -46,16 +46,16 @@
     <script>
         let mySpan = document.querySelectorAll('.change-bg span')
         let myCssLink = document.querySelector('#csslink')
-        let bgUrl = ['css/gray.css', 'css/blue.css', 'css/red.css']
+        let bgUrl = ['css/gray.css', 'css/blue.css', 'css/red.css',]
 
         for (let i = 0; i < mySpan.length; i++) {
             mySpan[i].onclick = function() {
-                myCssLink.href = bgUrl[1]
+                myCssLink.href = bgUrl[i]
                 createCookie('mycss', bgUrl[i], 30)
             }
         }
-        // console.log(getCookie('mycss'));
-        // myCssLink.href = getCookie('mycss')
+        console.log(getCookie('mycss'));
+        myCssLink.href = getCookie('mycss')
 
         if (getCookie('mycss')) {
             myCssLink.href = getCookie('mycss')

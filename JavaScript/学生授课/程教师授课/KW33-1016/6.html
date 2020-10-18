@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/gray.css" id="csslink">
+    <style>
+        .change-bg {
+            height: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .change-bg span {
+            width: 60px;
+            height: 20px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        .change-bg span:nth-of-type(1) {
+            background-color: #ccc;
+        }
+        .change-bg span:nth-of-type(2) {
+            background-color: blue;
+        }
+        .change-bg span:nth-of-type(3) {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="change-bg">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <script src="js/cookie.js"></script>
+    <script>
+        let mySpan = document.querySelectorAll('.change-bg span');
+        let myCssLink = document.querySelector('#csslink');
+        let bgUrl = ['css/gray.css','css/blue.css','css/red.css',]
+
+        for (let i = 0; i < mySpan.length; i++) {
+            mySpan[i].onclick = function(){
+                myCssLink.href = bgUrl[i]
+                createCookie('mycss',bgUrl[i], 30)
+            }
+        }
+
+        if (getCookie('mycss')) {
+            myCssLink.href = getCookie('mycss')
+        } else {
+            myCssLink.href = "css/gray.css"
+        }
+        
+        
+        
+    </script>
+</body>
+</html>
