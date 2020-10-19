@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.创建对象有哪几种方式
+        new Objcet()
+        // 字面量方法(少量对象 => 推荐): { a: 1 }
+        工厂模式
+        构造函数(大量对象 => 推荐)
+        原型模式
+        组合方法(构造 + 原型)
+
+        // 2.画出构造函数、原型(prototype),constructor,__proto__之间的关系示意图
+
+
+        // 3.构造函数继承和原型链继承的实现方法？
+        // 构造函数继承:在子构造函数里面使用call或apply方法调用父构造函数，把子构造函数里面的this和参数
+        // 传递给父构造函数:
+        Person.apply(this, arguments)
+        // 原型链继承:把父构造函数的实例赋值给子构造函数的原型
+        sonfn.prototype = new FaFn()
+
+
+        // 4.js对象分为哪几类？
+        // 内置对象(字符串对象，数组，正则表达式，Math对象)
+        自定义对象(见1解答)
+        宿主对象(浏览器对象window,document)
+    </script>
+</body>
+
+</html>

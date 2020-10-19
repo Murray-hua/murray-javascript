@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 300px;
+            border: 10px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        #box span {
+            background-color: red;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="txt"> <button id="search">查找</button>
+    <div id="box">
+        为纪念中国人民志愿军抗美援朝出国作战70周年，经中央军委批准，中央军委政治工作部组织拍摄了6集大型电视纪录片《为了和平》。第一集《正义担当》主要回溯美发动对朝鲜全面战争的历史背景和国际环境，以及给新中国国家安全带来的严重威胁，在危急关头，应朝鲜党和政府请求，中共中央和毛泽东同志高瞻远瞩、审时度势，毅然决然地作出抗美援朝、保家卫国的历史性决策，以大无畏的英雄气概果敢承担起保卫和平的历史使命。
+    </div>
+    <script>
+        let txt = document.querySelector('#txt');
+        let btn = document.querySelector('#search');
+        let box = document.querySelector('#box');
+        
+        let oldstr = box.innerHTML;
+
+        btn.onclick = function(){
+            box.innerHTML = oldstr;
+            let str = box.innerHTML.split(txt.value).join(`<span>${txt.value}</span>`)
+            box.innerHTML = str;
+        }
+        
+    </script>
+</body>
+</html>

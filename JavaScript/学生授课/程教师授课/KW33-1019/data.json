@@ -1,0 +1,26 @@
+[
+    {
+        "name": "张三",
+        "age": 19,
+        "addr": "南京市，雨花台区，小行路",
+        "married": false,
+        "friends": ["李四","王五"],
+        "pet": {"name": "旺财", "type":"狗狗"}
+    },
+    {
+        "name": "小明",
+        "age": 29,
+        "addr": "南京市，鼓楼区，小行路",
+        "married": true,
+        "friends": ["李雷","韩梅梅"],
+        "pet": {"name": "旺财", "type":"狗狗"}
+    },
+    {
+        "name": "张无忌",
+        "age": 33,
+        "addr": "南京市，秦淮区，小行路",
+        "married": true,
+        "friends": ["赵敏","周芷若"],
+        "pet": {"name": "旺财", "type":"狗狗"}
+    }
+]

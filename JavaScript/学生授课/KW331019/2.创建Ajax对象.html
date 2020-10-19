@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Ajax概念是一种在无需重新加载整个网页的情况下,能够更新部分网页的技术
+
+        // 创建ajax对象
+        let xhr = new XMLHttpRequest();
+
+        //连接服务器:请求方法(get,post),请求地址，异步(true)或同步(false)
+        xhr.open('get', 'test.txt', true)
+
+        //发送请求
+        xhr.send();
+
+        // 监控ajax请求到了哪一步
+        xhr.onreadystatechange = function() {
+
+            // 请求状态码;数据响应已就绪 =4
+            if (xhr.readyState == 4) {
+                // 状态码:数据成功到达客户端   200 = ok
+                if (xhr.status == 200) {
+                    // 打印返回的数据
+                    console.log(xhr.responseText);
+                    console.log(typeof xhr.responseText);
+                    // 把json字符串转为对象模式
+                    console.log(JSON.parse(xhr.responseText));
+                    console.log(JSON.parse(xhr.responseText).name);
+                }
+            }
+        }
+
+        // 连接服务器:请求方法（get,post）,请求地址,异步(true)或同步(false)
+        // 
+    </script>
+</body>
+
+</html>

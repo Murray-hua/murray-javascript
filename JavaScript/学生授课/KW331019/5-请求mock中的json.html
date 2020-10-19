@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function() {
+            // 请求状态码
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    console.log(JSON.parse(xhr.responseText));
+                }
+            }
+        }
+        // 连接服务器:请求方法(get,post),请求地址，异步（true）或同步（false）
+        // 异步（true）推荐，非阻塞
+        xhr.open('get', 'data.json', true)
+
+        //发送请求
+        xhr.send();
+    </script>
+</body>
+
+</html>
