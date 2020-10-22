@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.正则表达式对象的方法
+        // test()  //测试字符串和正则表达式是否匹配，返回布尔值
+        // exec()  //测试字符串是否和正则表达式是否匹配，返回结果数组或null
+
+        let str = '我是一个小太阳,又一个太阳'
+        let reg = /太阳/g;
+        // console.log(reg.test(str));
+        console.log(reg.exec(str));
+
+        // 2.字符串的方法
+        // search(reg) 返回匹配到的字符串下标， 没有匹配到则返回 - 1
+        // match(reg) 以数组形式返回匹配到的字符串， 没有匹配到则返回null
+        // replace(reg, 'content') 按照正则表达式进行替换， 返回一个字符串
+        // split(reg) 以正则表达式为分隔符对字符串进行分割， 返回数组
+
+        let str1 = 'javascript1 html55 css16 jquery100'
+        // 判断str里面有没有数字？
+        let reg1 = /\d/ //  \d 表示0-9的一个数字
+        // console.log(str1.search(reg1));
+
+        // console.log(str.index0f('3'));
+        // console.log(str.search('3'));
+
+        // 找出字符串str里面所有的数字:
+        let reg2 = /\d/g; //g 全局匹配
+        console.log(str1.match(reg2)); // ["1", "5", "5", "1", "6", "1", "0", "0"]
+
+
+        // // 找出字符串str里面所有连续的数字:
+        let reg3 = /\d+/g; //g 全局匹配
+        console.log(str1.match(reg3)); //['1','55','16','100']
+
+
+        let str4 = 'aa4,bf4,6,aafff'
+        let reg4 = /\d/g
+        console.log(str4.split(reg4));
+
+
+        let comments = "这个卖的太贵了，建议大家去拼多多看看，便宜多了，淘宝也不错，或者去天猫~";
+        let regComments = /拼多多|淘宝|天猫/g;
+        let newCom = comments.replace(regComments, '**')
+        console.log(newCom);
+
+
+        
+    </script>
+</body>
+
+</html>

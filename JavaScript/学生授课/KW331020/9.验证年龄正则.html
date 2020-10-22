@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .success {
+            color: green;
+        }
+
+        .fail {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="请输入您的年龄"><span></span>
+    <script>
+        // 写一个验证年龄的正则表达式
+        // 一位：1-9; 两位数字10-99； 三位：100
+        let age = document.querySelector('input')
+        let span = document.querySelector('span')
+        age.onblur = function() {
+            let regAge = /^([1-9]|[1-9]\d|1[0-1]\d|120)$/
+            if (regAge.test(age.value)) {
+                span.innerHTML = '年龄ok'
+                span.className = 'success'
+            } else {
+                span.innerHTML = '年龄有误'
+                span.className = 'fail'
+            }
+        }
+
+
+
+
+
+
+        // let age = '100'
+        // let reg = /[1-9][10-99]\d/
+        // console.log(reg.test(age));
+
+        // /^(?:[1-9][0-9]?|1[01][0-9]|120)$/
+    </script>
+</body>
+
+</html>

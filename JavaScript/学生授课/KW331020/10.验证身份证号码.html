@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .success {
+            color: green;
+        }
+
+        .fail {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="请输入身份证号码"><span></span>
+    <script>
+        // 可以是15位或者是18位， 其中最后一位可以是X， 其它全是数字，
+        // 可以是 不代表 必须是； 最后一位也许是X也许是数字
+
+        // 15全数字： 18全数字：14数字+xX; 17数字+xX
+
+        let txt = document.querySelector('input')
+        let span = document.querySelector('span')
+        txt.onblur = function() {
+            let regAge = /^(\d{14}|\d{17})(\d|[xX])$/
+            if (regAge.test(age.value)) {
+                span.innerHTML = 'ok'
+                span.className = 'success'
+            } else {
+                span.innerHTML = '有误'
+                span.className = 'fail'
+            }
+        }
+    </script>
+</body>
+
+</html>

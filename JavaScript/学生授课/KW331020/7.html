@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="图片格式以jpg,png,gif结尾" name="" id="">
+    <script>
+        let txt = document.querySelector('input');
+        txt.onblur = function() {
+            // 检测是否是一张图片：jpg,gif,png
+            let reg = /\.jpg|\.png|\.gif$/;
+            let reg = /\.(jpg|png|gif$)/;
+            if (reg.test(txt.value)) {
+                alert('格式正确')
+            } else {
+                alert('格式不正确')
+            }
+        }
+    </script>
+</body>
+
+</html>

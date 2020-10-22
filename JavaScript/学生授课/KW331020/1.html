@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 5-10 个位数字:第一个数字不能是0
+        while (true) {
+            let result = prompt("请输入一个QQ号码")
+            if (result == null) {
+                alert("你取消了")
+                break;
+            }
+            let reg = /^[1-9]\d{5,12}$/;
+            if (reg.test(reslut)) {
+                alert('ok')
+                break;
+            } else {
+                alert('你输入号码不正确')
+            }
+
+
+
+            // if (result.trim() == "") {
+            //     alert("不能为空")
+            // } else if (result.trim().length < 5 || result.trim().length > 12) {
+            //     alert("号码必须5-12")
+            // } else if (isNaN(result)) {
+            //     alert("必须是数字")
+            // } else if (result.trim().charCodeAt(0) == '48') {
+            //     alert("不能以0开头")
+            // } else {
+            //     alert('ok')
+            //     break;
+            // }
+
+        }
+    </script>
+</body>
+
+</html>

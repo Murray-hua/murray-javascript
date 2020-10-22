@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        tr,
-        th {
-            border: 1px;
+        table {
+            width: 500px;
             border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid blue;
+            text-align: center;
         }
     </style>
 </head>
@@ -30,7 +35,7 @@
 
 
     <script>
-        let mytodby = document.createElement('#mytbody')
+        let mytodby = document.querySelector('#mytbody')
         let xhr = new XMLHttpRequest();
 
         xhr.onreadystatechange = function() {
@@ -52,17 +57,21 @@
                         let newtd3 = document.createElement('td');
                         newtd3.innerHTML = mydata[i].addr
 
+                        let newtd4 = document.createElement('td');
+                        newtd4.innerHTML = mydata[i].pet.name
+
                         newtr.appendChild(newtd1)
                         newtr.appendChild(newtd2)
                         newtr.appendChild(newtd3)
-                        newtr.appendChild(newtr)
+                        newtr.appendChild(newtd4)
+                        mytodby.appendChild(newtr)
                     }
                 }
             }
         }
         // 连接服务器:请求方法(get,post),请求地址，异步（true）或同步（false）
         // 异步（true）推荐，非阻塞
-        xhr.open('get', 'data.json', true)
+        xhr.open('get', 'https://www.fastmock.site/mock/6a9050991729903ed57c02c6db8bb4b4/first/first', true)
 
         //发送请求
         xhr.send();

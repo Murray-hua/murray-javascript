@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建正则表达式方法1：
+        let reg1 = new RegExp('box', 'i'); //匹配 'box'这个字符串 , i表示忽略大小写
+        let str = 'this is a Box'
+        console.log(reg1.test(str));
+
+
+        // 创建正则表达式方法2：推荐
+        let str2 = 'this is a box'
+        let reg2 = /box/i;
+        console.log(reg2.test(str2));
+
+        let str3 = 'kw33'
+        let reg3 = new RegExp('\d'); //匹配一个字母d
+        console.log(reg3.test(str3)); //false
+
+        let str4 = 'kw31'
+        let reg4 = /\d/;
+        console.log(reg4.test(str4)); //true
+
+
+        // let newstr = "你的跑步时间是: 10'08\",加油"
+        // console.log(newstr);
+
+        let str5 = 'kw100'
+        let reg5 = new RegExp(str5)
+        let para = 'kw100今天开班啦'
+        console.log(reg5.test(para));
+    </script>
+</body>
+
+</html>
