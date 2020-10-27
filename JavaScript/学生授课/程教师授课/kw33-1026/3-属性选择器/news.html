@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>京东快报</title>
+    <link rel="stylesheet" href="css/newStyle.css">
+</head>
+
+<body>
+    <section id="news">
+        <header>京东快报<a href="#" class="more">更多 > </a></header>
+        <ul>
+            <li><a href="sale.jd.com/act/h7mf8.html" class="hot"><span>[618]</span>志玲姐姐：墨镜300减30</a></li>
+            <li><a href="www.jd.com/news.aspx?id=29257"><span>[公告]</span>京东无锡馆正式启动</a></li>
+            <li><a href="sale.jd.com/act/k2ad45v.html"><span>[特惠]</span>99元抢平板！品牌配件199-100</a></li>
+            <li><a href="www.jd.com/news.aspx?id=29252"><span>[公告]</span>节能领跑京东先行</a></li>
+            <li><a href="sale.jd.com/act/ugk2937w.html" class="last"><span>[特惠]</span>高洁丝实力撩货，领券五折</a></li>
+        </ul>
+    </section>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    //带有class的属性
+    $('[class]').css("color",'blue')
+
+    //带有class的属性且值为hot
+    $('[class="hot"]').css('text-decoration','underline')
+
+     //class的属性且值不是hot
+    $('a[class!=hot]').css('background-color','#eee')
+
+     //href值以www开头
+    $('[href^=www]').css('text-decoration','line-through')
+
+     //href值以html结尾
+     $('[href$=html]').css('font-weight','bold')
+
+     //href值包含k2
+     $('[href*=k2]').css('color','red')
+    </script>
+</body>
+
+</html>

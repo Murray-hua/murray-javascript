@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        // JS:网页加载完再执行：
+        // window.onload = function(){
+        //     alert('网页已经加载完毕1')
+        // }
+
+        // window.onload = function(){
+        //     alert('网页已经加载完毕2')
+        // }
+
+        // Jq:网页加载完再执行：
+        $(document).ready(function(){
+            alert("我欲奔赴沙场征战jQuery，势必攻克之！1")
+        })
+
+        $(function(){
+            alert("我欲奔赴沙场征战jQuery，势必攻克之！2")
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #list li:first-child {
+            color: red;
+        } */
+
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>111111111</li>
+        <li>22222222</li>
+        <li class="three">3333333333</li>
+        <li>44444444</li>
+        <li>5555555</li>
+    </ul>
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        // $('#list li:first-child').css('background-color','red')
+
+        // $('#list li:first').css('background-color','red')
+        // $('#list li:last').css('background-color','blue')
+
+        // $('#list li:not(.three)').css('text-decoration','underline')
+
+        // $('#list li:even').css('color','red')
+        // $('#list li:odd').css('color','blue')
+
+        // eq => equal等于
+        // $('#list li:nth-of-type(4)').css('color','blue')
+        // $('#list li:eq(3)').css('color','red')
+
+        // gt => great than 
+        $('#list li:gt(2)').css('color','purple')
+
+        // lt => less than 
+        $('#list li:lt(2)').css('color','orange')
+    </script>
+</body>
+</html>

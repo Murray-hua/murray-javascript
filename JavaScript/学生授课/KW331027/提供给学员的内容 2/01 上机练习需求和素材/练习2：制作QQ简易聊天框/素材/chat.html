@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>QQ简易聊天框</title>
+    <link rel="stylesheet" href="css/chat.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .ccc {
+            background-color: #ccc;
+        }
+
+ 
+    </style>
+</head>
+
+
+<body>
+    <section id="chat">
+        <div class="chatBody"></div>
+        <div><img src="images/icon.jpg"></div>
+        <textarea class="chatText"></textarea>
+        <div class="btn"><span>关闭(C)</span><span id="send">发送(S)</span></div>
+    </section>
+</body>
+<script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script>
+    $(document).ready(function() {
+        // 保存聊天者的头像和昵称
+        var headImg = new Array("head01.jpg", "head02.jpg", "head03.jpg");
+        var uName = new Array("时尚伊人", "六月奇迹", "松松");
+        // 点击鼠标事件
+        $("#send").click(function() {
+            //判断聊天内容长度>0，显示在上面
+            if ($(".chatText").val().length > 0) {
+                //获取聊天内容
+                var str = $(".chatBody").html();
+                //随机数
+                var tou = Math.floor(Math.random() * 3);
+                //获得随机图片
+                var headstr = "<div><img src='images/" + headImg[tou] + "'</div>";
+                //获得随机名字
+                var useName = "<p>" + uName[tou] + "</p>";
+
+                //获取当前输入的内容
+                var cha = $(".chatText").val();
+                var chastr = "<div>" + cha + "</div>";
+
+                //把内容放到chatbox里头
+                var suoYou = "<section>" + headstr + useName + chastr + "</section>";
+                //显示在指定位置，清楚内容
+                $(".chatBody").html(str + suoYou);
+                $(".chatBody section div:last").addClass("chatContent");
+                $(".chatText").val("");
+                $(".chatContent").addClass("ccc");
+            }
+        });
+    });
+</script>
+
+</html>

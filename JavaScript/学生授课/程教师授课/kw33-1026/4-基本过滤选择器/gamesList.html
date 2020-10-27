@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>仿冬奥列表内容</title>
+	 <link rel="stylesheet" href="css/games.css">
+	 <style>
+		 .on {
+			 color: red;
+			 font-size: 20px;
+		 }
+	 </style>
+ </head>
+ <body>
+	<div class="contain">
+		<h2>祝福冬奥</h2>
+		<ul>
+			<li> 贝克汉姆：衷心希望北京能够申办成功！</li>
+			<li> 姚明：北京申冬奥是个非常棒的机会！加油！</li>
+			<li> 张虹：北京办冬奥，大家的热情定超乎想象！ </li>
+			<li> 肖恩怀特：我爱北京，支持北京申办冬奥会！</li>
+			<li> 赵宏博：北京申办冬奥会是再合适不过了！</li>
+			<li> 你喜欢哪些冬季运动项目？(点击进入调查页)</li>
+		</ul>
+	</div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+	//用过滤选择器给h2设置背景颜色和字体颜色
+	$(':header').css({'color':'white','background-color':'skyblue'})
+
+	//li 最后一个 没有边框
+	$('.contain li:last').css('border','none')
+
+	//改变第一个li的字体大小和颜色
+	$('.contain li:first').addClass('on')
+
+	//设置偶数行背景颜色
+    //设置奇数行背景颜色
+	$('.contain li:even').css('background-color','green')
+	$('.contain li:odd').css('background-color','yellow')
+
+	//设置前两个li的字体颜色（从0开始,小于2）
+	$('.contain li:lt(2)').css('color','#fff')
+	
+    //设置后两个li的字体颜色（从0开始，大于3）
+	$('.contain li:gt(3)').css('color','blue')
+
+	//改变第3个li的背景颜色（从0开始
+	$('.contain li:eq(2)').css('background-color','pink')
+	</script>
+ </body>
+</html>

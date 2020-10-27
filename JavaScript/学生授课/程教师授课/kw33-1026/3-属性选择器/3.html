@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 属性值为value或value-开头 */
+        p[class|='zh'] {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p class="zh">教育改变生活1</p>
+    <p class="zh en">教育改变生活2</p>
+    <p class="zh-lang">教育改变生活3</p>
+    <p class="-zh en">教育改变生活4</p>
+    <p class="en-zh">教育改变生活5</p>
+</body>
+</html>

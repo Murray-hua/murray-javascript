@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1,.box4 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="show">显示</button>
+    <button id="hide">隐藏</button>
+    <div class="box1">盒子1</div>
+    <div class="box2">盒子2</div>
+    <div class="box3">盒子3</div>
+    <div class="box4">盒子4</div>
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        $('#show').click(function(){
+            $("div:hidden").show();
+        })
+        $('#hide').click(function(){
+            $("div:visible").hide();
+        })
+    </script>
+</body>
+</html>

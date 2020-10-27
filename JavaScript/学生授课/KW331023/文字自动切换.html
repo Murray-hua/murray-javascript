@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .list {
+            width: 400px;
+            height: 40px;
+            border: 1px solid #ccc;
+            margin: 50px auto;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        .list li {
+            line-height: 40px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="list">
+        <li>1.习近平在纪念抗美援朝70周年大会的讲话</li>
+        <li>2.习近平在纪念抗美援朝70周年大会的讲话</li>
+        <li>3.习近平在纪念抗美援朝70周年大会的讲话</li>
+        <li>4.习近平在纪念抗美援朝70周年大会的讲话</li>
+        <li>5.习近平在纪念抗美援朝70周年大会的讲话</li>
+    </ul>
+    <script>
+        let list = document.querySelector('.list');
+        // let list = document.querySelectorAll('.list li');
+
+        setInterval(() => {
+            let oldli = list.removeChild(list.firstElementChild);
+            list.appendChild(oldli)
+        }, 1000);
+    </script>
+</body>
+
+</html>

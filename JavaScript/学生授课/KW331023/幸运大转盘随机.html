@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 600px;
+            height: 600px;
+            /* border: 2px solid red; */
+            margin: 30px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+        }
+
+        .box div {
+            width: 180px;
+            height: 180px;
+            background-color: rgb(59, 199, 241);
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            line-height: 180px;
+            font-size: 20px;
+        }
+
+        .box button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .box button:nth-of-type(1) {
+            background-color: green;
+        }
+
+        .box button:nth-of-type(2) {
+            background-color: orangered;
+        }
+
+        .box .active {
+            /* color: #fff; */
+            background-color: rgb(114, 113, 113);
+        }
+
+        .box button .disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div>100元优惠券</div>
+        <div>200元优惠券</div>
+        <div>600元优惠券</div>
+        <div>800元优惠券</div>
+        <div>
+            <button type="button" id="start">开始</button>
+            &nbsp;&nbsp;
+            <button type="button" id="stop">停止</button>
+        </div>
+        <div>谢谢参与</div>
+        <div>1000元优惠券</div>
+        <div>1500元优惠券</div>
+        <div>2000元优惠券</div>
+    </div>
+    <script>
+        let divs = document.querySelectorAll('.box div');
+        let start = document.querySelector('#start');
+        let stop = document.querySelector('#stop');
+        let arr = [0, 1, 2, 5, 8, 7, 6, 3];
+        let timer = null;
+
+        start.onclick = function() {
+            this.disabled = true;
+            this.classList.add('disabled')
+            timer = setInterval(() => {
+                // 清空所有的div上的active
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].classList.remove('active')
+                }
+                // 生成一个0-7之间的随机整数
+                // Math.floor(Math.random() * (max - min + 1) + min)
+                let randomNum = Math.floor(Math.random() * 8)
+                divs[arr[randomNum]].classList.add('active')
+            }, 30);
+        }
+
+        stop.onclick = function() {
+            clearInterval(timer)
+            start.disabled = false;
+            start.classList.remove('disabled')
+        }
+    </script>
+</body>
+
+</html>

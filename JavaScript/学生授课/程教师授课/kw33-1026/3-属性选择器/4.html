@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* p[class!='hot'] {
+            color: red;
+        } */
+    </style>
+</head>
+<body>
+    <p class="hot">教育改变生活1</p>
+    <p class="cold">教育改变生活2</p>
+    <p class="hot">教育改变生活3</p>
+    <p class="aaa">教育改变生活4</p>
+    <p>教育改变生活5</p>
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    
+    <script>
+        $('p[class!=hot]').css('color','blue')
+    </script>
+</body>
+</html>

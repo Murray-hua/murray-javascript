@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 属性值中含有value的，value是独立的，或用空格隔开才行，而*只要包含就行，比~范围广 */
+        p[class~='hello'] {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p class="aaa hello">教育改变生活1</p>
+    <p class="hello aaa">教育改变生活2</p>
+    <p class="helloaaa">教育改变生活3</p>
+    <p class="hello">教育改变生活4</p>
+</body>
+</html>
