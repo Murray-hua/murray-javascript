@@ -4,10 +4,122 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>课工场论坛列表</title>
-    <link href="css/bbs.css" rel="stylesheet">
+    <link href="../素材/css/bbs.css" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-        
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .bbs {
+            margin: 0 auto;
+            width: 600px;
+            position: relative;
+        }
+
+        header {
+            padding: 5px 0;
+            border-bottom: 1px solid #cecece;
+        }
+
+        header span {
+            display: inline-block;
+            width: 220px;
+            height: 50px;
+            color: #fff;
+            background: #009966;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .post {
+            position: absolute;
+            background: #ffffff;
+            border: 1px #999999 solid;
+            width: 500px;
+            left: 65px;
+            top: 70px;
+            padding: 10px;
+            font-size: 14px;
+            z-index: 999999;
+            display: none;
+        }
+
+        .post .title {
+            width: 450px;
+            height: 30px;
+            line-height: 30px;
+            display: block;
+            border: 1px #aaaaaa solid;
+            margin-bottom: 10px;
+        }
+
+        .post select {
+            width: 200px;
+            height: 30px;
+        }
+
+        .post .content {
+            width: 450px;
+            height: 200px;
+            display: block;
+            margin: 10px 0;
+            border: 1px #aaaaaa solid;
+        }
+
+        .post .btn {
+            width: 160px;
+            height: 35px;
+            color: #fff;
+            background: #009966;
+            border: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 35px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .bbs section ul li {
+            padding: 10px 0;
+            border-bottom: 1px #999999 dashed;
+            overflow: hidden;
+        }
+
+        .bbs section ul li img {
+            float: left;
+            border-radius: 50%;
+            width: 60px;
+            margin-right: 10px;
+
+        }
+
+        .bbs section ul li h1 {
+            float: left;
+            width: 520px;
+            font-size: 16px;
+            line-height: 35px;
+        }
+
+        .bbs section ul li p {
+            color: #666666;
+            line-height: 25px;
+            font-size: 12px;
+        }
+
+        .bbs section ul li p span {
+            padding-right: 20px;
+        }
     </style>
 
 </head>
@@ -42,7 +154,7 @@
             $(".btn").click(function() {
                 //获取标题内容
                 var mytitle = $(".title").val();
-                var tites = $("<div>" + mytitle + "</div>");
+                var tites = $("<h1>" + mytitle + "</h1>");
                 //获取随,机数得到标题图片
                 var index = Math.floor(Math.random() * 4);
 
@@ -53,13 +165,15 @@
                 var date = new Date();
                 var newdate = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes();
                 var shijian = newdate;
-                var day = $("<p><span>" + myslect + "   " + shijian + "</span></p>");
+                var day = $("<p><span>" + "版块: " + myslect + "   " + "发表时间:" + shijian + "</span></p>");
 
                 var myli = $("<li></li>");
                 myli.append(imaindex);
                 myli.append(tites);
                 myli.append(day);
                 $("section ul").append(myli);
+                $(".post .content").val("");
+                $(".post .title").val("");
                 $(".post").hide();
             });
         });

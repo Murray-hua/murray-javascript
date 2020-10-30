@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 14px;
+        }
+
+        #list {
+            width: 169px;
+            height: 240px;
+            background: url(./images/bg.jpg) no-repeat;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        #list ul {
+            list-style: none;
+            margin-left: 13px;
+        }
+
+        #list li {
+            float: left;
+            width: 47px;
+            height: 23px;
+            background: url(./images/menu2.gif) no-repeat;
+            text-align: center;
+            line-height: 23px;
+            color: #fff;
+            margin-right: 1px;
+            cursor: pointer;
+        }
+
+        #list li.active {
+            background: url(./images/menu1.gif) no-repeat;
+        }
+
+        #list div {
+            clear: both;
+            line-height: 24px;
+            margin-left: 15px;
+            display: none;
+        }
+
+        #list div a {
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        #list div a:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="list">
+        <ul>
+            <li>小说</li>
+            <li>非小说</li>
+            <li>少儿</li>
+        </ul>
+        <div>
+            <a href="#" target=_blank>1.时间旅行者的妻子</a><br>
+            <a href="#" target=_blank>2.女心理师（下）</a><br>
+            <a href="#" target=_blank>3.鬼吹灯之精绝古城</a><br>
+            <a href="#" target=_blank>4.女心理师（上）</a><br>
+            <a href="#" target=_blank>5.小时候</a><br>
+            <a href="#" target=_blank>6.追风筝的人</a><br>
+            <a href="#" target=_blank>7.盗墓笔记2</a><br>
+            <a href="#" target=_blank>8.输赢</a>
+        </div>
+        <div>
+            <a href="#" target=_blank>1.人生若只如初见</a><br>
+            <a href="#" target=_blank>2.高效能人士的七个..</a><br>
+            <a href="#" target=_blank>3.求医不如求己</a><br>
+            <a href="#" target=_blank>4.人体使用手册</a><br>
+            <a href="#" target=_blank>5.孩子，把你的手给我</a><br>
+            <a href="#" target=_blank>6.别笑！我是英文单词书</a><br>
+            <a href="#" target=_blank>7.人体经络使用手册</a><br>
+            <a href="#" target=_blank>8.股市稳赚</a>
+        </div>
+        <div>
+            <a href="#" target=_blank>1.斯凯瑞金色童书・..</a><br>
+            <a href="#" target=_blank>2.哈利・波特与“混..</a><br>
+            <a href="#" target=_blank>3.不一样的卡梅拉（..</a><br>
+            <a href="#" target=_blank>4.它们是怎么来的</a><br>
+            <a href="#" target=_blank>5.五・三班的坏小子..</a><br>
+            <a href="#" target=_blank>6.男生日记</a><br>
+            <a href="#" target=_blank>7.哈利・波特与魔法石</a><br>
+            <a href="#" target=_blank>8.噼里啪啦丛书(全7册)</a>
+        </div>
+    </div>
+
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        // 初始化
+        $('#list ul li:first').addClass('active');
+        $('#list div:first').show();
+
+        $('#list li').click(function(){
+            $(this).siblings().removeClass('active')
+            $(this).addClass('active')
+
+            $('#list div').hide();
+            let li_index = $(this).index();
+            $('#list div').eq(li_index).show();
+        });
+
+    </script>
+</body>
+
+</html>

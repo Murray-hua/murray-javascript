@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>复制</button>
+    <br>
+    <div id="box">
+        <img src="images/568f8805bf2bf243c70f75e11043ce2e.jpg" alt="" width="200">
+    </div>
+
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        $('button').click(function (e) { 
+            e.preventDefault();
+            let newimg = $('#box img:first').clone();
+            $('#box').append(newimg);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://jd.com" target="_blank" title="多快好省" id="link">京东</a>
+    <img src="images/logo.png" alt="" gender="男">
+    
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        // JS操作元素的属性，用点或中括号
+        let mya = document.querySelector('#link');
+        // console.log(mya.href, mya.title);
+        // mya.href = "http://taobao.com"
+
+        // console.log(mya['id']);
+        // console.log(mya['title']);
+        // mya['title'] = '淘，我喜欢！'
+
+        // console.log(mya.getAttribute('href'));
+        // mya.setAttribute('href','http://qq.com')
+        // mya.removeAttribute('title')
+
+        // let myimg = document.querySelector('img');
+        // console.log(myimg.src);
+        // console.log(myimg.gender);
+
+        // console.log(myimg.getAttribute('src'));
+        // console.log(myimg.getAttribute('gender'));
+
+        // JQ操作元素的属性
+        console.log($('#link').attr('title'));
+        console.log($('#link').attr('id'));
+        $('#link').attr('title', '淘，我喜欢');
+
+        $('img').click(function (e) { 
+            e.preventDefault();
+            $(this).removeAttr('src');
+        });
+
+        
+        
+    </script>
+</body>
+</html>

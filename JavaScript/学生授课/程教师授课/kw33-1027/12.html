@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>复制</button>
+    <div id="box"><h1>jquery从入门到放弃</h1></div>
+    
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        // let btn = document.querySelector('button');
+        // let myh1 = document.querySelector('h1');
+        // btn.addEventListener('click', function () {
+        //     let newh = myh1.cloneNode(true);
+        //     document.body.appendChild(newh)
+        // })
+
+        $('#box h1').dblclick(function (e) { 
+            e.preventDefault();
+            alert('双击了')
+        });
+
+        $('button').click(function (e) { 
+            e.preventDefault();
+            let newh = $('#box h1').clone();
+            $('body').append(newh);
+        });
+
+    </script>
+</body>
+
+</html>

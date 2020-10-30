@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>我是一个标题</h1>
+    <button>移除</button>
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        $('h1').click(function(){
+            alert('ok')
+        })
+        $('button').click(function (e) { 
+            e.preventDefault();
+            // $('h1').empty(); // 清空内容
+            // $('h1').remove(); // 删除整个节点，包括标签和内容
+            // let myh = $('h1').remove();
+            let myh = $('h1').detach();
+            $(document.body).append(myh)
+        });
+    </script>
+</body>
+</html>

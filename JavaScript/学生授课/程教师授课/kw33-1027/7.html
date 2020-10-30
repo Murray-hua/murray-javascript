@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .aaa {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        // JS
+        let myh = document.createElement('h1')
+        myh.innerHTML = "我是一个小太阳"
+        myh.className = 'aaa'
+        document.body.appendChild(myh)
+
+        let myh2 = $('<h1 class="aaa">我是一个小太阳,天天充满正能量</h1>')
+        $(document.body).append(myh2);
+    </script>
+</body>
+</html>

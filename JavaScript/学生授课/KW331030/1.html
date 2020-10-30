@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script>
+        // js
+        // addEventListener();
+        // removeEventListener();
+
+        let fn1 = function() {
+            console.log(111);
+        };
+        let fn2 = function() {
+            console.log(111);
+        };
+        let fn3 = function() {
+            console.log(111);
+        };
+
+        // 绑定事件
+        $('button').on('click', fn1);
+        $('button').on('click', fn2);
+        $('button').on('mouseleave', fn3);
+
+
+        // 移除事件
+        $('button').off();//移除所有绑定的事件
+        $('button').off('click');//移除绑定的click事件
+        $('button').off('click',fn1);//移除绑定的click事件
+
+    </script>
+</body>
+
+</html>

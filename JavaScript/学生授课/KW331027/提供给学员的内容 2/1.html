@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>习近平谋划中国大棋局</h1>
+    <p></p>
+
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script>
+        // 设置=>修改=>写操作
+        $('p').css('color', 'red')
+        $('p').css({ 'color': 'red', 'background-color': 'yeloow' })
+
+        // 获取=>读操作
+        console.log($('h1').css('color'));
+        console.log($('h1').css('font-size'));
+
+        console.log(document.querySelector('h1').style.color);
+        console.log(document.querySelector('h1').style.fontSize);
+        let myh1 = document.querySelector('h1')
+        console.log(getComputedStyle(myh1).fontSize);
+
+        
+    </script>
+</body>
+
+</html>

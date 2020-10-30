@@ -6,9 +6,6 @@
     <title>今日团购模块 </title>
     <link rel="stylesheet" href="css/shopping.css">
     <style>
-        .box  {
-            
-        }
         .hoverstyle{
 		    background-color:#D51938;
 		    color:#fff;
@@ -47,12 +44,19 @@
     </div>
     <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script>
-        $('.box').mouseover(function() {
-            $(".box").addClass("hoverstyle");
-        }).mouseout(function() {
-            $(".box").removeClass("hoverstyle");
-        });
+        // $('.box').mouseover(function() {
+        //     $(this).addClass("hoverstyle");
+        // }).mouseout(function() {
+        //     $(this).removeClass("hoverstyle");
+        // });
   
+
+            $('box').hover(function () {
+                    // over
+                    $(this).find('dl').toggle('hoverstyle');
+                }
+            );
+        
     </script>
 </body>
 

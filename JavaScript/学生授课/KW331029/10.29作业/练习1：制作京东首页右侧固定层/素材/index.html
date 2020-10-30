@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>京东首页右侧固定层</title>
+    <link href="css/nav.css" rel="stylesheet">
+</head>
+<body>
+<nav id="nav">
+    <li><span></span><p>就东会员</p></li>
+    <li><span></span><p>购物车</p></li>
+    <li><span></span><p>我的关注</p></li>
+    <li><span></span><p>我的足迹</p></li>
+    <li><span></span><p>我的消息</p></li>
+    <li><span></span><p>咨询JIMI</p></li>
+</nav>
+
+
+<script src="./js/jquery-1.12.4.js"></script>
+<script>
+//     1、制作京东首页右侧的固定层，6 个图标：京东会员、购物车、我的关注、我
+// 的足迹、我的消息和咨询 JIMIR
+
+    $.each($('#nav li'),function(i,e){
+       $(e).hover(function(){
+        $('#nav li span').css('background-color','#7a6e6e')
+        $('#nav li span').eq(i).css('background-color',' #c81623')
+        $('#nav li p').eq(i).toggle()
+        
+       })
+
+    })
+    
+</script>
+</body>
+</html>

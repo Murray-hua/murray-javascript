@@ -4,21 +4,35 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>QQ简易聊天框</title>
-    <link rel="stylesheet" href="css/chat.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .ccc {
-            background-color: #ccc;
-        }
-
- 
-    </style>
+    <link rel="stylesheet" href="../素材/css/chat.css">
 </head>
 
+<style>
+    .chatBody div {
+        padding: 10px;
+    }
+
+    .chatBody div::after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+    .chatBody div h2 {
+            font-size: 14px;
+        }
+    .chatBody div img {
+        float: left;
+        margin-right: 10px;
+    }
+
+    .chatBody div p {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 5px;
+        width: 85%;
+        float: right;
+    }
+</style>
 
 <body>
     <section id="chat">
@@ -41,23 +55,21 @@
                 //获取聊天内容
                 var str = $(".chatBody").html();
                 //随机数
-                var tou = Math.floor(Math.random() * 3);
+                var iNum = Math.floor(Math.random() * 3);
                 //获得随机图片
-                var headstr = "<div><img src='images/" + headImg[tou] + "'</div>";
+                var headStr = "<div><img src='images/" + headImg[iNum] + "'</div>";
                 //获得随机名字
-                var useName = "<p>" + uName[tou] + "</p>";
+                var useName = "<h2>" + uName[iNum] + "</h2>";
 
                 //获取当前输入的内容
-                var cha = $(".chatText").val();
-                var chastr = "<div>" + cha + "</div>";
-
+                var chaStr = "<p>" + $(".chatText").val() + "</p>"
                 //把内容放到chatbox里头
-                var suoYou = "<section>" + headstr + useName + chastr + "</section>";
+                var currentStr = "<section>" + headStr + useName + chaStr + "</section>";
+
                 //显示在指定位置，清楚内容
-                $(".chatBody").html(str + suoYou);
+                $(".chatBody").html(str + currentStr);
                 $(".chatBody section div:last").addClass("chatContent");
                 $(".chatText").val("");
-                $(".chatContent").addClass("ccc");
             }
         });
     });

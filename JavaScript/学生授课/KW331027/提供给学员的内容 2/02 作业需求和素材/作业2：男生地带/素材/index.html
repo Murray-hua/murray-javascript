@@ -121,6 +121,26 @@
         <div style='clear:both;'></div>
     </div>
  </div>
+<script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script>
+	 $(function () {
+           $("img").mouseover(function () {
+               $(this).addClass("transparent_class")
+           })
+           $("img").mouseout(function () {
+               $(this).removeClass("transparent_class")
+           })
+       })
 
+
+       $('.box').hover(function () {
+               // over
+               $(this).find('img').stop.fadeTo('fast',0.3)
+           }, function () {
+               // out
+               $(this).find('img').stop.fadeTo('slow',1)
+           }
+       );
+</script>
 </body>
 </html>

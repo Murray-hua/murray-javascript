@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            position: fixed;
+            right: 0;
+            top: 400px;
+            
+            
+
+        }
+        .openbox1{
+            position: fixed;
+            right:0px;
+            top: 400px;
+           text-align: center;
+            border: 1px solid #333;
+            display: none;
+          
+        }
+    div{
+        display: flex;
+            flex-direction: column;
+    }
+
+       
+       
+    </style>
+</head>
+
+<body>
+    <div class="box"><img src="./在线客服素材/img/right_bar.jpg" alt="">
+     
+    </div>      
+    <div class="openbox1" "> <img src="./在线客服素材/img/qq.png" alt="">
+        <img src="./在线客服素材/img/qq.png" alt="">
+        <p style="font-weight: bolder;">客服电话  </p>
+        <p>123445  </p>
+    </div>
+   
+   
+    <script src="../作业1：左导航特效/素材/js/jquery-1.12.4.js"></script>
+    <script>
+        $('.box').mouseenter(function(){
+            $(this).hide()
+            $('.openbox1').show()
+        })
+
+        $('.openbox1').mouseleave(function(){
+            $('.openbox1').hide()
+            $('.box').toggle().show()
+        })
+        
+      
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        body {
+            font-size: 14px;
+            font-family: "microsoft yahei";
+        }
+
+        .box {
+            width: 600px;
+            position: relative;
+            /* border: 1px solid red; */
+            min-height: 600px;
+            margin: 0 auto;
+        }
+
+        .box header {
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .box header span {
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            background-color: #096;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .box ul li {
+            border-bottom: 1px dashed #ccc;
+            padding: 10px 0;
+        }
+
+        .box ul li::after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+        .box ul li img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .box ul li h3 {
+            margin-top: 5px;
+        }
+
+        .box ul li p {
+            color: #666;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+        .box ul li span {
+            margin-right: 20px;
+        }
+
+        .box .post {
+            width: 500px;
+            position: absolute;
+            height: 400px;
+            border: 1px solid #ccc;
+            left: 50px;
+            top: 80px;
+            background-color: #fff;
+            padding: 10px;
+            display: none;
+        }
+
+        .post input {
+            width: 400px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #ccc;
+            display: block;
+        }
+
+        .post select {
+            width: 200px;
+            height: 30px;
+            margin: 10px 0;
+        }
+
+        .post textarea {
+            display: block;
+            width: 400px;
+            height: 200px;
+            border: 1px solid #ccc;
+        }
+
+        .post button {
+            display: inline-block;
+            width: 150px;
+            height: 36px;
+            text-align: center;
+            line-height: 36px;
+            color: white;
+            background-color: #096;
+            border-radius: 5px;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <header>
+            <span id="mypost">我要发帖</span>
+        </header>
+        <ul id="main">
+            <!-- <li>
+                <img src="images/tou01.jpg" alt="">
+                <h3>北大青鸟</h3>
+                <p><span>版块：请选择版块发表</span><span>时间：2019-12-3</span></p>
+            </li> -->
+        </ul>
+        <div id="myModal" class="modal">
+            <div class="post">
+                <input type="text" placeholder="请输入标题(1-50个字符)" id="txt">
+                所属版块：<select name="" id="sel">
+                    <option>请选择版块</option>
+                    <option>电子书籍</option>
+                    <option>新课来了</option>
+                    <option>新手报到</option>
+                    <option>职业规划</option>
+                </select>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button id="pub">发布</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        var arrTou = Array.of("images/tou01.jpg", "images/tou02.jpg", "images/tou03.jpg", "images/tou04.jpg");
+        $('#mypost').click(function (e) { 
+            e.preventDefault();
+            $('.post').show();
+        });
+
+        $('#pub').click(function (e) { 
+            e.preventDefault();
+
+            if ($('#txt').val().trim() == "" || $('#sel').val() == "请选择版块") {
+                alert("标题或版块不能为空")
+                return;
+            }
+
+            let newli = $('<li></li>')
+            // 0-3
+            let num = Math.floor(Math.random()*4)
+            let newimg = $(`<img src="${arrTou[num]}" alt="">`);
+
+            let txtval = $('#txt').val();
+            let txt = $(`<h3>${txtval}</h3>`);
+
+            let selval = $('#sel').val();
+            let t = new Date().toLocaleDateString();
+            let newp = $(`<p><span>版块：${selval}</span><span>时间：${t}</span></p>`);
+
+            newli.append(newimg)
+            newli.append(txt)
+            newli.append(newp)
+
+            $('#main').prepend(newli)
+
+            $('#txt').val("")
+            $('#sel').val("请选择版块")
+
+            $('.post').hide();
+        });
+
+    </script>
+</body>
+
+</html>

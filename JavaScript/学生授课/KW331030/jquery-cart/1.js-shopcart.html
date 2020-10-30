@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>jq购物车效果2</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/cart.css" />
+</head>
+
+<body>
+    <div id="main" class="hander-car">
+        <div class="store-content">
+            <div class="cart-box">
+                <div class="title">
+                    <h2>购物清单</h2>
+                </div>
+                <div class="cart-inner">
+                    <div>
+                        <div class="cart-table-title">
+                            <span class="name">商品信息</span>
+                            <span class="operation">操作</span>
+                            <span class="subtotal">小计</span>
+                            <span class="num">数量</span>
+                            <span class="price">单价</span>
+                        </div>
+                        <div class="cart-table">
+                            <div class="cart-group">
+                                <!--购物列表-->
+                                <div class="cart-top-items">
+                                    <div class="cart-items">
+                                        <div class="items-choose">
+                                            <!-- 勾选商品  选中：checkbox-on -->
+                                            <span class="blue-checkbox-new"><a></a></span>
+                                        </div>
+                                        <div class="items-thumb">
+                                            <img src="./img/goods/s1.jpg">
+                                            <a href="javascript:;" target="_blank"></a>
+                                        </div>
+                                        <div class="name hide-row">
+                                            <div class="name-table">
+                                                <a href="javascript:;" target="_blank">坚果 Pro 钢化玻璃手感膜 无孔 （后壳用）</a>
+                                                <ul class="attribute">
+                                                    <li>透明</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="operation">
+                                        </div>
+                                        <!-- 小计 -->
+                                        <div class="subtotal">¥ 49.00</div>
+                                        <!-- 件数的操作 -->
+                                        <div class="item-cols-num">
+                                            <div class="select js-select-quantity">
+                                                <span class="down down-disabled">-</span>
+                                                <span class="num">
+                                                    <input type="text" value="1" style="display: inline-block;">
+                                                </span>
+                                                <span class="up">+</span>
+
+                                            </div>
+                                        </div>
+                                        <!-- 单价 -->
+                                        <div class="price">¥ 100.00</div>
+                                    </div>
+                                </div>
+                                <div class="cart-top-items">
+                                    <div class="cart-items">
+                                        <div class="items-choose">
+                                            <span class="blue-checkbox-new"><a></a></span>
+                                        </div>
+                                        <div class="items-thumb">
+                                            <img src="./img/goods/s1.jpg">
+                                            <a href="javascript:;" target="_blank"></a>
+                                        </div>
+                                        <div class="name hide-row">
+                                            <div class="name-table">
+                                                <a href="javascript:;" target="_blank">坚果 Pro 钢化玻璃手感膜 无孔 （后壳用）</a>
+                                                <ul class="attribute">
+                                                    <li>透明</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="operation">
+                                        </div>
+                                        <div class="subtotal">¥ 49.00</div>
+                                        <div class="item-cols-num">
+                                            <div class="select js-select-quantity">
+                                                <span class="down down-disabled">-</span>
+                                                <span class="num">
+                                                    <input type="text" value="1" style="display: inline-block;">
+                                                </span>
+                                                <span class="up">+</span>
+
+                                            </div>
+                                        </div>
+                                        <div class="price">¥ 200</div>
+                                    </div>
+                                </div>
+                                <div class="cart-top-items">
+                                    <div class="cart-items">
+                                        <div class="items-choose">
+                                            <span class="blue-checkbox-new"><a></a></span>
+                                        </div>
+                                        <div class="items-thumb">
+                                            <img src="./img/goods/s1.jpg">
+                                            <a href="javascript:;" target="_blank"></a>
+                                        </div>
+                                        <div class="name hide-row">
+                                            <div class="name-table">
+                                                <a href="javascript:;" target="_blank">坚果 Pro 钢化玻璃手感膜 无孔 （后壳用）</a>
+                                                <ul class="attribute">
+                                                    <li>透明</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="operation">
+                                        </div>
+                                        <div class="subtotal">¥ 49.00</div>
+                                        <div class="item-cols-num">
+                                            <div class="select js-select-quantity">
+                                                <span class="down down-disabled">-</span>
+                                                <span class="num">
+                                                    <input type="text" value="10" style="display: inline-block;">
+                                                </span>
+                                                <span class="up">+</span>
+
+                                            </div>
+                                        </div>
+                                        <div class="price">¥ 49.00</div>
+                                    </div>
+                                </div>
+                                <div class="cart-top-items">
+                                    <div class="cart-items">
+                                        <div class="items-choose">
+                                            <span class="blue-checkbox-new"><a></a></span>
+                                        </div>
+                                        <div class="items-thumb">
+                                            <img src="./img/goods/s1.jpg">
+                                            <a href="javascript:;" target="_blank"></a>
+                                        </div>
+                                        <div class="name hide-row">
+                                            <div class="name-table">
+                                                <a href="javascript:;" target="_blank">坚果 Pro 钢化玻璃手感膜 无孔 （后壳用）</a>
+                                                <ul class="attribute">
+                                                    <li>透明</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="operation">
+                                        </div>
+                                        <div class="subtotal">¥ 49.00</div>
+                                        <div class="item-cols-num">
+                                            <div class="select js-select-quantity">
+                                                <span class="down down-disabled">-</span>
+                                                <span class="num">
+                                                    <input type="text" value="2" style="display: inline-block;">
+                                                </span>
+                                                <span class="up">+</span>
+
+                                            </div>
+                                        </div>
+                                        <div class="price">¥ 58.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-bottom-bg fix-bottom">
+                    <div class="cart-bar-operation">
+                        <div>
+                            <div class="choose-all js-choose-all">
+                                <span class="blue-checkbox-new" id="chooseall"><a></a></span>
+                                全选
+                            </div>
+                            <!-- <div class="delete-choose-goods">删除选中的商品</div> -->
+                        </div>
+                    </div>
+                    <div class="shipping">
+                        <div class="shipping-box">
+                            <div class="shipping-total shipping-num">
+                                <h4 class="">
+                                    已选择 <i id="yixuan">0</i> 件商品
+                                </h4>
+                                <h5>
+                                    共计 <i id="gongji">0</i> 件商品
+                                </h5>
+                            </div>
+                            <div class="shipping-total shipping-price">
+                                <h4 class="">
+                                    应付总额：<span>￥</span><i class="moneyall">0</i>
+                                </h4>
+                                <h5 class="shipping-tips">
+                                    应付总额不含运费
+                                </h5>
+
+                            </div>
+                        </div>
+                        <span class="jianguo-blue-main-btn big-main-btn js-checkout disabled-btn"><a>现在结算</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        /**
+         选中: checkbox-on
+         结算按钮样式: disabled-btn
+         加减按钮禁用：down-disabled
+         */
+        let blueCheckboxes = document.querySelectorAll('.cart-group .blue-checkbox-new');
+        let chooseAll = document.querySelector('.choose-all .blue-checkbox-new');
+        let prices = document.querySelectorAll(".cart-items .price");
+        let inputNum = document.querySelectorAll(".num input");
+        let ups = document.querySelectorAll(".up");
+        let downs = document.querySelectorAll(".down");
+        let jsCheckout = document.querySelector(".js-checkout");
+
+        let xiaojis = document.querySelectorAll(".cart-items .subtotal");
+        let gongji = document.querySelector(".shipping-num h5 i")
+        let yiXuan = document.querySelector('.shipping-num h4 i');
+        let yingFu = document.querySelector('.moneyall');
+
+        var istrue = true;
+
+        // 设置结算的样式
+        let setClass = () => {
+            let isAllChecked = [...blueCheckboxes].some(item => item.classList.contains('checkbox-on'));
+            if (isAllChecked) {
+                jsCheckout.classList.remove('disabled-btn');
+            } else {
+                jsCheckout.classList.add('disabled-btn');
+            }
+        };
+
+        // 点击全选
+        chooseAll.addEventListener('click', () => {
+            chooseAll.classList.toggle('checkbox-on');
+            blueCheckboxes.forEach(item => {
+                if (istrue) {
+                    item.classList.add("checkbox-on")
+                } else {
+                    item.classList.remove("checkbox-on")
+                }
+            });
+            istrue = !istrue;
+            setClass();
+            jiesuan();
+        });
+
+        // 共计
+        let getTotalNum = () => {
+            let totalNum = 0;
+            totalNum = [...inputNum].reduce((a, b) => {
+                b = Number(b.value);
+                return a + b;
+            }, 0);
+            gongji.innerHTML = totalNum;
+        };
+        getTotalNum();
+
+        // 小计
+        let getXiaoJi = (price, num) => {
+            let xiaojiMoney = parseInt(price.slice(1).trim()) * parseInt(num);
+            return Number(xiaojiMoney.toFixed(2))
+        };
+
+        // 结算：已选数量和应付总额
+        let jiesuan = () => {
+            let yiXuanNum = 0;
+            let yingFuNum = 0;
+            blueCheckboxes.forEach((item, index) => {
+                if (item.classList.contains('checkbox-on')) {
+                    yiXuanNum += Number(inputNum[index].value);
+                    yingFuNum += getXiaoJi(prices[index].innerHTML, inputNum[index].value);
+                }
+            });
+            yiXuan.innerHTML = yiXuanNum;
+            yingFu.innerHTML = yingFuNum;
+        };
+
+        for (let i = 0; i < blueCheckboxes.length; i++) {
+            const element = blueCheckboxes[i];
+
+            element.addEventListener('click', () => {
+                element.classList.toggle('checkbox-on');
+
+                // 是否全部选中了
+                let isAllChecked = [...blueCheckboxes].every(item => item.classList.contains('checkbox-on'));
+
+                // 判断是否全部选中
+                if (isAllChecked) {
+                    chooseAll.classList.add('checkbox-on');
+                } else {
+                    chooseAll.classList.remove('checkbox-on');
+                }
+
+                istrue = !isAllChecked;
+                setClass();
+                jiesuan();
+            });
+
+            xiaojis[i].innerHTML = '￥' + getXiaoJi(prices[i].innerHTML, inputNum[i].value);
+
+            if (inputNum[i].value === '10') {
+                ups[i].classList.add("up-disabled");
+            } else {
+                ups[i].classList.remove("up-disabled");
+            }
+
+            if (inputNum[i].value === '1') {
+                downs[i].classList.add("down-disabled");
+            } else {
+                downs[i].classList.remove("down-disabled");
+            }
+
+            // 加
+            ups[i].addEventListener('click', () => {
+                let text = inputNum[i].value;
+                text = Math.min(10, Number(text) + 1);
+                inputNum[i].value = text;
+                if (text === 10) {
+                    ups[i].classList.add('up-disabled')
+                }
+                if (text > 1) {
+                    downs[i].classList.remove('down-disabled')
+                }
+                xiaojis[i].innerHTML = '￥' + getXiaoJi(prices[i].innerHTML, inputNum[i].value);
+                getTotalNum();
+                jiesuan();
+            });
+
+            // 减
+            downs[i].addEventListener('click', () => {
+                let text = inputNum[i].value;
+                text = Math.max(1, Number(text) - 1);
+                inputNum[i].value = text;
+                if (text === 1) {
+                    downs[i].classList.add('down-disabled')
+                }
+                if (text < 10) {
+                    ups[i].classList.remove('up-disabled')
+                }
+                xiaojis[i].innerHTML = '￥' + getXiaoJi(prices[i].innerHTML, inputNum[i].value);
+                getTotalNum();
+                jiesuan();
+            });
+
+        }
+    </script>
+</body>
+
+</html>

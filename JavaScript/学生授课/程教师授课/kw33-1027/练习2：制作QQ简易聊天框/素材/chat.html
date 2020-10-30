@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>QQ简易聊天框</title>
+    <link rel="stylesheet" href="css/chat.css">
+    <style>
+        .chatBody div {
+            padding: 10px;
+        }
+
+        .chatBody div::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .chatBody div img {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .chatBody div h2 {
+            font-size: 14px;
+        }
+
+        .chatBody div p {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            width: 85%;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="chat">
+        <div class="chatBody">
+            <!-- <div>
+            <img src="./images/head01.jpg" alt="">
+            <h2>标题</h2>
+            <p>我是内容</p>
+        </div> -->
+        </div>
+        <div><img src="images/icon.jpg"></div>
+        <textarea class="chatText"></textarea>
+        <div class="btn"><span>关闭(C)</span><span id="send">发送(S)</span></div>
+    </section>
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        let avatarlist = Array.of('./images/head01.jpg', './images/head02.jpg', './images/head03.jpg');
+
+        let username = new Array('张三', '李四', '王五');
+
+        $('#send').click(function (e) {
+            e.preventDefault();
+
+            if ($('.chatText').val().trim().length <= 0) {
+                alert('内容不能为空')
+            } else {
+                let str = $('.chatBody').html();
+                let randomNum = Math.floor(Math.random() * 3)
+                let myavatar = `<img src="${avatarlist[randomNum]}">`
+                let myname = `<h2>${username[randomNum]}</h2>`
+                let mytext = '<p>' + $('.chatText').val() + '</p>';
+                $('.chatBody').html(str + '<div>' + myavatar + myname + mytext + '</div>');
+                $('.chatText').val('');
+            }
+
+        });
+    </script>
+</body>
+
+</html>

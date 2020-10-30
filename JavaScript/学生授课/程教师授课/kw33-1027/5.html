@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <input type="text" placeholder="用户名"> 
+    <input type="password" placeholder="密码">
+    <button>提交</button>
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        $('button').click(function (e) { 
+            e.preventDefault();
+            alert('用户名：' + $('input[type=text]').val() + '，密码：' + $('input[type=password]').val())
+            $('input[type=text]').val('')
+            $('input[type=password]').val('')
+        });
+    </script>
+</body>
+</html>

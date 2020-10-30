@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>地址</th>
+                <th>宠物</th>
+            </tr>
+        </thead>
+        <tbody id="mytbody">
+        </tbody>
+    </table>
+
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        // $.get("https://www.fastmock.site/mock/4f60d566644d6646e94d679ea86f9287/aixue8/userinfo",
+        //     function (result) {
+        //         console.log(result);
+        //     },
+        //     "json"
+        // );
+
+
+        $.ajax({
+            type: "get", // 请求类型
+            url: "https://www.fastmock.site/mock/4f60d566644d6646e94d679ea86f9287/aixue8/userinfo",
+            dataType: "json", // 返回的数据类型
+            success: function(result) { // 请求成功的回调函数
+                console.log(result);
+                result.forEach(item => {
+                    $('#mytbody').append(`
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${item.age}</td>
+                        <td>${item.addr}</td>
+                        <td>${item.pet.name}</td>
+                    </tr>
+                `)
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

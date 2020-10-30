@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>我是一个标题</h1>
+    </div>
+
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+    //    我把书捡起来了 => 书被我捡起来了
+        let myp = $('<p>一些文字</p>')
+        // $('.box').append(myp) // 在元素内部后面添加节点
+        // myp.appendTo($('.box')) 
+        // $('.box').prepend(myp)  // 在元素内部前面添加节点
+        // myp.prependTo($('.box'))
+
+        // $('.box').after(myp)
+        // $('.box').before(myp)
+        myp.insertBefore($('.box'))
+    </script>
+</body>
+</html>

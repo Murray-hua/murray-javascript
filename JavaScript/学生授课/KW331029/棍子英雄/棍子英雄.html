@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            position: fixed;
+        }
+
+        .pillar {
+            width: 80px;
+            height: 400px;
+            background-color: #000;
+            position: fixed;
+            bottom: 0;
+        }
+
+        .pillar2 {
+            width: 80px;
+            height: 400px;
+            background-color: #000;
+            position: fixed;
+            bottom: 0;
+            left: 300px;
+        }
+
+        .person img {
+            position: fixed;
+            bottom: 400px;
+
+        }
+
+        #button {
+            top: 10%;
+            left: 50%;
+            /* transform: translate(-50%, -50%); */
+        }
+
+        #stick {
+            width: 8px;
+            height: 5px;
+            background-color: red;
+            position: fixed;
+            bottom: 400px;
+            left: 50px;
+            transition: all .2s;
+            transform-origin: right bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/1.jpg" alt="">
+    <div class="pillar"></div>
+    <div class="pillar2"></div>
+    <div class="person">
+        <img src="./images/stick_stand.png" alt="">
+    </div>
+    <div id="stick"></div>
+    <img src="./images/btn-bg.png" alt="" id="button">
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#button').mousedown(function() {
+                $("#stick").animate({ "height": "500px" }, 2500); //棍子变长
+            })
+            $("#button").mouseup(function() {
+                if (stop) {
+                    $("#stick").stop(); //停止棍子正在变长的动画，棍子停止变长
+                    stop = false;
+                    $("#stick").addClass("stickDown"); //棍子倒下
+                    moveMan();
+                }
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>

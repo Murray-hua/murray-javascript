@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>我是标题一</h1>
+    <button>替换</button>
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        let myh2 = $('<h2>我是标题二</h2>')
+        $('button').click(function (e) { 
+            e.preventDefault();
+            $('h1').replaceWith(myh2)
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1>习近平谋划中国大棋局</h1>
+
+    <p id="para" class="bor">回望“十三五”，在习近平总书记亲自推动下，京津冀协同发展、长江经济带发展、粤港澳大湾区建设、长三角一体化发展、黄河流域生态保护和高质量发展……一个个重大国家战略扎实推进。今天，人民日报新媒体播发微视频《习近平谋划中国大棋局》，让我们跟随总书记的同期声，看区域协调发展新格局、新进展。
+    </p>
+
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        // $('#para').click(function(){
+        //     $(this).toggleClass('bg')
+        // });
+
+        $('#para').click(function (e) { 
+            e.preventDefault();
+            $(this).toggleClass('bg');
+        });
+
+        $('#para').css('color');
+        $('h1').css('color', 'red');
+        $('.box').css({
+            border: '1px solid red',
+            color: 'red'
+        });
+
+    </script>
+</body>
+</html>

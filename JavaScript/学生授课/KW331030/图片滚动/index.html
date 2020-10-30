@@ -1,0 +1,113 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            img {
+                vertical-align: middle;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            .nav {
+                display: flex;
+                width: 150px;
+                margin: 50px auto;
+                flex-flow: row nowrap;
+                justify-content: space-around;
+            }
+
+            .wrap {
+                border: 1px solid #ccc;
+                padding: 10px;
+                width: 654px;
+                margin: 0 auto;
+            }
+
+            .box {
+                width: 654px;
+                position: relative;
+                height: 106px;
+                overflow: hidden;
+            }
+
+            .box ul {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            .box ul li {
+                border: 1px solid #ccc;
+                padding: 2px;
+                overflow: hidden;
+                width: 145px;
+                float: left;
+                margin: 0 5px;
+            }
+
+            .box ul li img {
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="nav" id="nav">
+            <a href="javascript:;">向左走</a>
+            <a href="javascript:;">向右走</a>
+        </div>
+
+        <div class="wrap">
+            <div class="box" id="box">
+                <ul>
+                    <li><img src="images/01.jpg" alt=""></li>
+                    <li><img src="images/02.jpg" alt=""></li>
+                    <li><img src="images/03.jpg" alt=""></li>
+                    <li><img src="images/04.jpg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+            let myul = document.querySelector('#box ul');
+            let myli = document.querySelectorAll('#box ul li');
+            myul.innerHTML += myul.innerHTML;
+
+            myul.style.width = '1300px';
+            console.log(myul.offsetWidth);
+
+            let speed = 3;
+            setInterval(() => {
+                if (myul.offsetLeft < -myul.offsetWidth / 2) {
+                    myul.style.left = 0;
+                }
+                if (myul.offsetLeft > 0) {
+                    myul.style.left = -myul.offsetWidth / 2 + 'px';
+                }
+
+                myul.style.left = myul.offsetLeft + speed + 'px'
+            }, 30);
+
+            let mya = document.querySelectorAll('#nav a');
+            mya[0].onclick = function() {
+                speed = -4;
+            }
+            mya[1].onclick = function() {
+                speed = 4;
+            }
+        </script>
+    </body>
+
+    </html>
