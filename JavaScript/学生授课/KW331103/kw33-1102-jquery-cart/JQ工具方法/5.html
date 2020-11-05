@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        // 把json字符串转对象：JSON.parse()
+        // 把json对象转为字符串：JSON.stringify()
+        $.ajax({
+            type: "get",
+            url: "https://www.fastmock.site/mock/4f60d566644d6646e94d679ea86f9287/aixue8/kw22",
+            dataType: "text", // json
+            success: function (result) {
+                console.log(JSON.parse(result));
+                console.log($.parseJSON(result));
+            }
+        });
+    </script>
+</body>
+</html>

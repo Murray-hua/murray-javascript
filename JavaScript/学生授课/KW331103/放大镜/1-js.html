@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #small-box {
+            width: 300px;
+            height: 225px;
+            border: 1px solid #000;
+            float: left;
+            position: relative;
+            margin-left: 50px;
+        }
+
+        #small-box span {
+            width: 100px;
+            height: 100px;
+            opacity: 0.3;
+            background-color: #000;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: move;
+            display: none;
+        }
+
+        #big-box {
+            width: 300px;
+            height: 300px;
+            float: left;
+            overflow: hidden;
+            border: 1px solid #000;
+            margin-left: 30px;
+            position: relative;
+            display: none;
+        }
+
+
+        #big-box img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="small-box">
+            <img src="images/smallpic.jpg" alt="">
+            <span id="mark"></span>
+        </div>
+        <div id="big-box">
+            <img src="images/bigpic.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        var smallBox = document.querySelector('#small-box');
+        var mark = document.querySelector('#small-box span');
+        var bigBox = document.querySelector('#big-box');
+        var bigpic = document.querySelector('#big-box img');
+
+
+        smallBox.addEventListener('mousemove', (e) => {
+
+            // 让鼠标位于mark的正中间：
+            //鼠标距浏览器距离	e.clientX
+            //smallBox距浏览器距离 smallBox.offsetLeft
+            //mark一半的宽度 (mark.offsetWidth)/2
+            var myleft = e.clientX - smallBox.offsetLeft - (mark.offsetWidth) / 2;
+            var mytop = e.clientY - smallBox.offsetTop - (mark.offsetHeight) / 2;
+
+            // 判断mark的位置：
+            if (myleft < 0) { myleft = 0; }
+            if (mytop < 0) { mytop = 0; }
+            if (myleft > smallBox.offsetWidth - mark.offsetWidth) { myleft = smallBox.offsetWidth - mark.offsetWidth; }
+            if (mytop > smallBox.offsetHeight - mark.offsetHeight) { mytop = smallBox.offsetHeight - mark.offsetHeight; }
+            mark.style.left = myleft + 'px';
+            mark.style.top = mytop + 'px';
+
+            // mark往右移动，大图应该往左走，走多少呢？按照比例走：比例就是大图宽度除以小盒子的宽度
+            bigpic.style.left = -myleft * (bigpic.offsetWidth / smallBox.offsetWidth) + 'px';
+			bigpic.style.top = -mytop * (bigpic.offsetHeight / smallBox.offsetHeight) + 'px';
+
+        });
+
+        smallBox.addEventListener('mouseenter',() => {
+            mark.style.display = "block";
+            bigBox.style.display = "block";
+        });
+        smallBox.addEventListener('mouseleave',() => {
+            mark.style.display = "none";
+            bigBox.style.display = "none";
+        });
+    </script>
+</body>
+
+</html>

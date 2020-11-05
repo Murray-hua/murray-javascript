@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .nav {
+            display: flex;
+            width: 150px;
+            margin: 50px auto;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+        }
+
+        .wrap {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 654px;
+            margin: 0 auto;
+
+        }
+
+        .box {
+            width: 654px;
+            position: relative;
+            height: 106px;
+            overflow: hidden;
+        }
+
+        .box ul {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+        }
+
+        .box ul li {
+            border: 1px solid #ccc;
+            padding: 2px;
+            overflow: hidden;
+            width: 150px;
+            float: left;
+            margin: 0 5px;
+        }
+
+        .box ul li img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav" id="nav">
+        <a href="javascript:;">向左走</a>
+        <a href="javascript:;">向右走</a>
+    </div>
+
+    <div class="wrap">
+        <div class="box" id="box">
+            <ul id="list">
+                <li><img src="images/01.jpg" alt=""></li>
+                <li><img src="images/02.jpg" alt=""></li>
+                <li><img src="images/03.jpg" alt=""></li>
+                <li><img src="images/04.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        $('#list').html($('#list').html() + $('#list').html())
+        let speed = 1;
+        let t = null;
+
+        let autoplay = () => {
+            if ($('#list').position().left < - $('#list').innerWidth() / 2) {
+                $('#list').css('left', '0px')
+            }
+            if ($('#list').position().left > 0) {
+                $('#list').css('left', - $('#list').innerWidth() / 2)
+            }
+            $('#list').css('left', $('#list').position().left + speed)
+        };
+
+        t = setInterval(autoplay, 8);
+
+        $('#nav a:first').click(function (e) {
+            e.preventDefault();
+            speed = -1;
+        });
+        $('#nav a:last').click(function (e) {
+            e.preventDefault();
+            speed = 1;
+        });
+
+        $('#box').hover(function () {
+            clearInterval(t)
+        }, function () {
+            t = setInterval(autoplay, 8);
+        }
+        );
+    </script>
+</body>
+
+</html>

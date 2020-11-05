@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <span>我是span</span>
+            <p>11111</p>
+        </li>
+        <li>
+            <p>11111</p>
+        </li>
+        <li>
+            <p>11111</p>
+        </li>
+    </ul>
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        $('ul li p').click(function (e) { 
+            e.preventDefault();
+            // index() 如果没有参数，指代当前这个元素在同辈元素中的索引
+            // console.log($(this).index());
+            console.log($('ul li p').index($(this)));
+        });
+    </script>
+</body>
+</html>

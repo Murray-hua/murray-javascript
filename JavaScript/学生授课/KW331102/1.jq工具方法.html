@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script>
+        // 判断数据类型：5个基本，Number类型，String类型，Boolean类型，undefined,Null
+        // 对象类型:Object
+        // JS判断数据类型：typeof， 判断具体对象类型：instanceof
+        // typeof： 'number','string','boolean','undefind','object'
+
+        // JQ判断数据类型：
+        console.log($.type(123));//number
+        console.log($.type('123'));//string
+        console.log($.type(true));//boolean
+        let a;
+        console.log($.type(a));//undefined
+        console.log($.type(null));//null
+        console.log($.type({a:1}));//object
+        console.log($.type(function(){}));//function
+        console.log($.type([1,23,34]));//array
+        console.log($.type(/box/));//regexp
+
+
+    </script>
+</body>
+</html>

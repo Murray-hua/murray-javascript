@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        let bird = {
+            name: '鸟',
+            fly: function(){
+                console.log(this.name + '会飞');
+            }
+        };
+        let pig = {
+            name: '猪'
+        };
+        // bird.fly.call(pig)
+
+        let pigfly = $.proxy(bird.fly, pig)
+        pigfly();
+
+    </script>
+</body>
+</html>

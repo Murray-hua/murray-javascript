@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 300px;
+            height: 225px;
+            border: 1px solid red;
+            margin-left: 100px;
+            margin-top: 100px;
+            position: relative;
+        }
+
+        #mark {
+            width: 70px;
+            height: 70px;
+            background-color: #000;
+            opacity: 0.5;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: move;
+        }
+
+        #hide-box {
+            position: absolute;
+            top: 0;
+            left: 310px;
+            width: 300px;
+            height: 225px;
+            overflow: hidden;
+            border: 1px solid red;
+        }
+        #big-img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box">
+        <img src="./images/smallpic.jpg" alt="">
+        <div id="mark"></div>
+        <div id="hide-box">
+            <img src="./images/bigpic.jpg" alt="" id="big-img">
+        </div>
+    </div>
+
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        $('#box').mousemove(function (e) {
+            // values: e.clientX, e.clientY, e.pageX, e.pageY
+            let myleft = e.clientX - $('#box').offset().left - $('#mark').width() / 2;
+            let mytop = e.clientY - $('#box').offset().top - $('#mark').height() / 2;
+
+            // 判断mark的位置
+            if (myleft < 0) { myleft = 0; }
+            if (mytop < 0) { mytop = 0; }
+            if (myleft > $('#box').width() - $('#mark').width()) {
+                myleft = $('#box').width() - $('#mark').width()
+            }
+            if ( mytop > $('#box').height() - $('#mark').height() ) {
+                mytop = $('#box').height() - $('#mark').height()
+            }
+
+            $('#mark').css('left', myleft)
+            $('#mark').css('top', mytop)
+
+            let KWrateX = $('#big-img').innerWidth() / $('#box').innerWidth();
+            let KWrateY = $('#big-img').innerHeight() / $('#box').innerHeight();
+            console.log(KWrateX, KWrateY);
+            $('#big-img').css({'left': -myleft * KWrateX, 'top': -mytop * KWrateY})
+        });
+    </script>
+</body>
+
+</html>
