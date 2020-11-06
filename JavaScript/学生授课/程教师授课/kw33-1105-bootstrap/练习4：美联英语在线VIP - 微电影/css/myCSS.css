@@ -1,0 +1,44 @@
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif!important;
+}
+
+
+h2.btitle {
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 38px;
+    color: #00a080;
+    font-weight: 100;
+}
+
+/*–°√¿GOGO*/
+#home_xmgo {
+    padding-top: 75px;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#home_xmgo .xmgoitem {
+    margin-bottom: 30px;
+}
+.metvideo {
+    position: relative;
+    display: block;
+}
+#home_xmgo .xmgoitem img.img-responsive {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#home_xmgo .xmgoitem h5 {
+    padding: 10px;
+    margin: 0;
+    color: #f3f3f3;
+    text-align: center;
+    background-color: rgba(51,51,51,.2);
+}
+
