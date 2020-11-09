@@ -7,6 +7,7 @@
     <title>KW33-新浪云</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="./swiper/css/swiper.min.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <style>
         body {
             color: #555;
@@ -20,9 +21,11 @@
         .font18 {
             font-size: 18px;
         }
-        .font10{
+
+        .font10 {
             font-size: 10px;
         }
+
         .list ul {
             margin-left: 20px;
             padding: 0;
@@ -39,6 +42,7 @@
             background-color: rgb(112, 3, 112);
             border-color: rgb(116, 2, 116);
         }
+
         .border-top ul li {
             list-style: none;
         }
@@ -111,7 +115,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-3 text-center">
-                <img src="./images/cont1.png" alt="">
+                <img src="./images/cont1.png" alt="" class="wow animate__bounce">
                 <h2 class="text-primary mt-2">SAE</h2>
                 <p>云应用</p>
             </div>
@@ -340,6 +344,17 @@
             },
 
         })
+    </script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        wow = new WOW({
+            boxClass: 'wow', // default
+            animateClass: 'animate__animated', // default
+            offset: 0, // default
+            mobile: true, // default
+            live: true // default
+        });
+        wow.init();
     </script>
 
 </body>

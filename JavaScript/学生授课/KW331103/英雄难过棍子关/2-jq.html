@@ -24,7 +24,29 @@
     </div>
     <script src="js/jquery-1.12.4.js"></script>
     <script>
-        
+        function moveMan() {
+            var stickW = $(".stick").width(); //获取倒下棍子的长度
+            setTimeout(function() {
+                $(".man").find("img").attr("src", "images/stick.gif");
+                $(".man").find("img").animate({ "left": stickW + "px" }, 1000, function() {
+                    var wellL = $(".well").eq(1).offset().left; //柱子距离屏幕左侧的距离
+                    var well0 = $(".well").eq(0).offset().left; //柱子距离屏幕左侧的距离
+                    colWidth = $(".well").eq(0).width();
+                    var range = wellL - well0 - colWidth; //获取两个柱子之间的距离
+                    if ((stickW < range) || (stickW > wellL)) { //判断人物是否落下
+                        $(".man").animate({ "bottom": "0px" });
+                    } else {
+                        $(".man").find("img").attr("src", "images/stick_stand.png").css({ "left": 0 }).hide();
+                        $(".stick").removeClass("stickDown").width(0); //棍子变为初始
+                        var oldL = $(".well-box").offset().left;
+                        $(".well-box").animate({ "left": -wellL + oldL }, 500, function() { //柱子移动
+                            $(".man").find("img").show();
+                            stop = false; //按钮不可以单击
+                        });
+                    }
+                });
+            }, 600);
+        }
     </script>
 </body>
 

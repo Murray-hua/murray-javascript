@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百度登录框</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        .login-btn {
+            width: 1200px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-btn clearfix">
+        <button type="button" class="btn btn-primary float-right btn-sm" data-toggle="modal" data-target="#exampleModal">登录</button>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">登录百度账号</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="user" class="form-control" id="recipient-name" placeholder="手机/用户名/邮箱">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="recipient-name" placeholder="密码">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                下次自动登录
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-block">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('#exampleModal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-title').text('New message to ' + recipient)
+            modal.find('.modal-body input').val(recipient)
+        })
+    </script>
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
