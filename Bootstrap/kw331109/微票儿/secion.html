@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .carousel-indicators li {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 1px;
+            text-indent: -999px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0);
+            border: 1px solid #fff;
+            border-radius: 10px;
+        }
+
+        .carousel-indicators .active {
+            width: 12px;
+            height: 12px;
+            margin: 0;
+            background-color: #fff;
+        }
+        section {
+            background: url('./image/bannerbg.png') no-repeat;
+
+        }
+
+        .newsList {
+            background: #fff;
+            padding: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <!--栅格布局 焦点图-->
+        <div class="container-fluid pt-5 pb-5">
+            <div class="row">
+                <div class="col-xs-12 col-md-9">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- 圆圈指示符 -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                        </ol>
+
+                        <!-- 图片容器 -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="image/1.jpg" class="img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="image/2.jpg" class="img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="image/3.jpg" class="img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="image/4.jpg" class="img-fluid" alt="...">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <div class="newsList">
+                        <h3>特惠看</h3>
+                        <img src="image/img1.jpg" class="img-fluid" alt="" />
+
+                        <div class="newsText">
+                            <p><a href="#">[苏州]2016迷笛电子音乐节(预售)</a></p>
+
+                            <p class="borderLine"><a href="#">穿着花裤子喝着小酒通宵达旦</a></p>
+
+                            <p><a href="#">2016刘若英世界巡回演唱会</a></p>
+
+                            <p><a href="#">[上海]百老汇经典音乐剧--《狮子王》</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

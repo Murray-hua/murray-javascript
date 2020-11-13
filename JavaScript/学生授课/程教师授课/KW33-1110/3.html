@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <style>
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" class="layui-btn" id="btn">我是按钮</button>
+    <script src="./layui/layui.all.js"></script>
+    <script>
+        let $ = layui.jquery ,
+         layer = layui.layer;
+
+        $('#btn').click(function (e) { 
+            layer.confirm("你确定吗？",{
+                title: '我是标题哦',
+                // area: ['500px','400px']
+                // offset: 'rb'
+                icon: 5,
+                // btn: ['确定','取消','你好']
+                // btnAlign: 'c'
+                closeBtn: 1,
+                shade:[0.5, 'purple'],
+                // shadeClose: true
+                // time: 3000
+                anim: 6,
+                // isOutAnim: false
+                // fixed: false
+                // resize:true,
+                // resizing: function(){
+                //     console.log('你拉我干嘛');
+                // }
+                scrollbar:false,
+                // move: false,
+                // moveOut: true
+            }, function(index){
+                console.log('你确定了');
+                layer.close(index)
+                $.ajax({
+                    type: "get",
+                    url: "http://47.114.95.159:3000/get-flink",
+                    dataType: "json",
+                    success: function (result) {
+                        console.log(result);
+                    }
+                });
+            }, function(){
+                console.log('你取消了');
+            })
+        });
+    </script>
+</body>
+</html>

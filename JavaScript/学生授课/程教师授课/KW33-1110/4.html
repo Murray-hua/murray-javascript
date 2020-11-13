@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+
+</head>
+
+<body>
+
+    <button class="layui-btn layui-btn-danger" id="btn">删除</button>
+    <script src="./layui/layui.all.js"></script>
+    <script>
+        var $ = layui.jquery;
+        var layer = layui.layer;
+        $('#btn').click(function () {
+            layer.confirm("你确定要删除吗？", function () {
+                layer.msg("删除成功了")
+            })
+        });
+
+        var index = layer.load(1, {
+            shade: [0.1, '#fff'] //0.1透明度的白色背景
+        });
+    </script>
+</body>
+
+</html>

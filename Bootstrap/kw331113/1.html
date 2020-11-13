@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 定义模板 -->
+    <script id="tpl" type="text/html">
+        <!-- 条件语句-->
+    {{if bol}}
+    <h2>{{title}}</h2>
+    {{/if}}
+    <ul>
+        <!-- 循环语句 -->
+        {{each fruits}}
+        <li>{{$index}}-{{$value}}</li>
+        {{/each}}
+    </ul>
+    </script>
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="./template-web.js"></script>
+
+    <script>
+        let data = {
+            bol: true,
+            title: '超市',
+            fruits: ['牛奶', '饭盒', '水果', '文具']
+        };
+
+        let str = template('tpl', data);
+        $('body').append(str)
+    </script>
+</body>
+
+</html>

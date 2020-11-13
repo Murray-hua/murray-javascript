@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+</head>
+<body>
+    <button type="button" class="layui-btn" id="btn">我是按钮</button>
+    <script src="./layui/layui.all.js"></script>
+    <script>
+        let $ = layui.jquery ,
+         layer = layui.layer;
+
+        $('#btn').click(function (e) { 
+            e.preventDefault();
+            // alert('hello kw33')
+            // layer.alert('只想简单的提示一些')
+            // layer.alert("前端好学吗？", {icon: 6})
+            layer.alert("双11来了，要去购物吗？", function(index) {
+                layer.close(index)
+                location.assign("https://jd.com")
+            })
+        });
+    </script>
+</body>
+</html>

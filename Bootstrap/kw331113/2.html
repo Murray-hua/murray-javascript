@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻列表</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <style>
+        *{
+            list-style: none;
+        }
+        .box{
+            width: 500px;
+            margin: 0 auto;
+        }
+        h3{
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>新闻中心</h3>
+        <div id="list">
+
+        </div>
+
+        <div id="mypage-wrap">
+            <div id="mypage"></div>
+        </div>
+    </div>
+
+    <script id="tpl-news" type="text/html">
+        <ul>
+            {{each listData item}}
+            <li><a href="#">{{item.title}}</a></li>
+            {{/each}}
+        </ul>
+    </script>
+    <script src="./template-web.js"></script>
+    <script src="./layui/layui.all.js"></script>
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+
+    <script>
+        let laypage = layui.laypage;
+        laypage.render({
+            elem: 'mypage',
+            count: 49,
+            limit: 10,
+            jump: function(obj, first) {
+                console.log(obj.curr);
+                console.log(obj.limit);
+                $.ajax({
+                    type: "get",
+                    url: "http://47.114.95.159:3001/getnews",
+                    data: { curr: obj.curr, limit: obj.limit },
+                    dataType: "json",
+                    success: function(result) {
+                        console.log(result);
+                        let str = template('tpl-news', result)
+                        $('#list').html(str)
+                    }
+                });
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

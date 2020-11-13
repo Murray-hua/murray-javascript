@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>友情链接操作</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -100px;
+            width: 300px;
+            height: 200px;
+            background-color: #eee;
+            padding: 20px;
+        }
+
+        #box input {
+            height: 40px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        #box button {
+            display: block;
+            width: 100%;
+            height: 40px;
+            border: none;
+            background-color: rgb(36, 169, 252);
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 800px;
+            margin: 10px auto;
+        }
+
+        #table {
+            width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <button type="button" class="layui-btn layui-icon layui-icon-add-circle layui-btn-sm" id="addBtn">添加数据</button>
+    </div>
+    <table class="layui-table mytable" lay-even id="table">
+        <colgroup>
+            <col width="150">
+            <col width="200">
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>网站名称</th>
+                <th>网站地址</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="mytbody">
+
+        </tbody>
+    </table>
+    <div id="box">
+        <input type="text" placeholder="网站名称" id="user">
+        <input type="text" placeholder="网站地址" id="url">
+        <br>
+        <button id="sumbit">提交</button>
+    </div>
+
+    <div id="box">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">输入框</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+                <label class="layui-form-label">密码框</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+        </form>
+    </div>
+
+
+
+    <script src="./layui/layui.all.js"></script>
+    <script>
+        var $ = layui.jquery;
+        var hmy = layui.layer;
+
+        function getflink() {
+            $.ajax({
+                type: "get",
+                url: "http://47.114.95.159:3000/get-flink",
+                // data: "data", // 发送给后端的参数
+                dataType: "json", // 后端返回的数据类型
+                success: function(result) {
+                    console.log(result);
+                    result.forEach(item => {
+                        let newtr = $(`<tr>
+                        <td>${item.id}</td>
+                        <td>${item.sitename}</td>
+                        <td>${item.siteurl}</td>
+                        <td><button type="button" class="layui-btn layui-btn-sm" >编辑</button><button type="button" class="layui-btn layui-btn-danger layui-btn-sm">删除</button></td>
+                    </tr>`)
+                        $('#mytbody').append(newtr)
+                    });
+                }
+            });
+        }
+        getflink();
+
+        $('#addBtn').click(function(e) {
+            e.preventDefault();
+            $('#box').show();
+        });
+
+
+
+
+
+
+        $('#delBtn').click(function(e) {
+            e.preventDefault();
+            var myid = prompt('请输入id号确定删除')
+            if (myid == null) { return }
+            $.ajax({
+                type: "POST",
+                url: "http://47.114.95.159:3000/delete-flink",
+                contentType: 'application/json',
+                data: JSON.stringify({ id: myid }),
+                dataType: "json",
+                success: function(res) {
+                    hmy.msg('删除成功了')
+                    console.log(res);
+                }
+            });
+        });
+        getflink();
+
+        $('#sumbit').click(function() {
+            var user = $('#user').val();
+            var url = $('#url').val();
+            if (user == null || url == null) { return }
+            $.ajax({
+                type: "POST",
+                url: "http://47.114.95.159:3000/add-flink",
+                contentType: 'application/json',
+                data: JSON.stringify({ sitename: user, siteurl: url }),
+                dataType: "json",
+                success: function(res) {
+                    hmy.msg('添加成功了', { icon: 1 })
+                    $('#box').hide();
+
+                }
+            });
+        })
+        getflink();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        $('#bjBtn').click(function(e) {
+            e.preventDefault();
+            var eidtId = prompt('请编辑id'),
+                eidtUse = prompt('请编辑网站名称'),
+                eidtUrl = prompt('请编辑网址');
+            if (eidtId == null || eidtUse == null || eidtUrl == null) { return }
+            $.ajax({
+                type: "POST",
+                url: "http://47.114.95.159:3000/update-flink",
+                contentType: 'application/json',
+                data: JSON.stringify({ id: eidtId, sitename: eidtUse, siteurl: eidtUrl }),
+                dataType: "json",
+                success: function(res) {
+                    console.log(res);
+                }
+            });
+        });
+    </script>
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+
+
+</body>
+
+</html>

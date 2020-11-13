@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./KW33-1112/layui/css/layui.css">
+</head>
+
+<body>
+    <button class="layui-btn" id="getBtn">获取数据</button>
+    <button class="layui-btn" id="addBtn">添加数据</button>
+    <button class="layui-btn layui-btn-danger" id="delBtn">删除数据</button>
+    <button class="layui-btn">编辑数据</button>
+
+    <script src="./KW33-1112/layui/layui.all.js"></script>
+    <script>
+        let $ = layui.jquery;
+        let layer = layui.layer;
+        $('#getBtn').click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "get",
+                url: "http://47.114.95.159:3000/get-flink",
+                dataType: "json",
+                success: function(response) {
+                    layer.msg('获取数据成功')
+                    console.log(response);
+                }
+            });
+        });
+
+        $('#addBtn').click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "post",
+                url: "http://47.114.95.159:3000/add-flink",
+                contentType: 'application/json',
+                data: JSON.stringify({ sitename: 'dke', siteurl: 'abc.com' }),
+                dataType: "json",
+                success: function(response) {
+                    layer.msg('添加数据成功')
+                    console.log(response);
+                }
+            });
+        });
+        $('#delBtn').click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "post",
+                url: "http://47.114.95.159:3000/delete-flink",
+                contentType: 'application/json',
+                data: JSON.stringify({ id: 4065 }),
+                dataType: "json",
+                success: function(response) {
+                    layer.msg('删除数据成功')
+                    console.log(response);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

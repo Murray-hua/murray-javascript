@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./kw33ui/kw33.ui.css">
+    
+</head>
+
+<body>
+
+
+    <button id="btn" class="btn btn-primary">获取数据</button>
+    <button id="del-btn" class="btn btn-danger">删除数据</button>
+    <button id="add-btn">添加数据</button>
+    <button id="bj-btn">编辑数据</button>
+
+
+    <div class="my-shadow" id="my-shadow">
+        <div class="alert-box" id="alert-box">
+            <span class="alert-close">&times</span>
+            <h3>提示</h3>
+            <p>删除成功了</p>
+        </div>
+    </div>
+
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        // 获取数据
+        $('#btn').click(function () {
+            // 从接口里面拿数据（调接口）
+            // 获取友情链接接口：http://47.114.95.159:3000/get-flink
+            // 请求类型： get
+            // 返回的数据类型：json
+
+
+            console.log('获取数据了');
+
+            $.ajax({
+                type: "get", // type:请求类型
+                url: "http://47.114.95.159:3000/get-flink", // 请求地址：
+                // data: "data", // 发送给后端的数据
+                dataType: "json", // 从后端接收的数据类型
+                // 请求成功时返回的数据
+                success: function (mylist) {
+                    console.log(mylist);
+                }
+            });
+        })
+
+
+        // 删除数据
+        // 删除数据接口：http://47.114.95.159:3000/delete-flink
+        // 请求类型： POST
+        // 删除友情链接所传数据格式: { id: delid }
+        $('#del-btn').click(function () {
+            $.ajax({
+                type: 'POST',
+                url: 'http://47.114.95.159:3000/delete-flink',
+                contentType: 'application/json',
+                data: JSON.stringify({ id: 221 }),
+                dataType: 'json',
+                success: function (res) {
+                    $('#my-shadow').show();
+                    $('#alert-box').show();
+                    $('.alert-close').click(function () {
+                        $('#my-shadow').hide();
+                        $('#alert-box').hide();
+                    })
+                    console.log(res);
+                }
+            })
+        })
+
+
+        // 添加数据
+        // 添加数据接口：http://47.114.95.159:3000/add-flink
+        // 请求类型： POST
+        // 添加友情链接所传数据格式: { id: delid }
+        $('#add-btn').click(function () {
+            $.ajax({
+                type: 'POST',
+                url: 'http://47.114.95.159:3000/add-flink',
+                contentType: 'application/json',
+                data: JSON.stringify({ sitename: '오늘 너무 더워요', siteurl: 'abc.com' }),
+                dataType: 'json',
+                success: function (res) {
+                    alert('添加成功了');
+                    console.log(res);
+                }
+            })
+        })
+
+
+
+        // 编辑数据
+        // 编辑数据接口：http://47.114.95.159:3000/update-flink
+        // 请求类型： POST
+        // 编辑友情链接所传数据格式: { id: delid }
+        $('#bj-btn').click(function () {
+            $.ajax({
+                type: 'POST',
+                url: 'http://47.114.95.159:3000/update-flink',
+                contentType: 'application/json',
+                data: JSON.stringify({ id: 222, sitename: '李四', siteurl: 'lisi.com' }),
+                dataType: 'json',
+                success: function (res) {
+                    alert('编辑成功了');
+                    console.log(res);
+                }
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>友情链接操作</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <style>
+        .mytable {
+            width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="layui-table mytable" lay-even>
+        <colgroup>
+            <col width="150">
+            <col width="200">
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>网站名称</th>
+                <th>网站地址</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="mytbody">
+
+        </tbody>
+    </table>
+    <script src="./layui/layui.all.js"></script>
+    <script>
+        let $ = layui.jquery;
+        $.ajax({
+            type: "get",
+            url: "http://47.114.95.159:3000/get-flink",
+            // data: "data", // 发送给后端的参数
+            dataType: "json", // 后端返回的数据类型
+            success: function(result) {
+                console.log(result);
+                result.forEach(item => {
+                    let newtr = $(`<tr>
+                        <td>${item.id}</td>
+                        <td>${item.sitename}</td>
+                        <td>${item.siteurl}</td>
+                        <td><button type="button" class="layui-btn layui-btn-sm" >编辑</button><button type="button" class="layui-btn layui-btn-danger layui-btn-sm">删除</button></td>
+                    </tr>`)
+                    $('#mytbody').append(newtr)
+                });
+            }
+        });
+    </script>
+
+
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+</body>
+
+</html>
