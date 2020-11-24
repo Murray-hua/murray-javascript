@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 500px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text"><button>搜索</button>
+    </div>
+
+
+
+    <script id="tpl-search" type="text/html">
+        <ul>
+            {{each listData item}}
+            <li><a href="#">{{item.title}}</a></li>
+            {{/each}}
+        </ul>
+    </script>
+    <script src="./template-web.js"></script>
+    <script src="./layui/layui.all.js"></script>
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+</body>
+
+</html>

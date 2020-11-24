@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ['a','b','c'];
+        for (const value of arr) {
+            console.log(value);
+        }
+
+        let arr2 = [1,2,3]
+        for (let num of arr2) {
+            num = num+1
+            console.log(num);
+        }
+
+        let str = 'html5'
+        for (const s of str) {
+            console.log(s);
+        }
+
+        let set1 = new Set(['a','b',1,2])
+        for (const value of set1) {
+            console.log(value);
+        }
+
+        let map1 = new Map()
+        map1.set('a',1)
+        for (const value of map1) {
+            console.log(value);
+        }
+
+        (function(){
+            console.log(arguments);
+            for (const value of arguments) {
+                console.log(value);
+            }
+        })('kw31','kw32','kw33')
+    </script>
+</body>
+</html>

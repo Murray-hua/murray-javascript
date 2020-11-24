@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 600px;
+            min-height: 400px;
+            border: 2px solid #ccc;
+            margin: 0 auto;
+        }
+
+        .box h3 {
+            height: 40px;
+            line-height: 40px;
+            padding-left: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .box ul li {
+            list-style: none;
+            line-height: 40px;
+            text-indent: 20px;
+        }
+
+        .box ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .box ul li a:hover {
+            color: rgb(5, 100, 189);
+        }
+
+        #mypage-wrap {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h3>新闻中心</h3>
+
+        <div id="list">
+
+        </div>
+        <div id="mypage-wrap">
+            <div id="mypage"></div>
+        </div>
+    </div>
+
+
+    <script id="tpl-news" type="text/html">
+        <ul>
+            {{each listData item}}
+            <li><a href="#">{{item.title}}</a></li>
+            {{/each}}
+        </ul>
+    </script>
+
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script src="./layui/layui.all.js"></script>
+    <script src="./js/template-web.js"></script>
+    <script>
+        let laypage = layui.laypage;
+
+
+        laypage.render({
+            elem: 'mypage'
+            , count: 49 //数据总数，从服务端得到
+            , limit: 10
+            , jump: function (obj, first) {
+                //obj包含了当前分页的所有参数，比如：
+                console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                console.log(obj.limit); //得到每页显示的条数
+
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://47.114.95.159:3001/getnews',
+                    dataType: 'json',
+                    data: { curr: obj.curr, limit: obj.limit },
+                    success: function (result) {
+                        console.log(result);
+                        let str = template('tpl-news', result)
+                        $('#list').html(str)
+                    }
+                })
+            }
+        });
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

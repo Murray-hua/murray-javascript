@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 扩展运算符
+        let arr1 = [1, 2, 3];
+        let arr2 = [4, 5, 6, 7];
+        // [1,2,3,4,5,6,7]
+
+        // 方法一：concat()
+        console.log(arr1.concat(arr2));
+
+        // 方法二：扩展运算符，三个点...
+        let newarr = [...arr1, ...arr2]
+        console.log(newarr);
+
+
+        let str = 'hello';
+        // 把字符串分隔为数组？
+
+        // 方法一: split()方法
+        let arr = str.split('');
+        console.log(arr);
+
+        // 方法二：扩展运算符
+        let arr3 = [...str]
+        console.log(arr3);
+
+        let obj = {
+            a: 1,
+            b: 2
+        }
+
+        // {a:1,b:2,c:3}
+        // obj.c=3;
+        console.log({ ...obj, c: 3 });
+
+        // 求一组数字的最大值：[3，57，8，9，34，-3，75]
+        let arr4 = [3, 57, 8, 9, 34, -3, 75]
+        console.log(Math.max(...arr4));
+    </script>
+</body>
+
+</html>

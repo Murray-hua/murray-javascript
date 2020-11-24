@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 定义模板 -->
+    <script id="tpl" type="text/html">
+        <!-- 条件语句 -->
+        {{if bol}}
+            <h2>{{title}}</h2>
+        {{/if}}
+        <ul>
+            <!-- 循环语句 -->
+            {{each fruits}}
+            <li>{{$index}} - {{$value}}</li>
+            {{/each}}
+        </ul>
+    </script>
+
+    <script src="./js/template-web.js"></script>
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        // 定义数据
+        let data = {
+            bol: true,
+            title: '水果',
+            fruits: ['香蕉', '西瓜', '苹果', '哈密瓜']
+        };
+
+        // 渲染模板: template(参数1，参数2)
+        // 参数1是模板的id ， 参数2是数据
+        let str = template('tpl', data);
+        $('body').append(str)
+
+    </script>
+</body>
+
+</html>

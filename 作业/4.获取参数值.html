@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 5. 获取地址栏age=20&pirce=30&keywords=lv&cc=1中的keywords参数的值
+        let str = 'age=20&pirce=30&keywords=lv&cc=1'
+
+        function getKeywords(key) {
+            let arr = str.split('&')
+            for (const value of arr) {
+                let arr1 = value.split('=');
+                console.log(arr1);
+                if (arr1[0] == key) {
+                    return arr1[1]
+                }
+            }
+        }
+        console.log(getKeywords('keywords'));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 700px;
+            height: 600px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #ccc;
+            margin: 150px auto;
+        }
+
+        header {
+            width: 300px;
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 80px;
+            margin-bottom: 40px;
+            margin-left: 200px;
+        }
+
+        header #active {
+            text-decoration: underline;
+            color: sandybrown;
+        }
+
+        .login input {
+            width: 600px;
+            height: 60px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        .layui-form-item {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .layui-form-item input {
+            padding-left: 40px;
+            margin-top: 40px;
+        }
+
+        .layui-form-item input::-webkit-input-placeholder {
+            font-size: 20px;
+            padding-top: 6px;
+        }
+
+        .login-btn {
+            width: 600px;
+            margin: 40px auto;
+        }
+
+        .login-btn button {
+            border-radius: 10px;
+            height: 60px;
+        }
+
+        .layui-icon {
+            position: absolute;
+            font-size: 25px;
+
+            left: 60px;
+            top: 16px;
+        }
+
+        .layui-form-item {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="login">
+            <header class="myactive"><a href="./login.html" id="active">登录</a> · <a href="./register.html">注册</a></header>
+            <form class="layui-form">
+                <div class="layui-form-item layui-input-icon-group">
+                    <i class="layui-icon layui-icon-username"></i><input type="text" name="account" required lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-item layui-input-icon-group">
+                    <i class="layui-icon layui-icon-password"></i><input type="password" name="password" required lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
+                </div>
+                <div class="login-btn">
+                    <button lay-submit lay-filter="login" class="layui-btn layui-btn-lg layui-btn-fluid">立即登录</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script>
+        $('myactive').click(function() {
+            $(this).addClass('#active').siblings().removeClass('#active')
+        })
+    </script>
+    <script src="./layui/layui.all.js"></script>
+</body>
+
+</html>

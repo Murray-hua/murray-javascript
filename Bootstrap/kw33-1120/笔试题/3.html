@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 3.存一个有效期为7天的cookie，key=nickname,val=Ace 
+        // let t = new Date();
+        // t.setDate( t.getDate() + 7)
+        // document.cookie = "nickname=Ace;expires=" + t;
+
+        let t = new Date();
+        t.setDate( t.getDate() - 1)
+        document.cookie = "nickname=Ace;expires=" + t;
+    </script>
+</body>
+</html>

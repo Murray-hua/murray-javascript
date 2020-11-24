@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //15.写一个函数，实现数组的join功能，如 _.join([1,2,3],'&')得到 1&2&3
+        Array.prototype.myjoin = function(str) {
+            let res = ""
+            for (let i = 0; i < this.length - 1; i++) {
+                res += this[i] + str;
+            }
+            return res + this[this.length - 1];
+        }
+        console.log([1, 2, 3].myjoin("&"));
+    </script>
+</body>
+
+</html>

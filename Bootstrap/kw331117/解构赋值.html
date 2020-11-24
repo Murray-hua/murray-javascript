@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // es6:解构赋值
+        // let { username, password } = data;
+
+        // 重命名
+        let { username: zs, password } = data;
+        // console.log(zs,password);
+
+        // 可以设置默认值
+        let person = { name: undefined, age: 18 }
+        let { name = '未知用户', age } = person;
+        console.log(name.age);
+
+        // 可以使用剩余参数
+        let obj = { a: 1, b: 2, c: 3, d: 4 }
+        
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+let a = 1;
+let b = 2;
+let c = 3;
+
+export {a,b}
+export default c;
+
+console.log(this);
+

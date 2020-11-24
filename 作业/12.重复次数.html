@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 13. 写一个函数， 得到字符串 aabcdcacd中每个字符串的出现次数
+        let str = 'aabcdcacd';
+
+        function count(str) {
+            let obj = {};
+            for (const value of str) {
+                if (obj[value]) {
+                    obj[value]++
+                } else {
+                    obj[value] = 1
+                }
+            }
+            return obj;
+        }
+        console.log(count(str));
+    </script>
+</body>
+
+</html>

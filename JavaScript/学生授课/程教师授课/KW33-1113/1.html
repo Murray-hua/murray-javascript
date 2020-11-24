@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>标题</h2>
+    <ul>
+        
+    </ul>
+
+    <script src='https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        let data = {
+            title: '水果',
+            fruits: ['香蕉','西瓜','苹果','哈密瓜']
+        };
+        $('h2').html(data.title);
+
+        // 一代，传统字符串拼接
+        let str = '';
+        data.fruits.forEach( item => {
+            str += `<li>${item}</li>`
+        })
+        $('ul').html(str)
+
+        // 二代，模板引擎， art-template , nunjucks
+        
+
+
+
+    </script>
+</body>
+</html>

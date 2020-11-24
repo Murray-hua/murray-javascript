@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+</head>
+
+<body>
+
+    <div id="mypage"></div>
+
+    <script src="./layui/layui.all.js"></script>
+    <script>
+        var laypage = layui.laypage;
+
+        laypage.render({
+            elem: 'mypage',
+            count: 70, //数据总数，从服务端得到
+            limit: 10,
+            // first: '首页',
+            // last: '尾页',
+            layout: ['count','prev','page','next','limit','refresh','skip'],
+            jump: function (obj) {
+                //obj包含了当前分页的所有参数，比如：
+                console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                console.log(obj.limit); //得到每页显示的条数
+
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // console.log(1 == '1');
+        // console.log(10 * 'zhangsan');
+
+        // console.log(Object.is(1, '1')); //flase
+        // console.log(Object.is(NaN, NaN)); //true
+
+
+
+
+
+
+        function getUser(obj) {
+            let defaultObj = {
+                name: '刘德华',
+                age: 0
+            }
+            let newobj = {};
+            Object.assign(newobj, defaultObj, obj)
+            console.log({ name: '', age: 18 });
+        }
+        getUser()
+    </script>
+</body>
+
+</html>
