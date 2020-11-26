@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        用户名: <input type="text" id="user">
+    </p>
+    <p>
+        密码: <input type="password" id="pwd">
+    </p>
+    <button type="button" id="loginbtn">登录</button>
+    <script>
+        let btn = document.querySelector('#loginbtn');
+        let user = document.querySelector('#user');
+        let pwd = document.querySelector('#pwd');
+
+        // // get 请求
+        // btn.onclick = function() {
+        //     let uservalue = user.value,
+        //         pwdvalue = pwd.value;
+        //     let url = `http://127.0.0.1:3000/ggg?name=${uservalue}&password=${pwdvalue}`
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.onreadystatechange = function() {
+        //         if (xhr.readyState === 4) {
+        //             if (xhr.status === 200) {
+        //                 console.log(xhr.responseText);
+        //             }
+        //         }
+        //     }
+        //     xhr.open('get', url, true)
+        //     xhr.send();
+        // }
+        // post 请求
+        btn.onclick = function() {
+            let uservalue = user.value,
+                pwdvalue = pwd.value;
+            let url = `http://127.0.0.1:3000/ppp`
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        console.log(xhr.responseText);
+                    }
+                }
+            }
+            xhr.open('post', url, true)
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+            xhr.send(`name=${uservalue}&password=${pwdvalue}`);
+        }
+    </script>
+</body>
+
+</html>

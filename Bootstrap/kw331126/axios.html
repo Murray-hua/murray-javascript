@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        用户名: <input type="text" id="user">
+    </p>
+    <p>
+        密码: <input type="password" id="pwd">
+    </p>
+    <button type="button" id="loginbtn">登录</button>
+
+
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <script>
+        // //get 请求
+        // $('#loginbtn').click(function(e) {
+        //     e.preventDefault();
+        //     axios.get('http://127.0.0.1:3000/ggg', {
+        //             params: {
+        //                 name: $('#user').val(),
+        //                 password: $('#pwd').val()
+        //             }
+        //         })
+        //         .then(res => {
+        //             console.log(res.data)
+        //         })
+
+        // });
+
+
+        //post 请求
+        $('#loginbtn').click(function(e) {
+            e.preventDefault();
+            axios.post('http://127.0.0.1:3000/ppp', {
+                    name: $('#user').val(),
+                    password: $('#pwd').val()
+                })
+                .then(res => {
+                    console.log(res.data)
+                })
+
+        });
+    </script>
+</body>
+
+</html>
